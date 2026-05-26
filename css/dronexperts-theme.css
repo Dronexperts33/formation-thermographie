@@ -41,7 +41,7 @@
 }
 
 .reveal .slides section {
-  padding: 48px 56px;
+  padding: 36px 56px 56px;
   box-sizing: border-box;
   height: 100%;
 }
@@ -172,17 +172,18 @@
 /* --- Slide footer --- */
 .slide-footer {
   position: absolute;
-  bottom: 20px;
+  bottom: 12px;
   left: 56px;
   right: 56px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.45em;
+  font-size: 0.4em;
   color: var(--dx-text-muted);
   font-weight: 400;
   border-top: 1px solid var(--dx-border);
-  padding-top: 12px;
+  padding-top: 8px;
+  background: var(--dx-bg-white);
 }
 
 .slide-footer-dark {
@@ -282,9 +283,9 @@
 }
 
 .slide-content h2 {
-  padding-bottom: 16px;
+  padding-bottom: 10px;
   border-bottom: 3px solid var(--dx-primary);
-  margin-bottom: 32px;
+  margin-bottom: 20px;
   display: inline-block;
 }
 
@@ -298,8 +299,8 @@
 .icon-list li {
   display: flex;
   align-items: flex-start;
-  gap: 16px;
-  padding: 12px 0;
+  gap: 14px;
+  padding: 7px 0;
   padding-left: 0;
 }
 
@@ -307,10 +308,10 @@
 
 .icon-list .icon {
   flex-shrink: 0;
-  width: 40px;
-  height: 40px;
+  width: 34px;
+  height: 34px;
   background: rgba(14, 116, 218, 0.1);
-  border-radius: 10px;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -318,8 +319,8 @@
 }
 
 .icon-list .icon svg {
-  width: 22px;
-  height: 22px;
+  width: 18px;
+  height: 18px;
   stroke: currentColor;
   fill: none;
   stroke-width: 2;
@@ -428,20 +429,20 @@
 .diagram-container {
   display: flex;
   justify-content: center;
-  gap: 28px;
-  margin-top: 32px;
+  gap: 18px;
+  margin-top: 16px;
   flex-wrap: wrap;
   align-items: stretch;
 }
 
 .diagram-card {
   flex: 1;
-  min-width: 200px;
+  min-width: 180px;
   max-width: 300px;
   background: var(--dx-bg-white);
   border: 2px solid var(--dx-border);
   border-radius: var(--dx-radius);
-  padding: 28px 20px;
+  padding: 16px 14px;
   text-align: center;
   transition: all 0.3s ease;
   position: relative;
@@ -464,10 +465,10 @@
 .diagram-card.card-cyan::before { background: var(--dx-info); }
 
 .diagram-card .card-icon {
-  width: 48px;
-  height: 48px;
-  margin: 0 auto 12px;
-  border-radius: 12px;
+  width: 38px;
+  height: 38px;
+  margin: 0 auto 8px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -596,10 +597,10 @@
 }
 
 .highlight-box {
-  max-width: 80%;
-  padding: 48px;
+  max-width: 85%;
+  padding: 28px 36px;
   background: white;
-  border-radius: 16px;
+  border-radius: 14px;
   border-left: 6px solid var(--dx-primary);
   box-shadow: var(--dx-shadow);
   text-align: left;
@@ -612,7 +613,7 @@
   color: var(--dx-primary);
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
   background: rgba(14,116,218,0.08);
   padding: 4px 14px;
   border-radius: 6px;
@@ -620,11 +621,11 @@
 
 .highlight-box blockquote,
 .reveal .highlight-box blockquote {
-  font-size: 1.1em;
+  font-size: 1em;
   font-weight: 600;
   color: var(--dx-text-dark);
-  line-height: 1.5;
-  margin: 0 0 16px 0;
+  line-height: 1.4;
+  margin: 0 0 10px 0;
   padding: 0;
   border: none;
   border-left: none;
@@ -845,7 +846,7 @@
   background: var(--dx-bg-light);
   border: 1px solid var(--dx-border);
   border-radius: var(--dx-radius);
-  padding: 20px 24px;
+  padding: 12px 18px;
 }
 
 /* Progress indicator */
@@ -888,7 +889,7 @@
   display: flex;
   align-items: flex-start;
   gap: 0;
-  margin: 32px 0;
+  margin: 18px 0;
 }
 
 .process-step {
