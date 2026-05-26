@@ -1,0 +1,544 @@
+/* ============================================================
+   DRONEXPERTS — Modèles documents imprimables A4
+   Charte v2.3 · cohérent avec livret-instructeur.html
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --dx-primary: #0E74DA;
+  --dx-primary-dark: #0B5DB0;
+  --dx-gradient-start: #1E3A8A;
+  --dx-gradient-end: #04355D;
+  --dx-bg-light: #F9FAFC;
+  --dx-bg-white: #FFFFFF;
+  --dx-text-dark: #0F172A;
+  --dx-text-secondary: #475569;
+  --dx-text-muted: #94A3B8;
+  --dx-border: #E2E8F0;
+  --dx-success: #10B981;
+  --dx-warning: #F59E0B;
+  --dx-error: #EF4444;
+}
+
+@page {
+  size: A4;
+  margin: 18mm 16mm 22mm 16mm;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 10pt;
+  color: var(--dx-text-secondary);
+  line-height: 1.55;
+  background: var(--dx-bg-white);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.page {
+  max-width: 210mm;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ============================================================
+   HEADER avec dégradé Dronexperts
+   ============================================================ */
+.doc-header {
+  background: linear-gradient(135deg, var(--dx-gradient-start) 0%, var(--dx-gradient-end) 100%);
+  color: white;
+  padding: 28px 32px;
+  border-radius: 0 0 14px 14px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.doc-header .header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.doc-header img.logo {
+  height: 48px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  margin-bottom: 10px;
+}
+
+.doc-header h1 {
+  font-size: 18pt;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.doc-header .subtitle {
+  font-size: 10pt;
+  font-weight: 400;
+  color: rgba(255,255,255,0.75);
+}
+
+.doc-header .doc-meta {
+  text-align: right;
+  font-size: 9pt;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.85);
+}
+
+.doc-header .doc-meta .meta-label {
+  font-size: 7.5pt;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.55);
+  font-weight: 600;
+}
+
+/* Bandeau "Modèle fourni par Dronexperts" */
+.doc-banner {
+  background: rgba(14,116,218,0.06);
+  border-left: 4px solid var(--dx-primary);
+  padding: 10px 16px;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 20px;
+  font-size: 8.5pt;
+  color: var(--dx-text-secondary);
+}
+
+.doc-banner strong {
+  color: var(--dx-primary);
+  font-weight: 600;
+}
+
+/* ============================================================
+   SECTIONS
+   ============================================================ */
+.section {
+  margin-bottom: 20px;
+  break-inside: avoid;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11pt;
+  font-weight: 700;
+  color: var(--dx-text-dark);
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--dx-primary);
+  margin-bottom: 12px;
+}
+
+.section-title .num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  background: var(--dx-primary);
+  color: white;
+  border-radius: 50%;
+  font-size: 9pt;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.subsection-title {
+  font-size: 9.5pt;
+  font-weight: 600;
+  color: var(--dx-text-dark);
+  margin: 12px 0 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.subsection-title .letter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  background: var(--dx-bg-light);
+  color: var(--dx-primary);
+  border-radius: 4px;
+  font-size: 8pt;
+  font-weight: 700;
+  border: 1px solid var(--dx-border);
+}
+
+/* ============================================================
+   CHAMPS À REMPLIR
+   ============================================================ */
+.field-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 20px;
+  margin-bottom: 12px;
+}
+
+.field-grid.cols-1 { grid-template-columns: 1fr; }
+.field-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.field label {
+  font-size: 8pt;
+  font-weight: 600;
+  color: var(--dx-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.field .input-line {
+  min-height: 22px;
+  padding: 4px 8px;
+  border: 1px solid var(--dx-border);
+  border-radius: 4px;
+  background: var(--dx-bg-light);
+  font-size: 9.5pt;
+  color: var(--dx-text-dark);
+}
+
+.field .input-line[contenteditable="true"]:focus {
+  outline: 2px solid var(--dx-primary);
+  background: white;
+}
+
+.field .input-large {
+  min-height: 60px;
+}
+
+.checkbox-row {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.checkbox-row label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 9pt;
+  color: var(--dx-text-dark);
+  cursor: pointer;
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
+.checkbox-row .checkbox {
+  width: 14px;
+  height: 14px;
+  border: 1.5px solid var(--dx-border);
+  border-radius: 3px;
+  display: inline-block;
+  background: white;
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   TABLES
+   ============================================================ */
+table.dx-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0 16px;
+  font-size: 9pt;
+}
+
+table.dx-table thead th {
+  background: var(--dx-primary);
+  color: white;
+  font-weight: 600;
+  text-align: left;
+  padding: 8px 10px;
+  border: 1px solid var(--dx-primary);
+}
+
+table.dx-table tbody td {
+  padding: 6px 10px;
+  border: 1px solid var(--dx-border);
+  vertical-align: top;
+}
+
+table.dx-table tbody tr:nth-child(even) td {
+  background: var(--dx-bg-light);
+}
+
+table.dx-table .num-cell {
+  text-align: center;
+  width: 80px;
+  white-space: nowrap;
+}
+
+table.dx-table .empty-cell {
+  background: white;
+  min-height: 24px;
+}
+
+/* ============================================================
+   CHECKLISTS
+   ============================================================ */
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 6px 0;
+  border-bottom: 1px dashed rgba(226,232,240,0.6);
+  font-size: 9.5pt;
+  line-height: 1.5;
+  break-inside: avoid;
+}
+
+.checklist li:last-child { border-bottom: none; }
+
+.checklist .box {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  margin-top: 1px;
+  border: 1.5px solid var(--dx-border);
+  border-radius: 4px;
+  background: white;
+}
+
+.checklist li strong {
+  color: var(--dx-text-dark);
+  font-weight: 600;
+}
+
+/* ============================================================
+   HIGHLIGHTS / NOTES
+   ============================================================ */
+.note {
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin: 10px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  break-inside: avoid;
+  font-size: 8.5pt;
+  line-height: 1.5;
+}
+
+.note .note-tag {
+  font-weight: 700;
+  font-size: 8pt;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-right: 4px;
+}
+
+.note-info {
+  background: rgba(14,116,218,0.06);
+  border-left: 4px solid var(--dx-primary);
+}
+.note-info .note-tag { color: var(--dx-primary); }
+
+.note-warning {
+  background: rgba(245,158,11,0.06);
+  border-left: 4px solid var(--dx-warning);
+}
+.note-warning .note-tag { color: #D97706; }
+
+.note-success {
+  background: rgba(16,185,129,0.06);
+  border-left: 4px solid var(--dx-success);
+}
+.note-success .note-tag { color: var(--dx-success); }
+
+/* ============================================================
+   TOTAUX (devis)
+   ============================================================ */
+.totals {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0;
+}
+
+.totals .totals-block {
+  grid-column: 2;
+  min-width: 220px;
+  border: 1px solid var(--dx-border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.totals .totals-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 14px;
+  font-size: 9.5pt;
+  border-bottom: 1px solid var(--dx-border);
+}
+
+.totals .totals-row:last-child { border-bottom: none; }
+
+.totals .totals-row.total {
+  background: var(--dx-primary);
+  color: white;
+  font-weight: 700;
+}
+
+.totals .totals-label {
+  color: var(--dx-text-secondary);
+  font-weight: 500;
+}
+.totals .totals-row.total .totals-label { color: white; }
+
+/* ============================================================
+   SIGNATURE
+   ============================================================ */
+.signature-zone {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  break-inside: avoid;
+}
+
+.signature-box {
+  padding: 12px 14px;
+  border: 1px solid var(--dx-border);
+  border-radius: 8px;
+  background: var(--dx-bg-light);
+}
+
+.signature-box .label {
+  font-size: 8pt;
+  font-weight: 600;
+  color: var(--dx-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.signature-box .signature-line {
+  min-height: 60px;
+  border-bottom: 1px solid var(--dx-text-muted);
+  margin-top: 4px;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.doc-footer {
+  margin-top: 32px;
+  padding-top: 12px;
+  border-top: 1px solid var(--dx-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 7.5pt;
+  color: var(--dx-text-muted);
+}
+
+.doc-footer a {
+  color: var(--dx-primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* ============================================================
+   NAVIGATION (en ligne uniquement, masquée à l'impression)
+   ============================================================ */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: var(--dx-bg-light);
+  border: 1px solid var(--dx-border);
+  border-radius: 20px;
+  color: var(--dx-primary);
+  text-decoration: none;
+  font-size: 8.5pt;
+  font-weight: 500;
+  margin-bottom: 16px;
+  transition: all 0.15s ease;
+}
+
+.back-link:hover {
+  background: white;
+  border-color: var(--dx-primary);
+}
+
+.print-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: var(--dx-primary);
+  color: white;
+  border: none;
+  border-radius: 100px;
+  font-family: inherit;
+  font-size: 9pt;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(14,116,218,0.3);
+  transition: all 0.2s ease;
+  z-index: 100;
+}
+
+.print-btn:hover {
+  background: var(--dx-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(14,116,218,0.4);
+}
+
+.print-btn svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+}
+
+/* ============================================================
+   PRINT
+   ============================================================ */
+@media print {
+  body { background: white; font-size: 10pt; }
+  .doc-header { border-radius: 0; margin-top: 0; }
+  .page { padding: 0; max-width: none; }
+  .back-link, .print-btn { display: none !important; }
+  .section { break-inside: avoid-page; }
+  .field-grid, .checklist li, .signature-zone, .note, table.dx-table tr { break-inside: avoid; }
+}
+
+@media screen {
+  body { background: var(--dx-bg-light); padding: 24px 0; }
+  .page {
+    background: white;
+    box-shadow: 0 4px 32px rgba(15,23,42,0.08);
+    border-radius: 12px;
+    padding: 0 32px 40px;
+    margin-bottom: 24px;
+  }
+  .doc-header { margin-left: -32px; margin-right: -32px; margin-top: 0; }
+}
