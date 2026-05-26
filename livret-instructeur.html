@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Livret d'Accueil Instructeur Thermographie — Dronexperts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================================
+       DRONEXPERTS — Livret Instructeur
+       Charte Graphique v2.3 (Mars 2026)
+       ============================================================ */
+    :root {
+      --dx-primary: #0E74DA;
+      --dx-primary-dark: #0B5DB0;
+      --dx-gradient-start: #1E3A8A;
+      --dx-gradient-end: #04355D;
+      --dx-bg-light: #F9FAFC;
+      --dx-bg-white: #FFFFFF;
+      --dx-text-dark: #0F172A;
+      --dx-text-secondary: #475569;
+      --dx-text-muted: #94A3B8;
+      --dx-border: #E2E8F0;
+      --dx-success: #10B981;
+      --dx-warning: #F59E0B;
+      --dx-error: #EF4444;
+      --dx-info: #06B6D4;
+    }
+
+    @page {
+      size: A4;
+      margin: 20mm 18mm 25mm 18mm;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 10.5pt;
+      color: var(--dx-text-secondary);
+      line-height: 1.6;
+      background: var(--dx-bg-white);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .page {
+      max-width: 210mm;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ---- HEADER ---- */
+    .header {
+      background: linear-gradient(135deg, var(--dx-gradient-start) 0%, var(--dx-gradient-end) 100%);
+      color: white;
+      text-align: center;
+      padding: 40px 32px 36px;
+      border-radius: 0 0 16px 16px;
+      margin-bottom: 28px;
+      position: relative;
+    }
+    .header img.logo {
+      height: 72px;
+      width: auto;
+      filter: brightness(0) invert(1);
+      margin-bottom: 16px;
+    }
+    .header h1 {
+      font-size: 22pt;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
+    .header .subtitle {
+      font-size: 11pt;
+      font-weight: 400;
+      color: rgba(255,255,255,0.8);
+    }
+
+    /* ---- INTRO BOX ---- */
+    .intro-box {
+      background: var(--dx-bg-light);
+      border: 1px solid var(--dx-border);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 32px;
+      text-align: center;
+      font-size: 10pt;
+      color: var(--dx-text-secondary);
+      line-height: 1.7;
+    }
+    .intro-box .mission {
+      display: inline-block;
+      margin-top: 10px;
+      font-weight: 700;
+      color: var(--dx-primary);
+      font-size: 11pt;
+      background: rgba(14,116,218,0.06);
+      padding: 4px 16px;
+      border-radius: 8px;
+    }
+
+    /* ---- SECTIONS ---- */
+    .section {
+      margin-bottom: 28px;
+      break-inside: avoid;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14pt;
+      font-weight: 700;
+      color: var(--dx-text-dark);
+      padding-bottom: 10px;
+      border-bottom: 3px solid var(--dx-primary);
+      margin-bottom: 20px;
+    }
+    .section-title .section-icon {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      background: rgba(14,116,218,0.1);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .section-title .section-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--dx-primary);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ---- SUB-SECTIONS ---- */
+    .subsection {
+      margin-bottom: 18px;
+      break-inside: avoid;
+    }
+    .subsection-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 10.5pt;
+      font-weight: 600;
+      color: var(--dx-text-dark);
+      margin-bottom: 10px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 6px;
+      font-size: 8.5pt;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+    .badge-blue { background: rgba(14,116,218,0.12); color: var(--dx-primary); }
+    .badge-green { background: rgba(16,185,129,0.12); color: var(--dx-success); }
+    .badge-orange { background: rgba(245,158,11,0.12); color: #D97706; }
+    .badge-red { background: rgba(239,68,68,0.12); color: var(--dx-error); }
+    .badge-dark { background: var(--dx-text-dark); color: white; }
+
+    /* ---- TASK LIST ---- */
+    .task-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .task-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(226,232,240,0.6);
+      font-size: 10pt;
+      line-height: 1.55;
+      break-inside: avoid;
+    }
+    .task-list li:last-child { border-bottom: none; }
+
+    .task-list .check {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      margin-top: 1px;
+      background: rgba(16,185,129,0.1);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .task-list .check svg {
+      width: 13px;
+      height: 13px;
+      stroke: var(--dx-success);
+      fill: none;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .task-list li strong {
+      font-weight: 600;
+      color: var(--dx-text-dark);
+    }
+
+    /* ---- HIGHLIGHT BOXES ---- */
+    .highlight {
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin: 14px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      break-inside: avoid;
+    }
+    .highlight .hl-icon {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .highlight .hl-icon svg {
+      width: 16px;
+      height: 16px;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .highlight .hl-content {
+      font-size: 9.5pt;
+      line-height: 1.55;
+    }
+    .highlight .hl-content strong {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .highlight-info {
+      background: rgba(14,116,218,0.06);
+      border-left: 4px solid var(--dx-primary);
+    }
+    .highlight-info .hl-icon { background: rgba(14,116,218,0.12); }
+    .highlight-info .hl-icon svg { stroke: var(--dx-primary); }
+    .highlight-info .hl-content strong { color: var(--dx-primary); }
+
+    .highlight-warning {
+      background: rgba(245,158,11,0.06);
+      border-left: 4px solid var(--dx-warning);
+    }
+    .highlight-warning .hl-icon { background: rgba(245,158,11,0.12); }
+    .highlight-warning .hl-icon svg { stroke: #D97706; }
+    .highlight-warning .hl-content strong { color: #D97706; }
+
+    .highlight-critical {
+      background: rgba(239,68,68,0.06);
+      border-left: 4px solid var(--dx-error);
+    }
+    .highlight-critical .hl-icon { background: rgba(239,68,68,0.12); }
+    .highlight-critical .hl-icon svg { stroke: var(--dx-error); }
+    .highlight-critical .hl-content strong { color: var(--dx-error); }
+
+    .highlight-success {
+      background: rgba(16,185,129,0.06);
+      border-left: 4px solid var(--dx-success);
+    }
+    .highlight-success .hl-icon { background: rgba(16,185,129,0.12); }
+    .highlight-success .hl-icon svg { stroke: var(--dx-success); }
+    .highlight-success .hl-content strong { color: var(--dx-success); }
+
+    /* ---- CONTACT CARD ---- */
+    .contact-card {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--dx-bg-light);
+      border: 1px solid var(--dx-border);
+      border-radius: 8px;
+      padding: 6px 12px;
+      font-size: 9pt;
+      font-weight: 500;
+      color: var(--dx-text-dark);
+      margin: 4px 4px 4px 0;
+    }
+    .contact-card svg {
+      width: 14px;
+      height: 14px;
+      stroke: var(--dx-primary);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ---- QUOTE BOX ---- */
+    .quote-box {
+      background: linear-gradient(135deg, var(--dx-gradient-start) 0%, var(--dx-gradient-end) 100%);
+      color: white;
+      text-align: center;
+      padding: 28px 32px;
+      border-radius: 12px;
+      margin-top: 28px;
+    }
+    .quote-box blockquote {
+      font-size: 12pt;
+      font-weight: 600;
+      font-style: italic;
+      line-height: 1.5;
+      margin-bottom: 8px;
+    }
+    .quote-box .thanks {
+      font-size: 9.5pt;
+      font-weight: 400;
+      color: rgba(255,255,255,0.75);
+    }
+
+    /* ---- SCREEN: interactive hover effects ---- */
+    @media screen {
+      .task-list li { transition: background 0.15s ease; border-radius: 6px; padding-left: 6px; padding-right: 6px; }
+      .task-list li:hover { background: var(--dx-bg-light); }
+      .contact-card { transition: all 0.15s ease; cursor: default; }
+      .contact-card:hover { border-color: var(--dx-primary); background: rgba(14,116,218,0.04); }
+    }
+
+    /* ---- PAGE FOOTER ---- */
+    .page-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 12px;
+      border-top: 1px solid var(--dx-border);
+      margin-top: 24px;
+      font-size: 8pt;
+      color: var(--dx-text-muted);
+    }
+
+    /* ---- PAGE BREAK (print only) ---- */
+    @media print {
+      .page-break {
+        page-break-before: always;
+        break-before: page;
+        padding-top: 8px;
+      }
+    }
+
+    /* ---- SCREEN: subtle section dividers ---- */
+    @media screen {
+      .section + .section { padding-top: 24px; border-top: 1px solid var(--dx-border); }
+    }
+
+    /* ---- PRINT ---- */
+    @media print {
+      body { background: white; font-size: 10pt; }
+      .header { border-radius: 0; margin-top: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 0; max-width: none; }
+      .highlight, .quote-box, .badge, .section-icon, .check, .hl-icon, .contact-card {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .section { break-inside: avoid-page; }
+      .subsection { break-inside: avoid; }
+      .task-list li { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ============================================================
+       HEADER
+       ============================================================ -->
+  <div class="header">
+    <img src="assets/img/logo-dronexperts.svg" alt="Dronexperts" class="logo">
+    <h1>Livret d'Accueil Instructeur</h1>
+    <p class="subtitle">Guide de préparation et d'animation — Formation Thermographie par Drone (2 jours)</p>
+  </div>
+
+  <!-- ============================================================
+       INTRO
+       ============================================================ -->
+  <div class="intro-box">
+    La session approche à grands pas ! Tout va s'enchaîner très vite et personne n'est à l'abri d'un petit oubli.<br>
+    Voici le rappel de tout ce qu'il faut faire afin que la session se passe pour le mieux.<br>
+    <span class="mission">Votre mission si vous l'acceptez : rendre 100% des stagiaires 100% satisfaits !</span>
+  </div>
+
+
+  <!-- ============================================================
+       SECTION 1 — EN AMONT
+       ============================================================ -->
+  <div class="section">
+    <div class="section-title">
+      <div class="section-icon">
+        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      </div>
+      1. J'organise ma session (En amont)
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">
+        <span class="badge badge-green">Dès la confirmation</span>
+      </div>
+      <ul class="task-list">
+        <li>
+          <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span>Si j'ai besoin d'un logement et/ou d'un transport, je procède à la réservation. Je me réfère à la <strong>politique voyage Dronexperts</strong> pour plus d'informations.</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">
+        <span class="badge badge-blue">Entre J-14 et J-7</span>
+      </div>
+      <ul class="task-list">
+        <li>
+          <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span>Je contacte <strong>Chrystel</strong> afin de confirmer la tenue de la formation.
+            <span class="contact-card"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Chrystel — Administration</span>
+          </span>
+        </li>
+        <li>
+          <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span>Je vérifie la disponibilité des <strong>lieux de formation</strong> (salle et extérieur). Ils doivent être indiqués comme réservés sur la fiche de session.</span>
+        </li>
+        <li>
+          <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span>Je signe mon <strong>contrat de sous-traitance</strong> et l'envoie à l'administration Dronexperts.</span>
+        </li>
+        <li>
+          <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span>Je m'assure d'avoir tout le <strong>matériel pédagogique</strong> nécessaire : drones thermiques (<strong>Mavic 3T</strong> et/ou <strong>Matrice 4T</strong>), tablettes/PC avec DJI Thermal Analysis Tool installé, vidéoprojecteur, support de cours imprimé, plan de rapport vierge, tableau des émissivités.</span>
+        </li>
+        <li>
+          <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span>Je m'assure de disposer des <strong>goodies et supports</strong> pour les stagiaires (stylos, livrets, checklists plastifiées).</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">
+        <span class="badge badge-orange">À J-6</span>
+      </div>
+      <ul class="task-list">
+        <li>
+          <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span>Je m'assure que les vols de démonstration thermo (site bâtiment + site photovoltaïque) sont planifiés, déclarés sur <strong>AlphaTango</strong> si nécessaire, et que les <strong>autorisations propriétaires</strong> (décollage + prise de vue) sont obtenues.</span>
+        </li>
+        <li>
+          <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span>Je débute la <strong>Checklist Instructeur</strong> et m'organise pour récupérer le matériel.</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+  <!-- ============================================================
+       SECTION 2 — PENDANT
+       ============================================================ -->
+  <div class="section page-break">
+    <div class="section-title">
+      <div class="section-icon">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      2. J'anime ma session (Pendant)
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">
+        <span class="badge badge-dark">Jour J — Matin</span>
+      </div>
+
+      <div class="highlight highlight-info">
+        <div class="hl-icon">
+          <svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+        </div>
+        <div class="hl-content">
+          <strong>L'accueil Dronexperts</strong>
+          Je passe à la boulangerie ! J'achete des viennoiseries (environ 1,5 par personne) pour le cafe d'accueil. Je conserve le ticket de caisse (aucun autre achat personnel ne doit y figurer).
+        </div>
+      </div>
+
+      <ul class="task-list">
+        <li>
+          <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span>Avant l'arrivée des stagiaires, je prepare la salle : mise en place des PC, tablettes ouvertes avec Checklists visibles, stylos. <strong>La salle doit paraitre parfaitement ordonnée et propre.</strong> Nous n'avons qu'une seule chance de faire une bonne première impression !</span>
+        </li>
+        <li>
+          <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span>J'informe immédiatement <strong>Chrystel</strong> en cas d'absence d'un stagiaire.</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">
+        <span class="badge badge-dark">Durant toute la session</span>
+      </div>
+
+      <div class="highlight highlight-critical">
+        <div class="hl-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="hl-content">
+          <strong>Sécurité absolue</strong>
+          Je respecte à la lettre les consignes de sécurité et la réglementation. Je suis en permanence maître de la situation, prêt à reprendre les commandes. La zone d'exclusion des tiers (10 m minimum) est strictement respectée.
+        </div>
+      </div>
+
+      <ul class="task-list">
+        <li>
+          <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span>Je maintiens une <strong>présentation et une hygiène de vie exemplaires</strong>.</span>
+        </li>
+        <li>
+          <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span>Je fais l'<strong>émargement en ligne</strong> sur formation.dronexperts.io ainsi que les élèves.</span>
+        </li>
+        <li>
+          <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span>La salle doit etre en permanence parfaitement rangée, les drones parfaitement exposés (alignement), en particulier le matin avant l'arrivée des stagiaires.</span>
+        </li>
+        <li>
+          <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span>Je suis à 100% au service des stagiaires : je dois trouver et proposer une solution à chacune de leurs attentes.</span>
+        </li>
+        <li>
+          <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span>J'anime la session et organise les modules en fonction de la météo, tout en m'assurant que <strong>le programme de formation est intégralement appliqué</strong>.</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">
+        <span class="badge badge-blue">Pédagogie et Suivi</span>
+      </div>
+      <ul class="task-list">
+        <li>
+          <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span>Lors de la première heure, je réalise un <strong>tour de table</strong>. Je liste les attentes personnalisées au tableau. Si elles sont hors sujet, je l'explique avec bienveillance ; si elles sont pertinentes, j'adapte mon animation pour y répondre.</span>
+        </li>
+        <li>
+          <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span><strong>Prévention des abandons :</strong> Chaque fin de journée, j'anime un débriefing pour détecter les stagiaires en difficulté. En cas de doute, j'alerte le responsable instructeur le soir même.
+            <span class="contact-card"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Jonathan — 07 84 99 67 75</span>
+          </span>
+        </li>
+        <li>
+          <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span>Chaque soir, je prends du recul (débriefing avec le co-instructeur si applicable) pour adapter la suite de la session.</span>
+        </li>
+        <li>
+          <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span>Je prends du <strong>plaisir à transmettre</strong> et je m'assure que tous les stagiaires en prennent !</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+  <!-- ============================================================
+       SECTION 3 — CERTIFICATION
+       ============================================================ -->
+  <div class="section page-break">
+    <div class="section-title">
+      <div class="section-icon">
+        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      </div>
+      3. Évaluation des acquis (Fin de session)
+    </div>
+
+    <ul class="task-list">
+      <li>
+        <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+        <span><strong>En fin de J1 et J2 :</strong> Je fais passer le <strong>QCM de validation des acquis</strong> (10 questions, ~15 min, accessible depuis le sommaire de formation). Correction collective immédiate.</span>
+      </li>
+    </ul>
+
+    <div class="highlight highlight-warning">
+      <div class="hl-icon">
+        <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      </div>
+      <div class="hl-content">
+        <strong>Cas d'un apprenant en difficulté</strong>
+        Je modifie le livret en indiquant les compétences non acquises (interprétation, paramétrage caméra, lecture rapport). J'explique avec pédagogie et je propose des ressources d'approfondissement (banque d'exercices, supports complémentaires).
+      </div>
+    </div>
+
+    <ul class="task-list">
+      <li>
+        <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+        <span>J'anime au moins <strong>6 exercices d'interprétation guidés</strong> en J2 après-midi (banque de 16 thermogrammes disponibles).</span>
+      </li>
+      <li>
+        <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+        <span>Je vérifie que chaque stagiaire a téléchargé les <strong>ressources annexes</strong> : plan de rapport vierge, tableau émissivités, modèles d'autorisation, devis type.</span>
+      </li>
+      <li>
+        <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+        <span>Le dernier jour, avant le tour de table final, je fais remplir le <strong>questionnaire d'évaluation à chaud</strong> en ligne par tous les stagiaires.</span>
+      </li>
+    </ul>
+  </div>
+
+
+  <!-- ============================================================
+       SECTION 4 — CLOTURE
+       ============================================================ -->
+  <div class="section">
+    <div class="section-title">
+      <div class="section-icon">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </div>
+      4. L'apres session (Cloture)
+    </div>
+
+    <ul class="task-list">
+      <li>
+        <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+        <span>Je rédige un courriel au <strong>responsable pédagogique</strong> pour l'informer du bon déroulement de la formation. Je signale tout événement sécuritaire ou déviation au programme.</span>
+      </li>
+    </ul>
+
+    <div class="highlight highlight-success">
+      <div class="hl-icon">
+        <svg viewBox="0 0 24 24"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"/><path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
+      </div>
+      <div class="hl-content">
+        <strong>Démarche Qualité</strong>
+        J'envoie le courriel type demandant de laisser un <strong>Avis Google</strong> et une évaluation CPF aux stagiaires, avec Chrystel en copie. C'est crucial pour la visibilité du centre !
+      </div>
+    </div>
+
+    <ul class="task-list">
+      <li>
+        <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+        <span>J'envoie ma <strong>facture</strong> à la comptabilité Dronexperts. Pour les frais (logement, transport, viennoiseries), je remplis la note de frais conformément à la politique en vigueur et je joins les tickets de caisse.</span>
+      </li>
+    </ul>
+  </div>
+
+
+  <!-- ============================================================
+       CITATION FINALE
+       ============================================================ -->
+  <div class="quote-box">
+    <blockquote>"Chez Dronexperts, ce sont les petits details qui font les grandes differences."</blockquote>
+    <p class="thanks">Merci pour votre engagement et votre professionnalisme !</p>
+  </div>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <div class="page-footer">
+    <span>Dronexperts — Livret Instructeur Thermographie</span>
+    <span>dronexperts.io</span>
+  </div>
+
+</div><!-- .page -->
+
+</body>
+</html>

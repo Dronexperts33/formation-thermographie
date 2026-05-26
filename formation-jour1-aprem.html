@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jour 1 Après-midi — Matériel DJI & préparation mission — Formation Thermographie par Drone</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css" id="theme">
+  <link rel="stylesheet" href="css/dronexperts-theme.css">
+</head>
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+<!-- SLIDE 1 — TITRE -->
+<section class="slide-title">
+  <img src="assets/img/logo-dronexperts.svg" alt="Dronexperts" class="slide-logo-large">
+  <h1>Formation Thermographie par Drone</h1>
+  <p class="subtitle">Jour 1 Après-midi — Matériel DJI &amp; préparation mission</p>
+  <span class="badge">Mavic 3T &amp; Matrice 4T · Réglages caméra · QCM J1</span>
+  <div class="slide-footer slide-footer-dark">
+    <span>Dronexperts — Formation Thermographie</span>
+    <span>Jour 1 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- SLIDE 2 — SOMMAIRE -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Sommaire de l'après-midi</h2>
+
+  <ul class="icon-list">
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+      <div class="text"><h4>7 · Critères de choix d'une caméra thermique</h4><p>Résolution, NETD, exactitude, focales, plage de température.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M2 22h20"/><path d="M5 11l7-5 7 5"/><rect x="6" y="11" width="12" height="11"/></svg></div>
+      <div class="text"><h4>8 · Matériel DJI : Mavic 3T &amp; Matrice 4T</h4><p>Caractéristiques détaillées, comparatif, format R-JPEG, équipements complémentaires.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <div class="text"><h4>9 · Réglementation thermo-drone (rappel express)</h4><p>Spécificités thermo, prise de vue hors visible, vol de nuit, autorisations propriétaires.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg></div>
+      <div class="text"><h4>10 · Préparation de mission</h4><p>Objectif, devis, déclarations, autorisations zones, documents à emporter.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/></svg></div>
+      <div class="text"><h4>11 · Facteur humain</h4><p>Concentration, stress, double tâche pilotage + interprétation thermo en vol.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33"/></svg></div>
+      <div class="text"><h4>12 · Réglages caméra terrain</h4><p>Palettes, niveau/gain, isotherme, conditions optimales d'intervention.</p></div>
+    </li>
+  </ul>
+
+  <div class="slide-footer">
+    <span>Sommaire — Jour 1 Après-midi</span>
+    <span>Dronexperts</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     MODULE 7 — CRITERES CAMERA THERMIQUE
+     ============================================================ -->
+<section class="slide-module">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <div class="module-number">Module 7</div>
+  <h2>Choisir une caméra thermique</h2>
+  <p class="module-desc">Les critères techniques qui font qu'une caméra est adaptée — ou pas — à un usage de thermographie par drone.</p>
+  <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+  </svg>
+  <div class="slide-footer">
+    <span>Module 7 — Critères caméra</span>
+    <span>Jour 1 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Critères de choix synthétiques -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Les 5 critères clés à évaluer</h2>
+
+  <div class="diagram-container">
+    <div class="diagram-card card-blue">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
+      <h3>Résolution</h3>
+      <p style="font-size: 0.75em;">Nombre de pixels du capteur thermique. <strong>640×512 px</strong> est le standard pro pour drone (M3T, M4T).</p>
+    </div>
+    <div class="diagram-card card-green">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+      <h3>NETD (sensibilité)</h3>
+      <p style="font-size: 0.75em;">Plus faible = plus précis. <strong>≤ 50 mK</strong> = pro · 150 mK = entrée de gamme (smartphones).</p>
+    </div>
+    <div class="diagram-card card-orange">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+      <h3>Exactitude</h3>
+      <p style="font-size: 0.75em;">Précision absolue de la mesure. Norme du secteur : <strong>±5 % ou ±2 °C</strong>.</p>
+    </div>
+  </div>
+
+  <div class="diagram-container" style="margin-top: 18px;">
+    <div class="diagram-card card-blue">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33"/></svg></div>
+      <h3>Focale</h3>
+      <p style="font-size: 0.75em;">Détermine l'angle de vue (FOV). <strong>Standard ≈ 50mm</strong>, grand-angle 18mm, télé 250mm.</p>
+    </div>
+    <div class="diagram-card card-orange">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 2v4"/><path d="M12 18v4"/><path d="m4.93 4.93 2.83 2.83"/><path d="m16.24 16.24 2.83 2.83"/></svg></div>
+      <h3>Plage T°</h3>
+      <p style="font-size: 0.75em;"><strong>Bâtiment</strong> : -20 / +50 °C suffit · <strong>Industrie</strong> : jusqu'à +350 °C requis.</p>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 7 — Critères clés</span>
+    <span>Jour 1 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — NETD en détail -->
+<section class="slide-two-col">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>NETD — la sensibilité thermique</h2>
+
+  <div class="two-col">
+    <div class="col-text">
+      <p>Le <strong>NETD</strong> (Noise Equivalent Temperature Difference) est le plus petit écart de température que la caméra peut distinguer entre deux pixels voisins.</p>
+      <ul>
+        <li>Exprimé en <strong>millikelvin (mK)</strong></li>
+        <li>Plus le NETD est <strong>faible</strong>, plus la caméra est <strong>fine</strong></li>
+        <li>Détermine la capacité à voir des micro-défauts (humidité, ponts thermiques discrets)</li>
+      </ul>
+      <div class="info-card" style="margin-top: 16px;">
+        <p style="margin:0; font-size:0.7em;">
+          <strong style="color: var(--dx-primary);">DJI Mavic 3T &amp; Matrice 4T</strong><br>
+          NETD ≤ <strong>50 mK</strong> — niveau professionnel
+        </p>
+      </div>
+    </div>
+    <div class="col-visual">
+      <table class="dx-table" style="font-size: 0.75em;">
+        <thead><tr><th>Type de matériel</th><th>NETD</th></tr></thead>
+        <tbody>
+          <tr><td>Caméra labo / R&amp;D</td><td>&lt; 20 mK</td></tr>
+          <tr><td>Drone pro (M3T, M4T)</td><td>≤ 50 mK</td></tr>
+          <tr><td>Drone précédent (Mavic 2 EA)</td><td>~50 mK</td></tr>
+          <tr><td>Caméra portable pro (FLIR E)</td><td>50–80 mK</td></tr>
+          <tr><td>FLIR ONE Pro (smartphone)</td><td>100 mK</td></tr>
+          <tr><td>FLIR ONE (consumer)</td><td>150 mK</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 7 — NETD</span>
+    <span>Jour 1 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Focales et angles -->
+<section class="slide-diagram">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Focales &amp; angles de vue</h2>
+
+  <div class="diagram-container">
+    <div class="diagram-card card-blue">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M5 12l-3 0"/><path d="M22 12l-3 0"/></svg></div>
+      <h3>Grand-angle</h3>
+      <span class="tag tag-primary" style="margin-bottom: 10px;">~18mm · FOV 42°</span>
+      <p style="font-size: 0.75em;">Cadre une grande surface. Idéal pour cartographier une toiture entière ou un champ photovoltaïque depuis une faible hauteur.</p>
+    </div>
+    <div class="diagram-card card-green">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="9"/></svg></div>
+      <h3>Standard</h3>
+      <span class="tag tag-success" style="margin-bottom: 10px;">35–50mm · FOV 24°</span>
+      <p style="font-size: 0.75em;">Angle de vue proche de l'œil humain. Bon compromis pour l'inspection de façades et la lecture de défauts à distance moyenne.</p>
+    </div>
+    <div class="diagram-card card-orange">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2"/><circle cx="12" cy="12" r="6"/></svg></div>
+      <h3>Téléobjectif</h3>
+      <span class="tag tag-warning" style="margin-bottom: 10px;">~250mm · FOV 14°</span>
+      <p style="font-size: 0.75em;">Zoom sur défaut ponctuel à grande distance. Lignes HT, cheminées, zones d'accès restreint. Le M3T et le M4T disposent d'un <strong>zoom numérique x28</strong>.</p>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 7 — Focales</span>
+    <span>Jour 1 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     MODULE 8 — MATERIEL DJI
+     ============================================================ -->
+<section class="slide-module">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <div class="module-number">Module 8</div>
+  <h2>DJI Mavic 3T &amp; Matrice 4T</h2>
+  <p class="module-desc">Les deux drones thermiques DJI de référence pour la thermographie professionnelle. Caractéristiques détaillées et critères de choix.</p>
+  <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M2 22h20"/><path d="M5 11l7-5 7 5"/><rect x="6" y="11" width="12" height="11"/>
+  </svg>
+  <div class="slide-footer">
+    <span>Module 8 — Matériel DJI</span>
+    <span>Jour 1 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Mavic 3T -->
+<section class="slide-two-col">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>DJI Mavic 3T</h2>
+
+  <div class="two-col">
+    <div class="col-text">
+      <p>Drone compact thermique <strong>pliable</strong>, optimisé pour la mobilité, l'inspection bâtiment et la sécurité civile.</p>
+      <ul>
+        <li><strong>Triple caméra</strong> : grand-angle 48 MP, télé 12 MP, thermique 640×512</li>
+        <li><strong>NETD</strong> ≤ 50 mK · plage -20 / +150 °C</li>
+        <li><strong>Précision</strong> ±2 °C ou ±2 %</li>
+        <li><strong>Zoom thermique</strong> numérique x28</li>
+        <li><strong>Format radiométrique</strong> R-JPEG DJI</li>
+        <li><strong>Autonomie</strong> ~45 min · masse 920 g</li>
+        <li><strong>Détection d'obstacles</strong> omnidirectionnelle</li>
+      </ul>
+      <div class="info-card" style="margin-top: 12px;">
+        <p style="margin:0; font-size:0.7em;">
+          <strong style="color: var(--dx-success);">✓ Usage typique</strong><br>
+          Inspection bâtiment, recherche personne, sécurité civile, missions rapides en mobilité.
+        </p>
+      </div>
+    </div>
+    <div class="col-visual">
+      <img src="https://images.unsplash.com/photo-1508444845599-5c89863b1c44?w=600&q=80" alt="DJI Mavic 3T" style="object-fit: cover;">
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 8 — Mavic 3T</span>
+    <span>Jour 1 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Matrice 4T -->
+<section class="slide-two-col">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>DJI Matrice 4T</h2>
+
+  <div class="two-col">
+    <div class="col-text">
+      <p>Drone <strong>professionnel</strong> de la gamme Matrice, optimisé pour les missions exigeantes : inspection industrielle, photovoltaïque, sécurité, conditions difficiles.</p>
+      <ul>
+        <li><strong>Quad caméra</strong> : grand-angle, télé, télé moyen, thermique 640×512</li>
+        <li><strong>NETD</strong> ≤ 50 mK · plage -20 / +150 °C</li>
+        <li><strong>Précision</strong> ±2 °C ou ±2 %</li>
+        <li><strong>Zoom thermique</strong> numérique x28</li>
+        <li><strong>Format radiométrique</strong> R-JPEG DJI</li>
+        <li><strong>Autonomie</strong> ~49 min · masse ~1.5 kg</li>
+        <li><strong>Résistance IP55</strong> · vol par vent fort</li>
+        <li><strong>RTK</strong> intégré (précision centimétrique)</li>
+      </ul>
+      <div class="info-card" style="margin-top: 12px;">
+        <p style="margin:0; font-size:0.7em;">
+          <strong style="color: var(--dx-success);">✓ Usage typique</strong><br>
+          Inspection industrielle, lignes HT, photovoltaïque à grande échelle, conditions météo dégradées.
+        </p>
+      </div>
+    </div>
+    <div class="col-visual">
+      <img src="https://images.unsplash.com/photo-1521405924368-64c5b84bec60?w=600&q=80" alt="DJI Matrice 4T" style="object-fit: cover;">
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 8 — Matrice 4T</span>
+    <span>Jour 1 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Tableau comparatif M3T vs M4T -->
+<section class="slide-table">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Comparatif Mavic 3T vs Matrice 4T</h2>
+
+  <table class="dx-table">
+    <thead>
+      <tr>
+        <th>Caractéristique</th>
+        <th>DJI Mavic 3T</th>
+        <th>DJI Matrice 4T</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Capteur thermique</strong></td><td>640 × 512 px</td><td>640 × 512 px</td></tr>
+      <tr><td><strong>NETD</strong></td><td>≤ 50 mK</td><td>≤ 50 mK</td></tr>
+      <tr><td><strong>Plage de mesure</strong></td><td>-20 / +150 °C</td><td>-20 / +150 °C</td></tr>
+      <tr><td><strong>Précision</strong></td><td>±2 °C ou ±2 %</td><td>±2 °C ou ±2 %</td></tr>
+      <tr><td><strong>Zoom thermique</strong></td><td>x28 numérique</td><td>x28 numérique</td></tr>
+      <tr><td><strong>Format</strong></td><td>R-JPEG DJI</td><td>R-JPEG DJI</td></tr>
+      <tr><td><strong>Caméras visibles</strong></td><td>Grand-angle 48 MP + télé 12 MP</td><td>Grand-angle + télé moyen + télé</td></tr>
+      <tr><td><strong>Autonomie</strong></td><td>~45 min</td><td>~49 min</td></tr>
+      <tr><td><strong>Masse</strong></td><td>920 g</td><td>~1.5 kg</td></tr>
+      <tr><td><strong>Étanchéité</strong></td><td>—</td><td>IP55</td></tr>
+      <tr><td><strong>RTK</strong></td><td>Module optionnel</td><td>Intégré</td></tr>
+    </tbody>
+  </table>
+
+  <div class="info-card" style="margin-top: 16px;">
+    <p style="margin:0; font-size:0.7em;">
+      <strong style="color: var(--dx-primary);">💡 Choisir entre M3T et M4T</strong><br>
+      M3T = mobilité, bâtiment, sécurité civile · M4T = grande échelle, industrie, conditions difficiles
+    </p>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 8 — Comparatif</span>
+    <span>Jour 1 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Format R-JPEG -->
+<section class="slide-highlight">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+
+  <div class="highlight-box highlight-success">
+    <div class="tag">Format radiométrique R-JPEG DJI</div>
+    <blockquote>Le R-JPEG (Radiometric JPEG) est un fichier image qui contient en plus de l'image visuelle <strong>une matrice de températures pour chaque pixel</strong>. Il permet de re-paramétrer l'émissivité, la RTC, l'humidité et les distances <strong>après le vol</strong>.</blockquote>
+    <p class="source">Exploitable dans DJI Thermal Analysis Tool (gratuit) — au programme du Jour 2 après-midi</p>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 8 — Format R-JPEG</span>
+    <span>Jour 1 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Équipements complémentaires -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Équipements complémentaires utiles</h2>
+
+  <ul class="icon-list">
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg></div>
+      <div class="text"><h4>Boussole magnétique</h4><p>Pour orienter le drone par rapport au soleil et anticiper les ombres portées sur les façades.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><line x1="12" y1="2" x2="12" y2="22"/><polyline points="17 5 12 2 7 5"/></svg></div>
+      <div class="text"><h4>Sonde de température / hygromètre</h4><p>Mesurer la T° et l'humidité ambiantes intérieures/extérieures — indispensables pour le rapport NF EN 13187.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12s4.48 10 10 10 10-4.48 10-10z"/></svg></div>
+      <div class="text"><h4>Solarimètre (missions PV)</h4><p>Mesure l'irradiance solaire (W/m²) au moment de la prise de vue — requis par la norme IEC 61724 pour évaluer la production réelle.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <div class="text"><h4>EPI &amp; consigne de sécurité</h4><p>Gilet haute visibilité, casque selon site industriel, balisage zone d'exclusion 10 m minimum.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/></svg></div>
+      <div class="text"><h4>Tablette de pilotage</h4><p>Écran lisible en plein soleil (DJI Smart Controller ou tablette équivalente) — essentiel pour interpréter le thermogramme en vol.</p></div>
+    </li>
+  </ul>
+
+  <div class="slide-footer">
+    <span>Module 8 — Équipements complémentaires</span>
+    <span>Jour 1 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     MODULE 9 — REGLEMENTATION (RAPPEL EXPRESS)
+     ============================================================ -->
+<section class="slide-module">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <div class="module-number">Module 9</div>
+  <h2>Réglementation thermo-drone</h2>
+  <p class="module-desc">Rappel court — vous êtes déjà télépilote certifié. Ici, on se concentre uniquement sur les spécificités liées à la thermographie.</p>
+  <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+  </svg>
+  <div class="slide-footer">
+    <span>Module 9 — Réglementation thermo</span>
+    <span>Jour 1 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Rappel pré-requis télépilote -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Pré-requis télépilote (rappel)</h2>
+
+  <p style="margin-bottom: 16px;">Vous êtes censé déjà disposer de :</p>
+
+  <ul class="icon-list">
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/></svg></div>
+      <div class="text"><h4>Certificat d'aptitude théorique</h4><p>Examen DGAC ou équivalent EASA (CATT, A1/A3, A2, STS).</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/></svg></div>
+      <div class="text"><h4>Déclaration d'activité &amp; MANEX</h4><p>Pour usage professionnel : déclaration sur AlphaTango, MANEX à jour, enregistrement des drones.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/></svg></div>
+      <div class="text"><h4>Assurance RC Pro</h4><p>Obligatoire pour les professionnels. À cumuler éventuellement avec une RC Aéro.</p></div>
+    </li>
+  </ul>
+
+  <div class="info-card" style="margin-top: 20px;">
+    <p style="margin:0; font-size:0.7em;">
+      <strong style="color: var(--dx-primary);">ℹ Pour aller plus loin</strong><br>
+      La formation télépilote Dronexperts (RS6982) couvre intégralement le cadre réglementaire. Voir <a href="https://formation.dronexperts.io">formation.dronexperts.io</a>.
+    </p>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 9 — Pré-requis</span>
+    <span>Jour 1 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Spécificités thermo -->
+<section class="slide-highlight">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+
+  <div class="highlight-box highlight-info">
+    <div class="tag">Bonne nouvelle</div>
+    <blockquote>La <strong>prise de vue hors spectre visible</strong> ne nécessite plus d'autorisation préfectorale depuis 2021. Le décret Cerfa 12546*01 ne s'applique plus à la thermographie.</blockquote>
+  </div>
+
+  <div style="margin-top: 28px;">
+    <h3 style="color: var(--dx-text-dark); font-size: 1em; margin-bottom: 12px;">Ce qui reste obligatoire pour la thermo :</h3>
+    <ul>
+      <li>Respect de toutes les règles habituelles du pilotage drone (catégorie Open, Spécifique, etc.)</li>
+      <li>Déclarations et autorisations selon les zones (voir tableau slide suivante)</li>
+      <li><strong>Autorisations privées</strong> (décollage + prise de vue) à obtenir du propriétaire</li>
+    </ul>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 9 — Spécificités thermo</span>
+    <span>Jour 1 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Vol de nuit thermo -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Vol de nuit pour la thermographie ?</h2>
+
+  <div class="highlight-box highlight-warning" style="margin-bottom: 20px;">
+    <div class="tag">Cadre général</div>
+    <blockquote>Le vol de nuit est <strong>interdit en catégorie Open</strong>. Une dérogation est possible via la <strong>déclaration R5-TAAG-6-F2</strong> (ou scénario STS pour vols professionnels).</blockquote>
+  </div>
+
+  <p>En pratique pour la thermographie bâtiment :</p>
+  <ul>
+    <li><strong>Pas besoin de voler la nuit</strong> dans la plupart des cas : le créneau optimal est le <strong>petit matin</strong> (avant lever de soleil, écart T° max).</li>
+    <li>Pour le PV : créneau <strong>milieu de journée</strong> (production max, soleil au zénith).</li>
+    <li>Vol de nuit utile uniquement pour : <strong>recherche de personne</strong>, <strong>inspections industrielles 24/7</strong>, certaines détections de fuites thermiques.</li>
+  </ul>
+
+  <div class="info-card" style="margin-top: 16px;">
+    <p style="margin:0; font-size:0.7em;">
+      <strong style="color: var(--dx-warning);">⚠ Si vol de nuit nécessaire</strong> · Déposer la déclaration R5-TAAG-6-F2 sur AlphaTango (délai 5 jours ouvrés minimum).
+    </p>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 9 — Vol de nuit</span>
+    <span>Jour 1 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Autorisations propriétaires -->
+<section class="slide-highlight">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+
+  <div class="highlight-box highlight-critical">
+    <div class="tag">Spécifique thermo bâtiment / PV</div>
+    <blockquote>Avant toute mission de thermographie, obtenir <strong>deux autorisations écrites</strong> du propriétaire des lieux : <strong>autorisation de décollage</strong> (zone privée) et <strong>autorisation de prise de vue</strong> (droits à l'image du bâtiment).</blockquote>
+    <p class="source">Modèles disponibles dans la section ressources du sommaire de formation</p>
+  </div>
+
+  <p style="margin-top: 24px; font-size: 0.8em;">Pour une centrale photovoltaïque industrielle, ajouter : <strong>fiche de site</strong>, plan d'évacuation, EPI requis, consignes spécifiques.</p>
+
+  <div class="slide-footer">
+    <span>Module 9 — Autorisations propriétaires</span>
+    <span>Jour 1 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     MODULE 10 — PREPARATION MISSION
+     ============================================================ -->
+<section class="slide-module">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <div class="module-number">Module 10</div>
+  <h2>Préparation de mission</h2>
+  <p class="module-desc">De l'appel client au décollage : la check-list des étapes à ne pas oublier.</p>
+  <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+  </svg>
+  <div class="slide-footer">
+    <span>Module 10 — Préparation mission</span>
+    <span>Jour 1 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Étapes de préparation -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Les étapes de préparation</h2>
+
+  <div class="process-steps">
+    <div class="process-step">
+      <div class="step-number">1</div>
+      <div class="step-label">Objectif</div>
+      <div class="step-desc">Type de repérage<br>thermique attendu</div>
+    </div>
+    <div class="process-step">
+      <div class="step-number">2</div>
+      <div class="step-label">Devis</div>
+      <div class="step-desc">Chiffrage<br>+ étude faisabilité</div>
+    </div>
+    <div class="process-step">
+      <div class="step-number">3</div>
+      <div class="step-label">Déclarations</div>
+      <div class="step-desc">AlphaTango,<br>Clearance, gestionnaire</div>
+    </div>
+    <div class="process-step">
+      <div class="step-number">4</div>
+      <div class="step-label">Autorisations</div>
+      <div class="step-desc">Propriétaire,<br>décollage, prise de vue</div>
+    </div>
+    <div class="process-step">
+      <div class="step-number">5</div>
+      <div class="step-label">Documents</div>
+      <div class="step-desc">TP + drone<br>+ check-list site</div>
+    </div>
+  </div>
+
+  <div class="info-card" style="margin-top: 32px;">
+    <p style="margin:0; font-size:0.7em;">
+      <strong style="color: var(--dx-warning);">⚠ Délais</strong> · Clearance : 5 jours ouvrés · Autorisations propriétaire : prévoir 1-2 semaines pour bâtiment professionnel.
+    </p>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 10 — Étapes</span>
+    <span>Jour 1 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Tableau zones -->
+<section class="slide-table">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Déclarations &amp; autorisations par zone</h2>
+
+  <table class="dx-table">
+    <thead>
+      <tr>
+        <th>Zone</th>
+        <th>Définition</th>
+        <th>Déclaration</th>
+        <th>Autorisation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>CTR</strong></td><td>Control Trafic Régional</td><td>AlphaTango</td><td>Clearance</td></tr>
+      <tr><td><strong>P / R / D</strong></td><td>Prohibited / Restricted / Dangerous</td><td>—</td><td>Gestionnaire</td></tr>
+      <tr><td><strong>ZIT / ZRT</strong></td><td>Zone Interdite / Réservée Temporaire</td><td>—</td><td>Gestionnaire</td></tr>
+      <tr><td><strong>RTBA</strong></td><td>Réseau Très Basse Altitude</td><td>—</td><td>— (interdit en activité)</td></tr>
+      <tr><td><strong>SETBA</strong></td><td>Secteur d'Entraînement TBA</td><td>—</td><td>Gestionnaire</td></tr>
+      <tr><td><strong>VOLTAC</strong></td><td>Zone d'entraînement hélicos</td><td>Si vol &gt; 50 m</td><td>—</td></tr>
+    </tbody>
+  </table>
+
+  <div class="info-card" style="margin-top: 16px;">
+    <p style="margin:0; font-size:0.7em;">
+      <strong style="color: var(--dx-primary);">🔗 Outils</strong> · Cartes.gouv.fr (restrictions drone), AlphaTango, Clearance, DroneKeeper, MaMissionDrone
+    </p>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 10 — Zones</span>
+    <span>Jour 1 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Documents à emporter -->
+<section class="slide-two-col">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Documents à emporter sur site</h2>
+
+  <div class="two-col">
+    <div class="col-text">
+      <h3 style="color: var(--dx-primary); font-size: 0.9em; margin-bottom: 8px;">Télépilote</h3>
+      <ul>
+        <li>Déclaration d'activité</li>
+        <li>Attestation de formation / brevet</li>
+        <li>Attestation d'assurance RC Pro</li>
+        <li>MANEX en cours de validité</li>
+        <li>Pièce d'identité</li>
+      </ul>
+    </div>
+    <div class="col-visual">
+      <h3 style="color: var(--dx-primary); font-size: 0.9em; margin-bottom: 8px;">Drone</h3>
+      <ul>
+        <li>Certificat de conception (classe C)</li>
+        <li>Plaque d'immatriculation visible</li>
+        <li>Enregistrement AlphaTango (exploitant + appareil)</li>
+        <li>Numéro d'identification électronique</li>
+      </ul>
+      <h3 style="color: var(--dx-primary); font-size: 0.9em; margin: 16px 0 8px;">Mission</h3>
+      <ul>
+        <li>Autorisations propriétaire (décollage + prise de vue)</li>
+        <li>Carnet de vol / journal de bord</li>
+        <li>Check-list pré-vol</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 10 — Documents</span>
+    <span>Jour 1 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     MODULE 11 — FACTEUR HUMAIN
+     ============================================================ -->
+<section class="slide-module">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <div class="module-number">Module 11</div>
+  <h2>Facteur humain en thermo-drone</h2>
+  <p class="module-desc">La thermographie en vol = double tâche cognitive. Comprendre les pièges du facteur humain dans ce contexte spécifique.</p>
+  <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/>
+  </svg>
+  <div class="slide-footer">
+    <span>Module 11 — Facteur humain</span>
+    <span>Jour 1 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Concentration et stress -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Concentration accrue, stress augmenté</h2>
+
+  <p style="margin-bottom: 16px;">La thermographie en vol impose une <strong>concentration plus élevée</strong> que le pilotage classique. Le télépilote pilote ET interprète en temps réel.</p>
+
+  <ul class="icon-list">
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg></div>
+      <div class="text"><h4>À éviter absolument</h4><p>Médicaments altérant la vigilance, alcool, fatigue importante, distractions extérieures, situations inattendues mal préparées.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <div class="text"><h4>Conséquences du stress</h4><p>Fatigue accélérée, pertes de mémoire courte, difficultés de discernement, augmentation du risque d'incident.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+      <div class="text"><h4>Antidotes</h4><p>Planification rigoureuse en amont, expérience de la mission, débriefing systématique, repos suffisant.</p></div>
+    </li>
+  </ul>
+
+  <div class="slide-footer">
+    <span>Module 11 — Stress &amp; concentration</span>
+    <span>Jour 1 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Double tâche -->
+<section class="slide-highlight">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+
+  <div class="highlight-box highlight-warning">
+    <div class="tag">Double tâche en vol</div>
+    <blockquote>Pendant la mission, le télépilote doit simultanément <strong>piloter le drone en sécurité</strong> ET <strong>interpréter les thermogrammes</strong> pour décider quoi photographier. Interpréter en vol = limiter le nombre de clichés à traiter ensuite.</blockquote>
+  </div>
+
+  <div style="margin-top: 24px;">
+    <h3 style="color: var(--dx-text-dark); font-size: 1em; margin-bottom: 12px;">Bonnes pratiques :</h3>
+    <ul>
+      <li><strong>Briefing avant vol</strong> : objectifs, zones critiques, points d'attention</li>
+      <li><strong>Trajectoire planifiée</strong> : éviter l'improvisation, suivre un parcours mémorisé</li>
+      <li><strong>Pauses régulières</strong> : poser le drone après 15-20 min de vol intensif</li>
+      <li><strong>Co-pilote / observateur</strong> recommandé pour les missions complexes (sécurité périmétrique pendant que TP interprète)</li>
+    </ul>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 11 — Double tâche</span>
+    <span>Jour 1 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     MODULE 12 — REGLAGES CAMERA TERRAIN
+     ============================================================ -->
+<section class="slide-module">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <div class="module-number">Module 12</div>
+  <h2>Réglages caméra terrain</h2>
+  <p class="module-desc">Palettes, niveau/gain, isotherme : les paramètres à maîtriser pour exploiter pleinement le M3T et le M4T en mission.</p>
+  <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33"/>
+  </svg>
+  <div class="slide-footer">
+    <span>Module 12 — Réglages caméra</span>
+    <span>Jour 1 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Palettes de couleurs -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Palettes de couleurs</h2>
+
+  <p style="margin-bottom: 16px;">Une palette désigne différentes couleurs pour marquer des niveaux de températures apparentes. Le choix dépend du <strong>type de contraste recherché</strong>.</p>
+
+  <div class="diagram-container">
+    <div class="diagram-card card-blue">
+      <div class="card-icon" style="background: linear-gradient(to right, #000, #fff);"><svg viewBox="0 0 24 24" stroke="white"><circle cx="12" cy="12" r="10"/></svg></div>
+      <h3>White-hot / Black-hot</h3>
+      <p style="font-size: 0.75em;">Niveaux de gris. Naturel et neutre. Idéal pour la recherche de personne ou de défauts ponctuels.</p>
+    </div>
+    <div class="diagram-card card-orange">
+      <div class="card-icon" style="background: linear-gradient(to right, #5B0F00, #FFD700);"><svg viewBox="0 0 24 24" stroke="white"><circle cx="12" cy="12" r="10"/></svg></div>
+      <h3>Iron / Lava</h3>
+      <p style="font-size: 0.75em;">Du noir au jaune en passant par rouge/orange. Très utilisée en bâtiment, très lisible pour le client final.</p>
+    </div>
+    <div class="diagram-card card-green">
+      <div class="card-icon" style="background: linear-gradient(to right, #1E3A8A, #DC2626);"><svg viewBox="0 0 24 24" stroke="white"><circle cx="12" cy="12" r="10"/></svg></div>
+      <h3>Rainbow</h3>
+      <p style="font-size: 0.75em;">Spectre complet. Maximise le contraste pour faire ressortir de faibles écarts — peut être visuellement chargée.</p>
+    </div>
+  </div>
+
+  <div class="info-card" style="margin-top: 16px;">
+    <p style="margin:0; font-size:0.7em;">
+      <strong style="color: var(--dx-primary);">💡 Astuce terrain</strong><br>
+      Changer de palette en cours de vol pour confirmer une interprétation. Le même défaut doit ressortir avec n'importe quelle palette.
+    </p>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 12 — Palettes</span>
+    <span>Jour 1 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Cadrage thermique niveau/gain -->
+<section class="slide-two-col">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Cadrage thermique : niveau &amp; gain</h2>
+
+  <div class="two-col">
+    <div class="col-text">
+      <p>Le <strong>cadrage thermique</strong> ajuste l'échelle de couleurs pour optimiser le contraste sur la zone d'intérêt.</p>
+      <ul>
+        <li><strong>Mode auto</strong> : la caméra adapte en continu (utile en survol exploration)</li>
+        <li><strong>Mode manuel</strong> : on fixe niveau (centre) et gain (étendue) — permet de comparer plusieurs prises de vue</li>
+        <li>Les zones hors plage apparaissent en noir/blanc saturé</li>
+      </ul>
+      <div class="info-card" style="margin-top: 12px;">
+        <p style="margin:0; font-size:0.7em;">
+          <strong style="color: var(--dx-warning);">⚠ Erreur classique</strong><br>
+          Laisser le mode auto sur une scène avec source très chaude (soleil reflété) écrase tout le reste de l'image.
+        </p>
+      </div>
+    </div>
+    <div class="col-visual">
+      <svg viewBox="0 0 380 280" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:380px;">
+        <defs>
+          <linearGradient id="paletteJ1A" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0" stop-color="#1E3A8A"/>
+            <stop offset="0.5" stop-color="#10B981"/>
+            <stop offset="1" stop-color="#DC2626"/>
+          </linearGradient>
+        </defs>
+        <!-- Échelle pleine -->
+        <text x="40" y="40" font-family="Inter" font-size="12" font-weight="600" fill="#0F172A">Mode auto (large)</text>
+        <rect x="40" y="50" width="300" height="22" fill="url(#paletteJ1A)" rx="3"/>
+        <text x="40" y="92" font-family="Inter" font-size="10" fill="#475569">-20 °C ←——————→ +50 °C</text>
+
+        <!-- Échelle cadrée -->
+        <text x="40" y="140" font-family="Inter" font-size="12" font-weight="600" fill="#0F172A">Mode manuel (cadré)</text>
+        <rect x="40" y="150" width="300" height="22" fill="url(#paletteJ1A)" rx="3"/>
+        <text x="40" y="192" font-family="Inter" font-size="10" fill="#475569">12 °C ←——————→ 22 °C</text>
+
+        <!-- Annotation -->
+        <text x="40" y="240" font-family="Inter" font-size="11" font-weight="600" fill="#0E74DA">→ Beaucoup plus de contraste</text>
+        <text x="40" y="258" font-family="Inter" font-size="11" font-weight="600" fill="#0E74DA">   sur la plage utile</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 12 — Niveau &amp; gain</span>
+    <span>Jour 1 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Isotherme -->
+<section class="slide-highlight">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+
+  <div class="highlight-box highlight-info">
+    <div class="tag">Isotherme</div>
+    <blockquote>L'<strong>isotherme</strong> remplace une plage de températures par une couleur très contrastée (rouge sur palette grise, par exemple). Permet de <strong>repérer instantanément</strong> toutes les zones de la scène à une T° donnée.</blockquote>
+  </div>
+
+  <div style="margin-top: 24px;">
+    <h3 style="color: var(--dx-text-dark); font-size: 1em; margin-bottom: 12px;">Cas d'usage typiques :</h3>
+    <ul>
+      <li><strong>Détection humidité</strong> : isotherme sur les zones &lt; T° rosée</li>
+      <li><strong>PV</strong> : isotherme sur cellules &gt; 80 °C (hot-spot critique)</li>
+      <li><strong>Électrique HT</strong> : isotherme sur connexions &gt; seuil d'alerte (ex. +30 °C / ambiant)</li>
+    </ul>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 12 — Isotherme</span>
+    <span>Jour 1 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Conditions optimales -->
+<section class="slide-table">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Conditions optimales d'intervention</h2>
+
+  <table class="dx-table">
+    <thead>
+      <tr>
+        <th>Paramètre</th>
+        <th>Bâtiment</th>
+        <th>Photovoltaïque</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Écart T° int/ext</strong></td><td>≥ 10 °C</td><td>Soleil ≥ 600 W/m²</td></tr>
+      <tr><td><strong>Chauffage activé</strong></td><td>24 h avant minimum</td><td>Installation en production</td></tr>
+      <tr><td><strong>Créneau horaire</strong></td><td>Petit matin (avant lever soleil)</td><td>Milieu de journée (soleil zénith)</td></tr>
+      <tr><td><strong>Vent</strong></td><td>&lt; 20 km/h (vent décharge la chaleur)</td><td>Idem</td></tr>
+      <tr><td><strong>Pluie / brouillard</strong></td><td>Exclus (les gouttes absorbent l'IR)</td><td>Exclus</td></tr>
+      <tr><td><strong>Ensoleillement direct</strong></td><td>À éviter (réchauffe les façades)</td><td>Requis</td></tr>
+      <tr><td><strong>Pas de précipitations</strong></td><td>6 h avant minimum</td><td>6 h avant minimum</td></tr>
+    </tbody>
+  </table>
+
+  <div class="info-card" style="margin-top: 16px;">
+    <p style="margin:0; font-size:0.7em;">
+      <strong style="color: var(--dx-error);">⚠ Sans ces conditions</strong> · Les thermogrammes ne seront pas exploitables et le rapport ne sera pas conforme NF EN 13187.
+    </p>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 12 — Conditions optimales</span>
+    <span>Jour 1 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- SYNTHESE FIN J1 -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Synthèse fin de Jour 1</h2>
+
+  <ul class="icon-list">
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/></svg></div>
+      <div class="text"><h4>5 critères clés caméra</h4><p>Résolution (640×512), NETD (≤50 mK), exactitude (±2°C), focale, plage. Mavic 3T et Matrice 4T sont à parité sur le capteur thermique.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/></svg></div>
+      <div class="text"><h4>R-JPEG DJI</h4><p>Format radiométrique embarqué : on peut re-paramétrer émissivité, RTC, distance APRÈS le vol dans le logiciel DJI Thermal Analysis Tool.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/></svg></div>
+      <div class="text"><h4>Spécifique thermo</h4><p>Plus besoin d'autorisation pour prise de vue hors visible. Autorisations propriétaires (décollage + prise de vue) toujours obligatoires.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/></svg></div>
+      <div class="text"><h4>Conditions optimales</h4><p>Bâtiment : écart ≥ 10°C, chauffage 24h avant, vent &lt;20 km/h, petit matin. PV : production max, milieu de journée.</p></div>
+    </li>
+  </ul>
+
+  <div class="highlight-box highlight-success" style="margin-top: 20px; padding: 14px 20px;">
+    <blockquote style="font-size: 0.85em;">👉 Passons au QCM Jour 1 pour valider les acquis avant la pause du soir.</blockquote>
+  </div>
+
+  <div class="slide-footer">
+    <span>Synthèse — Fin de Jour 1</span>
+    <span>Dronexperts</span>
+  </div>
+</section>
+
+
+<!-- CONCLUSION + LIEN QCM -->
+<section class="slide-conclusion">
+  <img src="assets/img/logo-dronexperts.svg" alt="Dronexperts" class="slide-logo-large">
+  <h2>Fin du Jour 1</h2>
+  <p>Place au QCM de validation des acquis (10 questions, ~15 min)</p>
+  <p style="font-size:0.6em; margin-top: 8px; opacity: 0.7;">Rendez-vous demain matin pour la méthodologie &amp; les cas d'usage</p>
+  <div class="conclusion-links">
+    <a href="formation-qcm-j1.html">→ Lancer le QCM Jour 1</a>
+    <a href="index-formation.html">← Retour sommaire</a>
+  </div>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    slideNumber: 'c/t',
+    transition: 'slide',
+    width: 1280,
+    height: 720,
+    margin: 0.04,
+    controls: true,
+    progress: true,
+    center: false,
+  });
+</script>
+</body>
+</html>

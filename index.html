@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formation Thermographie par Drone — Dronexperts</title>
+
+  <!-- Reveal.js -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css" id="theme">
+
+  <!-- Dronexperts Theme -->
+  <link rel="stylesheet" href="css/dronexperts-theme.css">
+</head>
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+<!-- ============================================================
+     SLIDE 1 — TITRE DE FORMATION (Hero)
+     ============================================================ -->
+<section class="slide-title">
+  <img src="assets/img/logo-dronexperts.svg" alt="Dronexperts" class="slide-logo-large">
+  <h1>Formation Thermographie par Drone</h1>
+  <p class="subtitle">Démo des types de slides — Initiation 2 jours</p>
+  <span class="badge">DJI Mavic 3T &amp; Matrice 4T — 14h pédagogiques</span>
+  <div class="slide-footer slide-footer-dark">
+    <span>Dronexperts — Formation Thermographie</span>
+    <span>dronexperts.io</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 2 — SEPARATEUR MODULE
+     ============================================================ -->
+<section class="slide-module">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <div class="module-number">Module 1</div>
+  <h2>Fondamentaux de la thermographie</h2>
+  <p class="module-desc">Rayonnement infrarouge, émissivité et lois physiques régissant la mesure thermique sans contact.</p>
+  <!-- Large faded icon background -->
+  <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
+  </svg>
+  <div class="slide-footer">
+    <span>Module 1 — Fondamentaux</span>
+    <span>Jour 1 Matin</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 3 — CONTENU TEXTE (icon list)
+     ============================================================ -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Objectifs de la formation</h2>
+
+  <ul class="icon-list">
+    <li>
+      <div class="icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg>
+      </div>
+      <div class="text">
+        <h4>Comprendre le rayonnement IR</h4>
+        <p>Maîtriser les concepts d'émissivité, réflexion et transmission, et les lois physiques de Stefan-Boltzmann, Wien et Planck.</p>
+      </div>
+    </li>
+    <li>
+      <div class="icon">
+        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      </div>
+      <div class="text">
+        <h4>Maîtriser le Mavic 3T et le Matrice 4T</h4>
+        <p>Paramétrage caméra, palettes, isotherme, format R-JPEG, choix des focales et conditions optimales de prise de vue.</p>
+      </div>
+    </li>
+    <li>
+      <div class="icon">
+        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      </div>
+      <div class="text">
+        <h4>Interpréter les thermogrammes</h4>
+        <p>Identifier les 12 pièges courants, appliquer les 5 règles de méthodologie et restituer les défauts détectés au client.</p>
+      </div>
+    </li>
+    <li>
+      <div class="icon">
+        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      </div>
+      <div class="text">
+        <h4>Rédiger un rapport conforme</h4>
+        <p>Structurer un rapport d'expertise selon la norme NF EN 13187 (19 points) avec recommandations exploitables.</p>
+      </div>
+    </li>
+  </ul>
+
+  <div class="slide-footer">
+    <span>Module 1 — Objectifs</span>
+    <span>Jour 1 Matin</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 4 — DEUX COLONNES (texte + image)
+     ============================================================ -->
+<section class="slide-two-col">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>L'émissivité — concept clé</h2>
+
+  <div class="two-col">
+    <div class="col-text">
+      <p>L'<strong>émissivité (ε)</strong> est la capacité d'un matériau à émettre de l'énergie thermique sous forme de rayonnement IR.</p>
+      <ul>
+        <li>Valeur sans dimension comprise entre <strong>0 et 1</strong></li>
+        <li>Corps noir parfait : ε = 1 (référence théorique)</li>
+        <li>Métal poli : ε ≈ 0.05 — très réfléchissant, peu émissif</li>
+        <li>Plâtre, bois, peinture mate : ε ≈ 0.85-0.95</li>
+      </ul>
+      <div class="info-card" style="margin-top: 16px;">
+        <p style="margin:0; font-size:0.7em;">
+          <strong style="color: var(--dx-warning);">&#9888; Attention</strong><br>
+          Une mauvaise émissivité paramétrée fausse la mesure. Toujours consulter le tableau des émissivités avant interprétation.
+        </p>
+      </div>
+    </div>
+    <div class="col-visual">
+      <img src="https://images.unsplash.com/photo-1545209463-e2825498edbf?w=600&q=80" alt="Thermogramme bâtiment" style="object-fit: cover;">
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 1 — Émissivité</span>
+    <span>Jour 1 Matin</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 5 — SCHEMA / DIAGRAMME (Cards)
+     ============================================================ -->
+<section class="slide-diagram">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Les 3 modes de transfert thermique</h2>
+
+  <div class="diagram-container">
+    <div class="diagram-card card-blue">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="12" x2="21" y2="12"/></svg>
+      </div>
+      <h3>Conduction</h3>
+      <span class="tag tag-primary" style="margin-bottom: 10px;">Solides</span>
+      <p>Transfert par contact moléculaire dans un matériau (ex : chaleur traversant un mur). Caractérisée par la conductivité λ (W/m·K).</p>
+    </div>
+
+    <div class="diagram-card card-orange">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2v6"/><path d="M5 12a7 7 0 0 0 14 0"/><path d="M3 22h18"/></svg>
+      </div>
+      <h3>Convection</h3>
+      <span class="tag tag-warning" style="margin-bottom: 10px;">Fluides</span>
+      <p>Transfert par mouvement de matière (air, eau). Naturelle (différence de densité) ou forcée (ventilation, vent).</p>
+    </div>
+
+    <div class="diagram-card card-green">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="M2 12h2"/><path d="M20 12h2"/></svg>
+      </div>
+      <h3>Rayonnement</h3>
+      <span class="tag tag-success" style="margin-bottom: 10px;">Sans contact</span>
+      <p>Émission d'ondes électromagnétiques par tout corps &gt; 0 K. C'est le mode mesuré par la caméra thermique.</p>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 1 — Transferts thermiques</span>
+    <span>Jour 1 Matin</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 6 — TABLEAU
+     ============================================================ -->
+<section class="slide-table">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Comparatif Mavic 3T vs Matrice 4T</h2>
+
+  <table class="dx-table">
+    <thead>
+      <tr>
+        <th>Caractéristique</th>
+        <th>DJI Mavic 3T</th>
+        <th>DJI Matrice 4T</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Capteur thermique</strong></td>
+        <td>640 × 512 px · 8-14 µm</td>
+        <td>640 × 512 px · 8-14 µm</td>
+      </tr>
+      <tr>
+        <td><strong>NETD</strong></td>
+        <td>≤ 50 mK</td>
+        <td>≤ 50 mK</td>
+      </tr>
+      <tr>
+        <td><strong>Précision mesure</strong></td>
+        <td>±2 °C ou ±2 %</td>
+        <td>±2 °C ou ±2 %</td>
+      </tr>
+      <tr>
+        <td><strong>Zoom thermique</strong></td>
+        <td>x28 numérique</td>
+        <td>x28 numérique</td>
+      </tr>
+      <tr>
+        <td><strong>Format radiométrique</strong></td>
+        <td>R-JPEG (DJI)</td>
+        <td>R-JPEG (DJI)</td>
+      </tr>
+      <tr>
+        <td><strong>Autonomie / Classe</strong></td>
+        <td>~45 min · C2 possible</td>
+        <td>~49 min · usage pro</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="slide-footer">
+    <span>Module 2 — Matériel DJI</span>
+    <span>Jour 1 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 7 — IMAGE PLEIN ECRAN
+     ============================================================ -->
+<section class="slide-image" style="background-image: url('https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=1600&q=80');">
+  <div class="image-content">
+    <h2>La préparation de mission thermo</h2>
+    <p>Météo, créneaux horaires, écart de température, autorisations : chaque mission thermographique nécessite une analyse préalable rigoureuse pour garantir l'exploitabilité des thermogrammes.</p>
+  </div>
+  <div class="slide-footer slide-footer-dark" style="z-index: 3;">
+    <span>Module 2 — Préparation</span>
+    <span>Jour 1 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 8 — CITATION / HIGHLIGHT
+     ============================================================ -->
+<section class="slide-highlight">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+
+  <div class="highlight-box highlight-error">
+    <div class="tag">Règle d'or</div>
+    <blockquote>Un thermogramme bâtiment exploitable nécessite un écart de température intérieur/extérieur d'au moins 10 °C, avec un chauffage en fonctionnement depuis au moins 24 h.</blockquote>
+    <p class="source">Norme NF EN 13187 — Performance thermique des bâtiments</p>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 2 — Conditions optimales</span>
+    <span>Jour 1 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 9 — QCM / QUIZ
+     ============================================================ -->
+<section class="slide-quiz">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>
+    <svg style="width:28px; height:28px; vertical-align:middle; margin-right:8px; stroke:var(--dx-primary); fill:none; stroke-width:2;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+    Question
+  </h2>
+
+  <p class="quiz-question">Quelle est la valeur typique d'émissivité d'un mur en plâtre peint mat ?</p>
+
+  <div class="quiz-options">
+    <div class="quiz-option">
+      <span class="option-letter">A</span>
+      <span>0.05 — surface très réfléchissante</span>
+    </div>
+    <div class="quiz-option">
+      <span class="option-letter">B</span>
+      <span>0.45 — surface moyennement émissive</span>
+    </div>
+    <div class="quiz-option correct">
+      <span class="option-letter">C</span>
+      <span>0.92 — surface fortement émissive</span>
+    </div>
+    <div class="quiz-option">
+      <span class="option-letter">D</span>
+      <span>1.00 — corps noir parfait</span>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>QCM — Fondamentaux IR</span>
+    <span>Évaluation Jour 1</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 10 — SCHEMA SVG (Process / Timeline)
+     ============================================================ -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Déroulement de la formation</h2>
+
+  <div class="process-steps">
+    <div class="process-step">
+      <div class="step-number">1</div>
+      <div class="step-label">J1 Matin</div>
+      <div class="step-desc">Fondamentaux IR<br>&amp; thermique bâtiment</div>
+    </div>
+    <div class="process-step">
+      <div class="step-number">2</div>
+      <div class="step-label">J1 Après-midi</div>
+      <div class="step-desc">Matériel DJI<br>&amp; préparation mission</div>
+    </div>
+    <div class="process-step">
+      <div class="step-number">3</div>
+      <div class="step-label">J2 Matin</div>
+      <div class="step-desc">Méthodologie<br>&amp; cas d'usage</div>
+    </div>
+    <div class="process-step">
+      <div class="step-number">4</div>
+      <div class="step-label">J2 Après-midi</div>
+      <div class="step-desc">Post-traitement<br>&amp; rapport</div>
+    </div>
+  </div>
+
+  <!-- Stats callout -->
+  <div class="stat-row" style="margin-top: 40px;">
+    <div class="stat-item">
+      <div class="stat-number">14h</div>
+      <div class="stat-label">de formation</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">4</div>
+      <div class="stat-label">demi-journées</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">2</div>
+      <div class="stat-label">QCM</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">6</div>
+      <div class="stat-label">exercices</div>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 1 — Programme</span>
+    <span>Jour 1 Matin</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 11 — DEUX COLONNES avec schema SVG inline
+     ============================================================ -->
+<section class="slide-two-col">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Spectre électromagnétique &amp; fenêtres IR</h2>
+
+  <div class="two-col">
+    <div class="col-text">
+      <ul>
+        <li><strong>Visible</strong> : 0.4 – 0.8 µm (œil humain)</li>
+        <li><strong>Proche IR</strong> : 0.8 – 2.5 µm (vision nocturne)</li>
+        <li><strong>IR moyen</strong> : 2.5 – 25 µm (caméras thermiques)</li>
+        <li><strong>IR lointain</strong> : 25 – 1000 µm</li>
+      </ul>
+      <div class="info-card" style="margin-top: 12px;">
+        <p style="margin:0; font-size:0.65em;">
+          <strong>Fenêtres atmosphériques</strong> : 2-5 µm et <strong>7-15 µm</strong> (utilisée par le Mavic 3T et le Matrice 4T)
+        </p>
+      </div>
+    </div>
+    <div class="col-visual">
+      <!-- Schema SVG inline : spectre EM -->
+      <svg viewBox="0 0 440 280" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:440px;">
+        <defs>
+          <linearGradient id="spectrum" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0" stop-color="#7C3AED"/>
+            <stop offset="0.15" stop-color="#3B82F6"/>
+            <stop offset="0.3" stop-color="#10B981"/>
+            <stop offset="0.45" stop-color="#FBBF24"/>
+            <stop offset="0.6" stop-color="#F97316"/>
+            <stop offset="0.75" stop-color="#EF4444"/>
+            <stop offset="1" stop-color="#7F1D1D"/>
+          </linearGradient>
+        </defs>
+        <!-- Axe -->
+        <line x1="30" y1="200" x2="420" y2="200" stroke="#475569" stroke-width="1.5"/>
+        <!-- Visible -->
+        <rect x="60" y="100" width="60" height="80" fill="url(#spectrum)" opacity="0.8" rx="2"/>
+        <text x="90" y="92" text-anchor="middle" font-family="Inter" font-size="10" font-weight="600" fill="#0F172A">Visible</text>
+        <text x="90" y="218" text-anchor="middle" font-family="Inter" font-size="9" fill="#475569">0.4–0.8 µm</text>
+        <!-- Proche IR -->
+        <rect x="130" y="120" width="50" height="60" fill="#DC2626" opacity="0.5" rx="2"/>
+        <text x="155" y="112" text-anchor="middle" font-family="Inter" font-size="10" font-weight="600" fill="#0F172A">Proche IR</text>
+        <text x="155" y="218" text-anchor="middle" font-family="Inter" font-size="9" fill="#475569">0.8–2.5 µm</text>
+        <!-- IR moyen / Fenêtre 2-5 -->
+        <rect x="190" y="135" width="70" height="45" fill="#0E74DA" opacity="0.4" rx="2"/>
+        <text x="225" y="127" text-anchor="middle" font-family="Inter" font-size="10" font-weight="600" fill="#0E74DA">Fen. 2-5</text>
+        <text x="225" y="218" text-anchor="middle" font-family="Inter" font-size="9" fill="#475569">2-5 µm</text>
+        <!-- Fenêtre 7-15 (mise en valeur) -->
+        <rect x="270" y="115" width="90" height="65" fill="#0E74DA" opacity="0.85" rx="2" stroke="#0E74DA" stroke-width="2"/>
+        <text x="315" y="107" text-anchor="middle" font-family="Inter" font-size="11" font-weight="700" fill="#0E74DA">Fen. 7-15 µm</text>
+        <text x="315" y="151" text-anchor="middle" font-family="Inter" font-size="10" font-weight="700" fill="white">DJI</text>
+        <text x="315" y="166" text-anchor="middle" font-family="Inter" font-size="9" fill="white">M3T / M4T</text>
+        <text x="315" y="218" text-anchor="middle" font-family="Inter" font-size="9" fill="#475569">7-15 µm</text>
+        <!-- IR lointain -->
+        <rect x="370" y="155" width="40" height="25" fill="#94A3B8" opacity="0.5" rx="2"/>
+        <text x="390" y="147" text-anchor="middle" font-family="Inter" font-size="9" font-weight="500" fill="#475569">IR lointain</text>
+        <text x="390" y="218" text-anchor="middle" font-family="Inter" font-size="9" fill="#475569">&gt; 25 µm</text>
+        <!-- Titre axe -->
+        <text x="225" y="252" text-anchor="middle" font-family="Inter" font-size="11" font-weight="600" fill="#475569">Longueur d'onde →</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 1 — Spectre EM</span>
+    <span>Jour 1 Matin</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 12 — CONCLUSION / CONTACT
+     ============================================================ -->
+<section class="slide-conclusion">
+  <img src="assets/img/logo-dronexperts.svg" alt="Dronexperts" class="slide-logo-large">
+  <h2>Merci de votre attention</h2>
+  <p>Formation Thermographie par Drone — Dronexperts</p>
+  <p style="font-size:0.6em; margin-top: 8px; opacity: 0.7;">2 jours · 14 heures · DJI Mavic 3T &amp; Matrice 4T</p>
+  <div class="conclusion-links">
+    <a href="https://www.dronexperts.io" target="_blank">dronexperts.io</a>
+    <a href="https://formation.dronexperts.io" target="_blank">formation.dronexperts.io</a>
+  </div>
+</section>
+
+</div>
+</div>
+
+<!-- Reveal.js script -->
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    slideNumber: 'c/t',
+    transition: 'slide',
+    width: 1280,
+    height: 720,
+    margin: 0.04,
+    controls: true,
+    progress: true,
+    center: false,
+  });
+</script>
+</body>
+</html>

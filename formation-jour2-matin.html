@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jour 2 Matin — Méthodologie & cas d'usage — Formation Thermographie par Drone</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css" id="theme">
+  <link rel="stylesheet" href="css/dronexperts-theme.css">
+</head>
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+<!-- SLIDE 1 — TITRE -->
+<section class="slide-title">
+  <img src="assets/img/logo-dronexperts.svg" alt="Dronexperts" class="slide-logo-large">
+  <h1>Formation Thermographie par Drone</h1>
+  <p class="subtitle">Jour 2 Matin — Méthodologie &amp; cas d'usage</p>
+  <span class="badge">12 pièges · 5 règles · Bâtiment · PV · Réseau de chaleur</span>
+  <div class="slide-footer slide-footer-dark">
+    <span>Dronexperts — Formation Thermographie</span>
+    <span>Jour 2 Matin</span>
+  </div>
+</section>
+
+
+<!-- SLIDE 2 — SOMMAIRE -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Sommaire de la matinée</h2>
+
+  <ul class="icon-list">
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+      <div class="text"><h4>13 · Les 12 pièges d'interprétation</h4><p>Émissivité, soleil, vent, mobilier, réflexion, effet de coin… ce qui peut tromper le télépilote.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/></svg></div>
+      <div class="text"><h4>14 · Méthodologie de relevé</h4><p>Les 5 règles d'or, conditions avant mesure, sources d'erreur classiques.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
+      <div class="text"><h4>15 · Cas d'usage : Bâtiment / Isolation / Humidité</h4><p>Cartographie extérieure et intérieure, ponts thermiques, recherche d'humidité.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+      <div class="text"><h4>16 · Cas d'usage : Photovoltaïque</h4><p>Composants, contrôle cellules, motif thermique, créneau, position drone.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/></svg></div>
+      <div class="text"><h4>17 · Réseau de chaleur &amp; industriel</h4><p>Détection de fuites, calorifugeage, lignes HT, postes électriques.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/></svg></div>
+      <div class="text"><h4>18 · Cas particuliers</h4><p>Recherche personne, agriculture, archéologie, faune sauvage.</p></div>
+    </li>
+  </ul>
+
+  <div class="slide-footer">
+    <span>Sommaire — Jour 2 Matin</span>
+    <span>Dronexperts</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     MODULE 13 — LES 12 PIEGES
+     ============================================================ -->
+<section class="slide-module">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <div class="module-number">Module 13</div>
+  <h2>Les 12 pièges d'interprétation</h2>
+  <p class="module-desc">L'interprétation d'un thermogramme est complexe. Voici les 12 pièges qui font qu'un télépilote débutant confond une réflexion avec un défaut, ou une ombre avec un pont thermique.</p>
+  <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+  </svg>
+  <div class="slide-footer">
+    <span>Module 13 — 12 pièges</span>
+    <span>Jour 2 Matin</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Intro pièges -->
+<section class="slide-highlight">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+
+  <div class="highlight-box highlight-warning">
+    <div class="tag">À retenir avant tout</div>
+    <blockquote>La caméra thermique ne mesure pas une température, elle mesure un <strong>rayonnement</strong>. L'interprétation nécessite une bonne connaissance du milieu et des matériaux observés.</blockquote>
+  </div>
+
+  <p style="margin-top: 24px;">Les 12 pièges qui suivent sont les confusions les plus fréquentes en thermographie bâtiment. Les connaître = la moitié du travail d'interprétation est faite.</p>
+
+  <div class="slide-footer">
+    <span>Module 13 — Préambule</span>
+    <span>Jour 2 Matin</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Pièges 1-2 -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Pièges 1 &amp; 2 — Émissivité &amp; soleil</h2>
+
+  <div class="diagram-container">
+    <div class="diagram-card card-blue">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><text x="12" y="16" text-anchor="middle" font-size="11" font-weight="700" fill="white">1</text></svg></div>
+      <h3>Piège 1 — Émissivité</h3>
+      <p style="font-size: 0.78em;">Deux matériaux à la <strong>même T° réelle</strong> mais avec ε différent renverront un rayonnement différent. Une zone qui semble froide peut juste être très réfléchissante (ε bas).</p>
+    </div>
+    <div class="diagram-card card-orange">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg></div>
+      <h3>Piège 2 — Soleil &amp; ombres portées</h3>
+      <p style="font-size: 0.78em;">Une façade exposée au soleil quelques heures avant la mesure <strong>reste chaude longtemps</strong>. Les zones rouges ne sont pas forcément des défauts d'isolation.</p>
+    </div>
+  </div>
+
+  <div class="info-card" style="margin-top: 20px;">
+    <p style="margin:0; font-size:0.7em;">
+      <strong style="color: var(--dx-primary);">→ Antidote</strong> · Intervenir le matin avant le lever du soleil (bâtiment) · Consulter le tableau d'émissivité avant interprétation.
+    </p>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 13 — Pièges 1-2</span>
+    <span>Jour 2 Matin</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Pièges 3-4 -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Pièges 3 &amp; 4 — Facteurs climatiques</h2>
+
+  <div class="diagram-container">
+    <div class="diagram-card card-blue">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><text x="12" y="16" text-anchor="middle" font-size="11" font-weight="700" fill="white">3</text></svg></div>
+      <h3>Piège 3 — Climat externe</h3>
+      <p style="font-size: 0.78em;"><strong>Pluie</strong> refroidit les surfaces (puis évaporation = encore plus froid). <strong>Vent</strong> homogénéise les T° et gomme les différences. <strong>Brouillard</strong> absorbe l'IR.</p>
+    </div>
+    <div class="diagram-card card-orange">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><text x="12" y="16" text-anchor="middle" font-size="11" font-weight="700" fill="white">4</text></svg></div>
+      <h3>Piège 4 — Climat interne</h3>
+      <p style="font-size: 0.78em;"><strong>Chauffage</strong> (radiateurs, planchers) et <strong>climatisation</strong> créent des motifs trompeurs. Un point froid peut être une bouche de ventilation, pas un défaut.</p>
+    </div>
+  </div>
+
+  <div class="info-card" style="margin-top: 20px;">
+    <p style="margin:0; font-size:0.7em;">
+      <strong style="color: var(--dx-primary);">→ Antidote</strong> · Noter conditions météo 6h avant + dans le rapport · Repérer en visite les sources de chaud/froid avant les prises de vue.
+    </p>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 13 — Pièges 3-4</span>
+    <span>Jour 2 Matin</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Pièges 5-6 -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Pièges 5 &amp; 6 — Mobilier &amp; réflexion</h2>
+
+  <div class="diagram-container">
+    <div class="diagram-card card-blue">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><text x="12" y="16" text-anchor="middle" font-size="11" font-weight="700" fill="white">5</text></svg></div>
+      <h3>Piège 5 — Mobilier interne</h3>
+      <p style="font-size: 0.78em;">Une armoire, un écran ou un meuble plaqué contre un mur extérieur le <strong>masque thermiquement</strong>. Le mur dessous ne sera pas réchauffé : zone froide qui n'est pas un défaut.</p>
+    </div>
+    <div class="diagram-card card-orange">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><text x="12" y="16" text-anchor="middle" font-size="11" font-weight="700" fill="white">6</text></svg></div>
+      <h3>Piège 6 — Réflexion</h3>
+      <p style="font-size: 0.78em;">Certains matériaux (vitres, métaux polis, plastique brillant) agissent comme des <strong>miroirs IR</strong>. Une fenêtre de toiture peut « refléter » le ciel froid ou un radiateur intérieur.</p>
+    </div>
+  </div>
+
+  <div class="info-card" style="margin-top: 20px;">
+    <p style="margin:0; font-size:0.7em;">
+      <strong style="color: var(--dx-primary);">→ Antidote</strong> · Visite préalable du logement avant inspection · Changer d'angle de prise de vue (la réflexion bouge, le défaut reste).
+    </p>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 13 — Pièges 5-6</span>
+    <span>Jour 2 Matin</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Pièges 7-8 -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Pièges 7 &amp; 8 — Effet de coin &amp; fuites</h2>
+
+  <div class="diagram-container">
+    <div class="diagram-card card-blue">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><text x="12" y="16" text-anchor="middle" font-size="11" font-weight="700" fill="white">7</text></svg></div>
+      <h3>Piège 7 — Effet de coin</h3>
+      <p style="font-size: 0.78em;">Un angle <strong>rentrant</strong> apparaît plus chaud (réflexion mutuelle des deux parois). Un angle <strong>sortant</strong> apparaît plus froid. C'est une irrégularité géométrique, pas un défaut.</p>
+    </div>
+    <div class="diagram-card card-orange">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><text x="12" y="16" text-anchor="middle" font-size="11" font-weight="700" fill="white">8</text></svg></div>
+      <h3>Piège 8 — Fuites de chauffage</h3>
+      <p style="font-size: 0.78em;">L'eau circule dans les parois et <strong>s'accumule dans les points bas</strong>. Une tache chaude peut être plus en aval que la fuite réelle.</p>
+    </div>
+  </div>
+
+  <div class="info-card" style="margin-top: 20px;">
+    <p style="margin:0; font-size:0.7em;">
+      <strong style="color: var(--dx-primary);">→ Antidote</strong> · Connaître la géométrie du bâtiment · Pour les fuites : remonter du chaud vers la source potentielle (haut du réseau).
+    </p>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 13 — Pièges 7-8</span>
+    <span>Jour 2 Matin</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Pièges 9-10 -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Pièges 9 &amp; 10 — Occupation &amp; structure</h2>
+
+  <div class="diagram-container">
+    <div class="diagram-card card-blue">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><text x="12" y="16" text-anchor="middle" font-size="11" font-weight="700" fill="white">9</text></svg></div>
+      <h3>Piège 9 — Occupation</h3>
+      <p style="font-size: 0.78em;">Tous les occupants ne chauffent pas leur logement de la même façon. Une pièce non chauffée apparaît froide : ce n'est pas une déperdition de l'enveloppe, c'est un choix d'occupation.</p>
+    </div>
+    <div class="diagram-card card-orange">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><text x="12" y="16" text-anchor="middle" font-size="11" font-weight="700" fill="white">10</text></svg></div>
+      <h3>Piège 10 — Structure</h3>
+      <p style="font-size: 0.78em;">Débord de toiture, auvent, balcon, casquette : ces éléments créent des <strong>zones d'ombre persistantes</strong> qui apparaissent froides indépendamment de l'isolation.</p>
+    </div>
+  </div>
+
+  <div class="info-card" style="margin-top: 20px;">
+    <p style="margin:0; font-size:0.7em;">
+      <strong style="color: var(--dx-primary);">→ Antidote</strong> · Recueillir mode d'occupation auprès du client · Croiser thermogramme avec photo visible du même angle.
+    </p>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 13 — Pièges 9-10</span>
+    <span>Jour 2 Matin</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Pièges 11-12 -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Pièges 11 &amp; 12 — Cheminée &amp; radiateur</h2>
+
+  <div class="diagram-container">
+    <div class="diagram-card card-blue">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><text x="12" y="16" text-anchor="middle" font-size="11" font-weight="700" fill="white">11</text></svg></div>
+      <h3>Piège 11 — Conduit de cheminée</h3>
+      <p style="font-size: 0.78em;">Une cheminée en fonctionnement chauffe le mur ou le toit qu'elle traverse. Avant de diagnostiquer un défaut, <strong>vérifier la présence d'un conduit actif</strong>.</p>
+    </div>
+    <div class="diagram-card card-orange">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><text x="12" y="16" text-anchor="middle" font-size="11" font-weight="700" fill="white">12</text></svg></div>
+      <h3>Piège 12 — Radiateur derrière mur</h3>
+      <p style="font-size: 0.78em;">Un radiateur intérieur réchauffe la paroi qui le supporte. La signature thermique sur la façade extérieure peut faire croire à un défaut d'isolation alors que c'est une <strong>source chaude légitime</strong>.</p>
+    </div>
+  </div>
+
+  <div class="info-card" style="margin-top: 20px;">
+    <p style="margin:0; font-size:0.7em;">
+      <strong style="color: var(--dx-primary);">→ Antidote</strong> · Demander au client le plan des radiateurs et conduits · Comparer plusieurs façades du même bâtiment.
+    </p>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 13 — Pièges 11-12</span>
+    <span>Jour 2 Matin</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     MODULE 14 — METHODOLOGIE
+     ============================================================ -->
+<section class="slide-module">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <div class="module-number">Module 14</div>
+  <h2>Méthodologie de relevé</h2>
+  <p class="module-desc">Les 5 règles d'or, les conditions à respecter avant la mesure, les sources d'erreur les plus courantes.</p>
+  <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+  </svg>
+  <div class="slide-footer">
+    <span>Module 14 — Méthodologie</span>
+    <span>Jour 2 Matin</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Les 5 règles -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Les 5 règles d'or du relevé</h2>
+
+  <ul class="icon-list">
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="9"/></svg></div>
+      <div class="text"><h4>Règle 1 — Réglage de l'optique</h4><p>Vérifier mise au point et propreté de la lentille avant chaque vol. Un thermogramme flou est inexploitable.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
+      <div class="text"><h4>Règle 2 — Observer l'environnement</h4><p>Scanner la scène avec la caméra (et avec ses yeux) pour repérer sources chaudes/froides, réflexions, mobilier, conduits.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="3" x2="9" y2="21"/></svg></div>
+      <div class="text"><h4>Règle 3 — Composer l'image</h4><p>Adapter palette + niveau/gain pour optimiser le contraste sur la zone d'intérêt. Centrer le défaut dans l'image.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+      <div class="text"><h4>Règle 4 — Taille de l'objet</h4><p>L'objet à mesurer doit couvrir au moins <strong>3×3 pixels</strong>. Sinon, se rapprocher : un spot trop petit est perturbé par les pixels voisins.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M2 12l5-5 5 5 5-5 5 5"/></svg></div>
+      <div class="text"><h4>Règle 5 — Angle d'observation</h4><p>Cible vue sous un angle compris entre <strong>-45° et +45°</strong>. Au-delà, l'émissivité chute brutalement et la mesure devient fausse.</p></div>
+    </li>
+  </ul>
+
+  <div class="slide-footer">
+    <span>Module 14 — 5 règles</span>
+    <span>Jour 2 Matin</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Avant les mesures -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Avant la première prise de vue</h2>
+
+  <div class="diagram-container">
+    <div class="diagram-card card-blue">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><line x1="12" y1="4" x2="12" y2="20"/></svg></div>
+      <h3>Pour le bâtiment</h3>
+      <ul style="font-size: 0.72em; text-align: left; margin: 0; padding-left: 16px;">
+        <li>Bâtiment chauffé depuis <strong>24h minimum</strong></li>
+        <li>Écart T° int/ext ≥ <strong>10 °C</strong></li>
+        <li><strong>Petit matin</strong> (avant lever soleil) ou ciel couvert</li>
+        <li>Vent &lt; <strong>20 km/h</strong></li>
+        <li>Pas de pluie depuis <strong>24h</strong></li>
+        <li>Déplacer meubles contre mur ext + rideaux</li>
+        <li>Préparation au moins <strong>6h avant</strong></li>
+      </ul>
+    </div>
+    <div class="diagram-card card-orange">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/></svg></div>
+      <h3>Pour le photovoltaïque</h3>
+      <ul style="font-size: 0.72em; text-align: left; margin: 0; padding-left: 16px;">
+        <li>Installation <strong>en production</strong> (régime stabilisé)</li>
+        <li>Irradiance solaire ≥ <strong>600 W/m²</strong> (vérif solarimètre)</li>
+        <li><strong>Milieu de journée</strong>, soleil au zénith</li>
+        <li>Ciel <strong>clair</strong> (pas de nuages : reflets)</li>
+        <li>Pas de vent (gomme les écarts)</li>
+        <li>Angle de vue &lt; <strong>45°</strong></li>
+        <li>Position drone : <strong>50 cm – 2 m</strong> du panneau pour cellule</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 14 — Conditions préalables</span>
+    <span>Jour 2 Matin</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Sources d'erreur -->
+<section class="slide-highlight">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+
+  <div class="highlight-box highlight-error">
+    <div class="tag">12 sources d'erreur de mesure</div>
+    <blockquote style="font-size: 0.85em;">Émissivité mal réglée · RTC mal réglée · Image floue · Distance inadaptée · Objectif inapproprié · Spot trop grand · Interférences ligne de transmission · Sources de rayonnement externes · Erreurs de réflexion · Variations T° ambiantes rapides · Méconnaissance structure objet · Angle &gt; 45°</blockquote>
+  </div>
+
+  <div class="info-card" style="margin-top: 24px;">
+    <p style="margin:0; font-size:0.75em;">
+      <strong style="color: var(--dx-primary);">→ Anticiper plutôt que corriger</strong><br>
+      Une bonne préparation supprime 80 % des sources d'erreur. Le post-traitement (Jour 2 PM) peut corriger émissivité et RTC, mais pas un cliché flou ou un angle trop fermé.
+    </p>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 14 — Sources d'erreur</span>
+    <span>Jour 2 Matin</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     MODULE 15 — BATIMENT / HUMIDITE
+     ============================================================ -->
+<section class="slide-module">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <div class="module-number">Module 15</div>
+  <h2>Cas d'usage : Bâtiment, isolation, humidité</h2>
+  <p class="module-desc">Le cas d'usage n°1 de la thermographie par drone. Cartographier l'enveloppe, détecter ponts thermiques, fuites d'air, infiltrations.</p>
+  <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+  </svg>
+  <div class="slide-footer">
+    <span>Module 15 — Bâtiment</span>
+    <span>Jour 2 Matin</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Bâtiment : objectifs -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Bâtiment — Que cherche-t-on ?</h2>
+
+  <ul class="icon-list">
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
+      <div class="text"><h4>Cartographie de l'enveloppe</h4><p>Vue d'ensemble des façades + toitures. Identification des zones de déperdition globale (toiture mal isolée, mur sans isolant).</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M21 8L18 11L15 8"/><path d="M3 12v6a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6"/></svg></div>
+      <div class="text"><h4>Ponts thermiques</h4><p>Linéaires (planchers, refends, linteaux) ou ponctuels (boîtiers électriques, fixations).</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg></div>
+      <div class="text"><h4>Infiltrations d'air &amp; humidité</h4><p>Défauts d'étanchéité menuiseries, remontées capillaires, infiltrations toiture, condensation interne.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/></svg></div>
+      <div class="text"><h4>Contrôle de pose post-travaux</h4><p>Vérification d'une ITE ou ITI fraîchement réalisée : continuité de l'isolant, traitement des points singuliers.</p></div>
+    </li>
+  </ul>
+
+  <div class="slide-footer">
+    <span>Module 15 — Objectifs bâtiment</span>
+    <span>Jour 2 Matin</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Cartographie extérieure -->
+<section class="slide-two-col">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Cartographie extérieure au drone</h2>
+
+  <div class="two-col">
+    <div class="col-text">
+      <p>L'extérieur permet de <strong>repérer rapidement</strong> les zones à problèmes : absence d'isolation, ponts thermiques structurels, défauts de menuiseries.</p>
+      <ul>
+        <li>Survol systématique des <strong>4 façades</strong> + toiture</li>
+        <li>Prises de vue à <strong>angle &lt; 45°</strong> (idéalement face à la façade)</li>
+        <li>Maintenir une <strong>hauteur constante</strong> pour permettre les comparaisons</li>
+        <li>Prendre aussi des zones <strong>apparemment OK</strong> comme référence</li>
+        <li>Annoter chaque cliché avec <strong>position + orientation</strong> (croquis du bâtiment)</li>
+      </ul>
+      <div class="info-card" style="margin-top: 12px;">
+        <p style="margin:0; font-size:0.7em;">
+          <strong style="color: var(--dx-primary);">💡 Astuce</strong> · Le M3T et le M4T disposent d'un capteur visible : faire 2 clichés (visible + thermo) au même endroit pour faciliter l'interprétation.
+        </p>
+      </div>
+    </div>
+    <div class="col-visual">
+      <img src="https://images.unsplash.com/photo-1545209463-e2825498edbf?w=600&q=80" alt="Cartographie thermique de bâtiment" style="object-fit: cover;">
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 15 — Cartographie extérieure</span>
+    <span>Jour 2 Matin</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Cartographie intérieure -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Cartographie intérieure (à pied)</h2>
+
+  <p style="margin-bottom: 16px;">L'intérieur, fait à la caméra portable, vient <strong>confirmer et qualifier</strong> les défauts repérés à l'extérieur depuis le drone.</p>
+
+  <div class="diagram-container">
+    <div class="diagram-card card-blue">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="1"/></svg></div>
+      <h3>Détecter les ponts thermiques</h3>
+      <p style="font-size: 0.72em;">Lignes froides aux liaisons (planchers, refends). Visibles côté chaud (l'hiver, à l'intérieur).</p>
+    </div>
+    <div class="diagram-card card-orange">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="1"/><line x1="9" y1="4" x2="9" y2="20"/></svg></div>
+      <h3>Vérifier les menuiseries</h3>
+      <p style="font-size: 0.72em;">Joints défectueux, dormants mal posés, fuites d'air autour des fenêtres et portes.</p>
+    </div>
+    <div class="diagram-card card-green">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg></div>
+      <h3>Localiser l'humidité</h3>
+      <p style="font-size: 0.72em;">Points froids permanents = condensation + risque moisissures. Souvent invisibles à l'œil nu.</p>
+    </div>
+  </div>
+
+  <div class="info-card" style="margin-top: 18px;">
+    <p style="margin:0; font-size:0.7em;">
+      <strong style="color: var(--dx-warning);">⚠ Annotation</strong> · Beaucoup de photos similaires en peu de temps ⟶ <strong>noter le lieu + l'angle de chaque cliché sur un plan</strong> pour ne pas s'y perdre au moment du rapport.
+    </p>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 15 — Cartographie intérieure</span>
+    <span>Jour 2 Matin</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Humidité -->
+<section class="slide-two-col">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Recherche d'humidité</h2>
+
+  <div class="two-col">
+    <div class="col-text">
+      <p>L'humidité est la cause la plus fréquente de dégradation d'un bâtiment. Trois grands cas d'usage :</p>
+      <ul>
+        <li><strong>Humidité de surface</strong> : points froids (condensation, moisissures)</li>
+        <li><strong>Infiltration en toiture terrasse</strong> : zone humide reste froide plus longtemps que la masse sèche (norme US <strong>C1153-97</strong>)</li>
+        <li><strong>Remontées capillaires</strong> : bandeau froid en partie basse des murs anciens</li>
+      </ul>
+      <div class="info-card" style="margin-top: 12px;">
+        <p style="margin:0; font-size:0.7em;">
+          <strong style="color: var(--dx-primary);">⏱ Créneau optimal infiltration toiture</strong><br>
+          Début ou fin de journée, après séchage de la toiture, par temps ensoleillé sans vent (la masse humide refroidit / chauffe plus lentement que l'isolant sec).
+        </p>
+      </div>
+    </div>
+    <div class="col-visual">
+      <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=600&q=80" alt="Inspection toiture" style="object-fit: cover;">
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 15 — Humidité</span>
+    <span>Jour 2 Matin</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     MODULE 16 — PHOTOVOLTAIQUE
+     ============================================================ -->
+<section class="slide-module">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <div class="module-number">Module 16</div>
+  <h2>Cas d'usage : Photovoltaïque</h2>
+  <p class="module-desc">L'autre grand cas d'usage du drone thermique. Inspection de centrales PV, contrôle de réception, recherche de cellules défectueuses.</p>
+  <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+  </svg>
+  <div class="slide-footer">
+    <span>Module 16 — Photovoltaïque</span>
+    <span>Jour 2 Matin</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Composants installation PV -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Composants d'une installation PV</h2>
+
+  <div class="process-steps">
+    <div class="process-step">
+      <div class="step-number">1</div>
+      <div class="step-label">Panneaux</div>
+      <div class="step-desc">Mono / poly /<br>amorphe</div>
+    </div>
+    <div class="process-step">
+      <div class="step-number">2</div>
+      <div class="step-label">Strings</div>
+      <div class="step-desc">Panneaux<br>en série</div>
+    </div>
+    <div class="process-step">
+      <div class="step-number">3</div>
+      <div class="step-label">Boîtier connexion</div>
+      <div class="step-desc">Diodes<br>by-pass</div>
+    </div>
+    <div class="process-step">
+      <div class="step-number">4</div>
+      <div class="step-label">Onduleur</div>
+      <div class="step-desc">DC → AC<br>(central ou micro)</div>
+    </div>
+    <div class="process-step">
+      <div class="step-number">5</div>
+      <div class="step-label">Protections</div>
+      <div class="step-desc">AC, DC,<br>foudre</div>
+    </div>
+  </div>
+
+  <p style="margin-top: 32px; font-size: 0.78em;">La caméra thermique permet de contrôler <strong>chacun de ces éléments</strong> : cellules défectueuses sur le panneau, hot-spots, défauts de connexion, surchauffe d'onduleur.</p>
+
+  <div class="slide-footer">
+    <span>Module 16 — Composants PV</span>
+    <span>Jour 2 Matin</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Que contrôle-t-on en PV -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Que contrôle-t-on en PV ?</h2>
+
+  <div class="diagram-container">
+    <div class="diagram-card card-blue">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/></svg></div>
+      <h3>Les cellules</h3>
+      <p style="font-size: 0.75em;">Une cellule défectueuse ne convertit plus l'énergie ⟶ elle se comporte comme une <strong>surface absorbante</strong> ⟶ écart d'au moins <strong>12 °C</strong> avec ses voisines.</p>
+    </div>
+    <div class="diagram-card card-orange">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg></div>
+      <h3>Le motif thermique</h3>
+      <p style="font-size: 0.75em;">Les panneaux d'un string doivent présenter un <strong>échauffement progressif et cohérent</strong>. Un motif incohérent = problème de connexion entre panneaux.</p>
+    </div>
+    <div class="diagram-card card-green">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12s4.48 10 10 10 10-4.48 10-10z"/><path d="M2 12h20"/></svg></div>
+      <h3>Les éléments électriques</h3>
+      <p style="font-size: 0.75em;">Câbles, boîtiers de connexion, coffrets, onduleur : toute <strong>surchauffe anormale</strong> est un signe avant-coureur de panne ou d'incendie.</p>
+    </div>
+  </div>
+
+  <div class="info-card" style="margin-top: 16px;">
+    <p style="margin:0; font-size:0.7em;">
+      <strong style="color: var(--dx-primary);">📊 Rendement réel</strong> · Norme IEC 61724 + solarimètre (W/m²) pour évaluer la production réelle vs théorique.
+    </p>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 16 — Contrôle PV</span>
+    <span>Jour 2 Matin</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Contraintes PV : créneau, angle, position -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Contraintes opérationnelles PV</h2>
+
+  <ul class="icon-list">
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/></svg></div>
+      <div class="text"><h4>Quand intervenir ?</h4><p>Installation en <strong>production</strong>, milieu de journée, ciel <strong>clair</strong> (pas de nuages : reflets), sans vent.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M2 12l5-5 5 5 5-5 5 5"/></svg></div>
+      <div class="text"><h4>Angle de prise de vue</h4><p>L'angle ne doit pas dépasser <strong>45°</strong>. C'est rapidement une contrainte sur des toitures pentues.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M2 22h20"/><path d="M5 11l7-5 7 5"/><rect x="6" y="11" width="12" height="11"/></svg></div>
+      <div class="text"><h4>Position du drone</h4><p>Pour analyse <strong>cellule par cellule</strong> : se tenir à <strong>50 cm à 2 m</strong> du panneau. Pour vue d'ensemble : 10-30 m suffisent.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+      <div class="text"><h4>Présence d'ombre</h4><p>Une ombre sur un panneau crée une perte sur tout le string. <strong>Repérer les obstacles environnants</strong> (arbres, mâts).</p></div>
+    </li>
+  </ul>
+
+  <div class="slide-footer">
+    <span>Module 16 — Contraintes PV</span>
+    <span>Jour 2 Matin</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     MODULE 17 — RESEAU CHALEUR & INDUSTRIEL
+     ============================================================ -->
+<section class="slide-module">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <div class="module-number">Module 17</div>
+  <h2>Réseau de chaleur &amp; industriel</h2>
+  <p class="module-desc">Détection de fuites en réseau de chauffage urbain, contrôle de calorifugeage, inspection de lignes HT et postes électriques.</p>
+  <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+  </svg>
+  <div class="slide-footer">
+    <span>Module 17 — Réseau &amp; industriel</span>
+    <span>Jour 2 Matin</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Réseau de chaleur -->
+<section class="slide-two-col">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Réseau de chaleur urbain</h2>
+
+  <div class="two-col">
+    <div class="col-text">
+      <h3 style="color: var(--dx-primary); font-size: 0.95em; margin-bottom: 8px;">Objectifs</h3>
+      <ul style="font-size: 0.78em;">
+        <li>Détecter <strong>fuites</strong> du réseau enterré (surconsommation, perte thermique)</li>
+        <li>Vérifier état du <strong>calorifugeage</strong></li>
+        <li>Cartographier la <strong>position exacte</strong> d'anciens réseaux</li>
+      </ul>
+
+      <h3 style="color: var(--dx-primary); font-size: 0.95em; margin: 16px 0 8px;">Quoi contrôler</h3>
+      <ul style="font-size: 0.78em;">
+        <li>Réseaux d'eau chaude principaux + raccordements</li>
+        <li>Sous-stations</li>
+        <li>Réseau secondaire (intérieur immeubles)</li>
+      </ul>
+    </div>
+    <div class="col-visual">
+      <h3 style="color: var(--dx-primary); font-size: 0.95em; margin-bottom: 8px;">Quand intervenir</h3>
+      <ul style="font-size: 0.78em;">
+        <li><strong>Période de chauffe</strong></li>
+        <li><strong>Avant lever soleil</strong></li>
+        <li>Écart T° réseau / sol ≥ <strong>10 °C</strong></li>
+      </ul>
+
+      <h3 style="color: var(--dx-primary); font-size: 0.95em; margin: 16px 0 8px;">Limites</h3>
+      <ul style="font-size: 0.78em;">
+        <li>Fuite à 90 °C détectable jusqu'à <strong>1 m de profondeur</strong> en surface</li>
+        <li>Si pas d'écart de T° en surface ⟶ pas de détection</li>
+      </ul>
+
+      <div class="info-card" style="margin-top: 12px;">
+        <p style="margin:0; font-size:0.7em;">
+          <strong style="color: var(--dx-warning);">⚠ Contraintes drone</strong><br>
+          Survol en ville ⟶ scénario STS-01, drone classe C5, autorisations propriétaires (terrains privés traversés).
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 17 — Réseau de chaleur</span>
+    <span>Jour 2 Matin</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Industriel / HT -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Inspection industrielle &amp; lignes HT</h2>
+
+  <ul class="icon-list">
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/></svg></div>
+      <div class="text"><h4>Lignes haute tension</h4><p>Inspection rapide de longues portées : connexions chaudes (mauvais serrage), isolateurs défaillants, pylônes corrodés.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg></div>
+      <div class="text"><h4>Postes de transformation</h4><p>Détection d'échauffements sur transformateurs, jeux de barres, sectionneurs — maintenance prédictive avant panne.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+      <div class="text"><h4>Maintenance industrielle</h4><p>Moteurs, paliers, roulements, fours, cuves, isolations de tuyauteries process — surveillance en exploitation.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
+      <div class="text"><h4>Sites ICPE</h4><p>Inspection de cheminées industrielles, stockages chauffés, conduits gainés — accès difficile au sol.</p></div>
+    </li>
+  </ul>
+
+  <div class="info-card" style="margin-top: 16px;">
+    <p style="margin:0; font-size:0.7em;">
+      <strong style="color: var(--dx-primary);">📋 Pré-requis spécifiques</strong><br>
+      EPI selon site (casque, chaussures sécurité, gilet), respect des consignes ICPE, balisage zone d'exclusion, autorisation exploitant.
+    </p>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 17 — Industriel &amp; HT</span>
+    <span>Jour 2 Matin</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     MODULE 18 — CAS PARTICULIERS
+     ============================================================ -->
+<section class="slide-module">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <div class="module-number">Module 18</div>
+  <h2>Cas particuliers</h2>
+  <p class="module-desc">Recherche de personne, agriculture de précision, archéologie, faune sauvage : les usages moins fréquents mais à fort impact.</p>
+  <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/>
+  </svg>
+  <div class="slide-footer">
+    <span>Module 18 — Cas particuliers</span>
+    <span>Jour 2 Matin</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Cas particuliers -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Autres applications du drone thermique</h2>
+
+  <div class="diagram-container">
+    <div class="diagram-card card-blue">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M5 21v-2a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v2"/></svg></div>
+      <h3>Recherche de personne</h3>
+      <p style="font-size: 0.7em;">Disparition en zone naturelle, forêt, montagne. La signature thermique humaine (~32 °C surface) ressort sur fond froid. Palette <strong>white-hot</strong>.</p>
+    </div>
+    <div class="diagram-card card-orange">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/></svg></div>
+      <h3>Agriculture de précision</h3>
+      <p style="font-size: 0.7em;">Cartographie du <strong>stress hydrique</strong> des cultures. Une plante stressée transpire moins ⟶ T° de surface plus élevée.</p>
+    </div>
+    <div class="diagram-card card-green">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+      <h3>Archéologie</h3>
+      <p style="font-size: 0.7em;">Anomalies thermiques du sol révélant des vestiges enfouis (murs, fossés, fondations) — masse thermique différente du terrain naturel.</p>
+    </div>
+  </div>
+
+  <div class="diagram-container" style="margin-top: 18px;">
+    <div class="diagram-card card-blue">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/></svg></div>
+      <h3>Faune sauvage</h3>
+      <p style="font-size: 0.7em;">Sauvegarde de <strong>faons</strong> avant fauchage (programme Sauvonsbambi), suivi de gibier, détection de nids.</p>
+    </div>
+    <div class="diagram-card card-orange">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
+      <h3>Pollution thermique</h3>
+      <p style="font-size: 0.7em;">Rejets industriels dans cours d'eau : panaches chauds visibles à la surface — preuve cartographique.</p>
+    </div>
+    <div class="diagram-card card-green">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg></div>
+      <h3>R&amp;D &amp; sécurité</h3>
+      <p style="font-size: 0.7em;">Surveillance périmétrique, détection d'intrusion, contrôle qualité industriel, suivi de processus thermiques.</p>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 18 — Cas particuliers</span>
+    <span>Jour 2 Matin</span>
+  </div>
+</section>
+
+
+<!-- SYNTHESE FIN MATINEE -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Synthèse fin de matinée</h2>
+
+  <ul class="icon-list">
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/></svg></div>
+      <div class="text"><h4>12 pièges d'interprétation</h4><p>Émissivité, soleil, climat, mobilier, réflexion, coin, fuite, occupation, structure, cheminée, radiateur.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/></svg></div>
+      <div class="text"><h4>5 règles d'or</h4><p>Optique, environnement, composition, taille objet, angle ±45°.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/></svg></div>
+      <div class="text"><h4>3 grands cas d'usage</h4><p>Bâtiment (ponts thermiques + humidité), photovoltaïque (cellules + motif string), réseau de chaleur (fuites enterrées).</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/></svg></div>
+      <div class="text"><h4>Cas particuliers</h4><p>Recherche personne, agriculture, archéo, faune, pollution thermique, sécurité.</p></div>
+    </li>
+  </ul>
+
+  <div class="highlight-box highlight-info" style="margin-top: 20px; padding: 14px 20px;">
+    <blockquote style="font-size: 0.85em;">👉 Cet après-midi : post-traitement avec DJI Thermal Analysis Tool, normes, structure du rapport, et 6 exercices d'interprétation guidés.</blockquote>
+  </div>
+
+  <div class="slide-footer">
+    <span>Synthèse — Jour 2 Matin</span>
+    <span>Dronexperts</span>
+  </div>
+</section>
+
+
+<!-- CONCLUSION -->
+<section class="slide-conclusion">
+  <img src="assets/img/logo-dronexperts.svg" alt="Dronexperts" class="slide-logo-large">
+  <h2>Pause déjeuner</h2>
+  <p>Rendez-vous à 13h30 pour le post-traitement et la rédaction du rapport</p>
+  <p style="font-size:0.6em; margin-top: 8px; opacity: 0.7;">Jour 2 Après-midi — DJI Thermal Analysis Tool, normes, exercices d'interprétation, QCM J2</p>
+  <div class="conclusion-links">
+    <a href="index-formation.html">← Retour sommaire</a>
+    <a href="formation-jour2-aprem.html">Suite : J2 Après-midi →</a>
+  </div>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    slideNumber: 'c/t',
+    transition: 'slide',
+    width: 1280,
+    height: 720,
+    margin: 0.04,
+    controls: true,
+    progress: true,
+    center: false,
+  });
+</script>
+</body>
+</html>

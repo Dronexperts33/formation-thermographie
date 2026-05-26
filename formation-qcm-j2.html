@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QCM Jour 2 — Formation Thermographie par Drone — Dronexperts</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css" id="theme">
+  <link rel="stylesheet" href="css/dronexperts-theme.css">
+
+  <style>
+    .qcm-question {
+      font-size: 0.95em; font-weight: 600; color: var(--dx-text-dark);
+      margin-bottom: 18px; line-height: 1.4;
+    }
+    .qcm-options { list-style: none; padding: 0; margin: 0; }
+    .qcm-options li {
+      padding: 10px 16px; margin-bottom: 8px;
+      background: var(--dx-bg-light, #F8FAFC);
+      border-left: 3px solid var(--dx-border);
+      border-radius: 6px; font-size: 0.78em;
+      display: flex; align-items: flex-start; gap: 10px;
+    }
+    .qcm-options li .letter {
+      font-weight: 700; color: #D97706;
+      flex-shrink: 0; width: 22px;
+    }
+    .qcm-answer {
+      margin-top: 18px; padding: 14px 18px;
+      background: rgba(16,185,129,0.08);
+      border-left: 4px solid #10B981;
+      border-radius: 6px; font-size: 0.78em;
+    }
+    .qcm-answer .answer-tag {
+      display: inline-block; background: #10B981; color: white;
+      font-weight: 700; padding: 3px 10px; border-radius: 4px;
+      font-size: 0.85em; margin-right: 8px; letter-spacing: 0.05em;
+    }
+    .qcm-question-num {
+      display: inline-block; background: #F59E0B; color: white;
+      font-weight: 700; padding: 4px 12px; border-radius: 12px;
+      font-size: 0.7em; margin-bottom: 10px; letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+
+<!-- TITRE QCM J2 -->
+<section class="slide-title">
+  <img src="assets/img/logo-dronexperts.svg" alt="Dronexperts" class="slide-logo-large">
+  <h1>QCM — Jour 2</h1>
+  <p class="subtitle">Validation des acquis — Méthodologie, cas d'usage, post-traitement &amp; rapport</p>
+  <span class="badge">10 questions · ~15 min</span>
+  <div class="slide-footer slide-footer-dark">
+    <span>Dronexperts — Formation Thermographie</span>
+    <span>QCM Jour 2</span>
+  </div>
+</section>
+
+
+<!-- CONSIGNES -->
+<section class="slide-content">
+  <a href="index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <h2>Consignes du QCM</h2>
+  <ul class="icon-list">
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+      <div class="text"><h4>Durée indicative : 15 minutes</h4><p>Soit ~1 min 30 par question. Modulez selon le temps disponible.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+      <div class="text"><h4>Une seule bonne réponse par question</h4><p>Sauf indication contraire dans l'énoncé.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+      <div class="text"><h4>Correction collective immédiate</h4><p>La réponse et l'explication s'affichent au clic suivant après chaque question.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/></svg></div>
+      <div class="text"><h4>Objectif pédagogique</h4><p>Valider les acquis du Jour 2 avant la clôture de la formation. Pas de note finale.</p></div>
+    </li>
+  </ul>
+  <div class="slide-footer">
+    <span>QCM J2 — Consignes</span>
+    <span>Jour 2</span>
+  </div>
+</section>
+
+
+<!-- Q1 — Piège réflexion -->
+<section class="slide-content">
+  <a href="index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 1 / 10</span>
+  <p class="qcm-question">Sur le thermogramme d'une fenêtre de toiture, une zone très froide apparaît sur le vitrage. Quelle est l'hypothèse la plus probable ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Le vitrage est défectueux et laisse passer le froid</li>
+    <li><span class="letter">B.</span> Le vitrage réfléchit le ciel froid (piège n°6)</li>
+    <li><span class="letter">C.</span> Le radiateur intérieur est éteint</li>
+    <li><span class="letter">D.</span> Le double vitrage a perdu son gaz argon</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE B</span> Piège n°6 — <strong>réflexion</strong>. Le verre se comporte comme un miroir IR : il reflète la température du ciel froid (notamment la nuit ou le matin). Pour confirmer : changer d'angle de vue (la réflexion bouge, le défaut reste).
+  </div>
+  <div class="slide-footer"><span>QCM J2 — Q1</span><span>Piège réflexion</span></div>
+</section>
+
+
+<!-- Q2 — Angle max -->
+<section class="slide-content">
+  <a href="index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 2 / 10</span>
+  <p class="qcm-question">Quel est l'angle maximal d'observation d'une cible pour conserver une mesure thermique fiable (règle d'or n°5) ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> ±15°</li>
+    <li><span class="letter">B.</span> ±30°</li>
+    <li><span class="letter">C.</span> ±45°</li>
+    <li><span class="letter">D.</span> ±90°</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE C</span> L'objet doit être observé sous un angle compris entre <strong>-45° et +45°</strong>. Au-delà, l'émissivité chute brutalement et la mesure devient fausse. Particulièrement critique pour les bâtiments hauts (visés depuis le sol).
+  </div>
+  <div class="slide-footer"><span>QCM J2 — Q2</span><span>Angle ±45°</span></div>
+</section>
+
+
+<!-- Q3 — Cellule PV défectueuse -->
+<section class="slide-content">
+  <a href="index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 3 / 10</span>
+  <p class="qcm-question">Sur un thermogramme PV, quel écart de T° caractérise typiquement une cellule défectueuse par rapport à ses voisines saines ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> ~2 °C</li>
+    <li><span class="letter">B.</span> ~5 °C</li>
+    <li><span class="letter">C.</span> ~12 °C ou plus</li>
+    <li><span class="letter">D.</span> Aucun écart visible</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE C</span> Une cellule défectueuse ne convertit plus le rayonnement en électricité ⟶ elle l'absorbe sous forme de chaleur. Écart typique d'<strong>au moins 12 °C</strong> avec les cellules voisines, souvent plus (hot-spot critique &gt; 80 °C).
+  </div>
+  <div class="slide-footer"><span>QCM J2 — Q3</span><span>Cellule PV</span></div>
+</section>
+
+
+<!-- Q4 — Position drone PV -->
+<section class="slide-content">
+  <a href="index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 4 / 10</span>
+  <p class="qcm-question">À quelle distance positionner le drone pour analyser une cellule PV en détail (recherche de hot-spot) ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> 50 cm à 2 m</li>
+    <li><span class="letter">B.</span> 5 à 10 m</li>
+    <li><span class="letter">C.</span> 20 à 30 m</li>
+    <li><span class="letter">D.</span> Plus de 50 m</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE A</span> Pour analyse <strong>cellule par cellule</strong> : se positionner entre <strong>50 cm et 2 m</strong> du panneau. Pour une vue d'ensemble (motif thermique du string), 10-30 m suffisent.
+  </div>
+  <div class="slide-footer"><span>QCM J2 — Q4</span><span>Position drone PV</span></div>
+</section>
+
+
+<!-- Q5 — Norme bâtiment -->
+<section class="slide-content">
+  <a href="index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 5 / 10</span>
+  <p class="qcm-question">Quelle norme française régit la méthode de détection d'irrégularités thermiques dans les enveloppes de bâtiments ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> NF A09-400</li>
+    <li><span class="letter">B.</span> APSAD D19</li>
+    <li><span class="letter">C.</span> NF EN 13187</li>
+    <li><span class="letter">D.</span> IEC 61724</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE C</span> <strong>NF EN 13187</strong> — Performance thermique des bâtiments. Méthode qualitative par imagerie IR. NF A09-400 = vocabulaire · APSAD D19 = incendie/électrique · IEC 61724 = rendement PV.
+  </div>
+  <div class="slide-footer"><span>QCM J2 — Q5</span><span>NF EN 13187</span></div>
+</section>
+
+
+<!-- Q6 — 19 points rapport -->
+<section class="slide-content">
+  <a href="index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 6 / 10</span>
+  <p class="qcm-question">Combien de points comporte un rapport d'essai complet selon la norme NF EN 13187 ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> 11 points</li>
+    <li><span class="letter">B.</span> 15 points</li>
+    <li><span class="letter">C.</span> 19 points</li>
+    <li><span class="letter">D.</span> 25 points</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE C</span> Le rapport d'essai complet comporte <strong>19 points</strong> organisés en 5 sections (identification, conditions, constats, analyse, signature). Le rapport <em>simplifié</em>, lui, ne comporte que 11 points.
+  </div>
+  <div class="slide-footer"><span>QCM J2 — Q6</span><span>19 points</span></div>
+</section>
+
+
+<!-- Q7 — DJI Thermal Analysis Tool -->
+<section class="slide-content">
+  <a href="index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 7 / 10</span>
+  <p class="qcm-question">Quel est le logiciel officiel et gratuit fourni par DJI pour exploiter les R-JPEG du Mavic 3T et du Matrice 4T ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> FLIR Tools</li>
+    <li><span class="letter">B.</span> DJI Thermal Analysis Tool</li>
+    <li><span class="letter">C.</span> Testo IRSoft</li>
+    <li><span class="letter">D.</span> IRT Cronista PRO</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE B</span> <strong>DJI Thermal Analysis Tool 3</strong> est gratuit, téléchargeable sur le site DJI Enterprise. Il lit nativement les R-JPEG, permet de re-paramétrer émissivité/RTC, mesures point/zone/ligne, isotherme, export CSV.
+  </div>
+  <div class="slide-footer"><span>QCM J2 — Q7</span><span>DJI TAT</span></div>
+</section>
+
+
+<!-- Q8 — Émissivité surface réfléchissante -->
+<section class="slide-content">
+  <a href="index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 8 / 10</span>
+  <p class="qcm-question">Sur une surface métallique très réfléchissante (ε bas), comment obtenir une mesure de température fiable ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Augmenter la distance de prise de vue</li>
+    <li><span class="letter">B.</span> Coller un patch de scotch noir mat (ε ≈ 0.95) sur la zone à mesurer</li>
+    <li><span class="letter">C.</span> Refroidir la caméra</li>
+    <li><span class="letter">D.</span> Utiliser une palette de couleurs différente</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE B</span> Une surface à ε bas reflète l'environnement plus qu'elle n'émet sa propre T°. <strong>Astuce terrain</strong> : appliquer un patch à ε élevé connu (scotch noir mat, peinture matte) ⟶ mesure fiable sur le patch.
+  </div>
+  <div class="slide-footer"><span>QCM J2 — Q8</span><span>Surfaces réfléchissantes</span></div>
+</section>
+
+
+<!-- Q9 — Export CSV -->
+<section class="slide-content">
+  <a href="index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 9 / 10</span>
+  <p class="qcm-question">Quelle fonction de DJI TAT permet de tracer un profil de température sur une ligne dans Excel ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Export PDF du rapport</li>
+    <li><span class="letter">B.</span> Export CSV des mesures</li>
+    <li><span class="letter">C.</span> Export R-JPEG annoté</li>
+    <li><span class="letter">D.</span> Export panoramique</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE B</span> L'<strong>export CSV</strong> exporte la matrice de T° (ou les mesures sur ligne/zone). Importé dans Excel, on génère un graphique de profil de T° très utile pour visualiser un gradient (ex. mur isolé/non isolé).
+  </div>
+  <div class="slide-footer"><span>QCM J2 — Q9</span><span>Export CSV</span></div>
+</section>
+
+
+<!-- Q10 — Documents qui font foi -->
+<section class="slide-content">
+  <a href="index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 10 / 10</span>
+  <p class="qcm-question">En cas de litige avec un client après une mission de thermographie, quels documents font foi ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Les e-mails échangés</li>
+    <li><span class="letter">B.</span> Le devis uniquement</li>
+    <li><span class="letter">C.</span> La proposition commerciale et le rapport d'expertise</li>
+    <li><span class="letter">D.</span> Les R-JPEG bruts</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE C</span> Seuls la <strong>proposition commerciale signée</strong> et le <strong>rapport d'expertise</strong> remis au client font foi en cas de contestation. D'où l'importance de soigner ces deux documents et de bien y mentionner les contraintes et limites.
+  </div>
+  <div class="slide-footer"><span>QCM J2 — Q10</span><span>Documents litige</span></div>
+</section>
+
+
+<!-- CONCLUSION QCM -->
+<section class="slide-conclusion">
+  <img src="assets/img/logo-dronexperts.svg" alt="Dronexperts" class="slide-logo-large">
+  <h2>Bravo, formation terminée !</h2>
+  <p>Merci de votre engagement durant ces 2 jours.</p>
+  <p style="font-size:0.6em; margin-top: 8px; opacity: 0.7;">N'oubliez pas de télécharger les ressources annexes (plan de rapport, tableau émissivités, modèles) depuis le sommaire de formation.</p>
+  <div class="conclusion-links">
+    <a href="index-formation.html">← Retour sommaire</a>
+    <a href="https://www.dronexperts.io" target="_blank">dronexperts.io</a>
+  </div>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    slideNumber: 'c/t',
+    transition: 'slide',
+    width: 1280,
+    height: 720,
+    margin: 0.04,
+    controls: true,
+    progress: true,
+    center: false,
+  });
+</script>
+</body>
+</html>

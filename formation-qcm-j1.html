@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QCM Jour 1 — Formation Thermographie par Drone — Dronexperts</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css" id="theme">
+  <link rel="stylesheet" href="css/dronexperts-theme.css">
+
+  <style>
+    .qcm-question {
+      font-size: 0.95em; font-weight: 600; color: var(--dx-text-dark);
+      margin-bottom: 18px; line-height: 1.4;
+    }
+    .qcm-options { list-style: none; padding: 0; margin: 0; }
+    .qcm-options li {
+      padding: 10px 16px; margin-bottom: 8px;
+      background: var(--dx-bg-light, #F8FAFC);
+      border-left: 3px solid var(--dx-border);
+      border-radius: 6px; font-size: 0.78em;
+      display: flex; align-items: flex-start; gap: 10px;
+    }
+    .qcm-options li .letter {
+      font-weight: 700; color: var(--dx-primary);
+      flex-shrink: 0; width: 22px;
+    }
+    .qcm-answer {
+      margin-top: 18px; padding: 14px 18px;
+      background: rgba(16,185,129,0.08);
+      border-left: 4px solid #10B981;
+      border-radius: 6px; font-size: 0.78em;
+    }
+    .qcm-answer .answer-tag {
+      display: inline-block; background: #10B981; color: white;
+      font-weight: 700; padding: 3px 10px; border-radius: 4px;
+      font-size: 0.85em; margin-right: 8px; letter-spacing: 0.05em;
+    }
+    .qcm-question-num {
+      display: inline-block; background: var(--dx-primary); color: white;
+      font-weight: 700; padding: 4px 12px; border-radius: 12px;
+      font-size: 0.7em; margin-bottom: 10px; letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+
+<!-- TITRE QCM J1 -->
+<section class="slide-title">
+  <img src="assets/img/logo-dronexperts.svg" alt="Dronexperts" class="slide-logo-large">
+  <h1>QCM — Jour 1</h1>
+  <p class="subtitle">Validation des acquis — Fondamentaux IR, matériel DJI &amp; préparation mission</p>
+  <span class="badge">10 questions · ~15 min</span>
+  <div class="slide-footer slide-footer-dark">
+    <span>Dronexperts — Formation Thermographie</span>
+    <span>QCM Jour 1</span>
+  </div>
+</section>
+
+
+<!-- CONSIGNES -->
+<section class="slide-content">
+  <a href="index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <h2>Consignes du QCM</h2>
+  <ul class="icon-list">
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+      <div class="text"><h4>Durée indicative : 15 minutes</h4><p>Soit ~1 min 30 par question. Modulez selon le temps disponible.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+      <div class="text"><h4>Une seule bonne réponse par question</h4><p>Sauf indication contraire dans l'énoncé.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+      <div class="text"><h4>Correction collective immédiate</h4><p>La réponse et l'explication s'affichent au clic suivant après chaque question.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/></svg></div>
+      <div class="text"><h4>Objectif pédagogique</h4><p>Ancrer les acquis du Jour 1 avant la méthodologie et les cas d'usage de demain. Pas de note finale.</p></div>
+    </li>
+  </ul>
+  <div class="slide-footer">
+    <span>QCM J1 — Consignes</span>
+    <span>Jour 1</span>
+  </div>
+</section>
+
+
+<!-- Q1 — Tout objet émet -->
+<section class="slide-content">
+  <a href="index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 1 / 10</span>
+  <p class="qcm-question">À partir de quelle température un objet émet-il un rayonnement électromagnétique ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Au-dessus de 0 °C</li>
+    <li><span class="letter">B.</span> Au-dessus de 0 K (-273,15 °C)</li>
+    <li><span class="letter">C.</span> Au-dessus de 100 °C</li>
+    <li><span class="letter">D.</span> Au-dessus de 500 °C (visible à l'œil)</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE B</span> <strong>Tout objet dont la T° dépasse le zéro absolu (0 K = -273,15 °C) émet un rayonnement.</strong> En dessous de ~500 °C, ce rayonnement est dans l'IR, invisible à l'œil mais mesurable par caméra thermique.
+  </div>
+  <div class="slide-footer"><span>QCM J1 — Q1</span><span>Rayonnement IR</span></div>
+</section>
+
+
+<!-- Q2 — Émissivité plâtre -->
+<section class="slide-content">
+  <a href="index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 2 / 10</span>
+  <p class="qcm-question">Quelle est l'émissivité typique d'un mur en plâtre peint mat ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> 0.05 — surface très réfléchissante</li>
+    <li><span class="letter">B.</span> 0.50 — moyenne</li>
+    <li><span class="letter">C.</span> 0.92 — surface fortement émissive</li>
+    <li><span class="letter">D.</span> 1.00 — corps noir parfait</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE C</span> Plâtre, peinture mate, brique, béton, bois et la plupart des matériaux du bâtiment ont une ε de l'ordre de <strong>0.85 à 0.95</strong>. Les métaux polis (alu 0.05, cuivre poli 0.04) sont à l'inverse très réfléchissants.
+  </div>
+  <div class="slide-footer"><span>QCM J1 — Q2</span><span>Émissivité</span></div>
+</section>
+
+
+<!-- Q3 — α + ρ + τ = 1 -->
+<section class="slide-content">
+  <a href="index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 3 / 10</span>
+  <p class="qcm-question">La somme des coefficients d'absorption (α), réflexion (ρ) et transmission (τ) d'un matériau est égale à :</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> 0</li>
+    <li><span class="letter">B.</span> 0,5</li>
+    <li><span class="letter">C.</span> 1</li>
+    <li><span class="letter">D.</span> Variable selon la T°</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE C</span> <strong>α + ρ + τ = 1</strong> (loi de conservation de l'énergie). Pour les corps opaques (la plupart des matériaux du bâtiment), τ = 0 donc <strong>ε + ρ = 1</strong>. Une surface très émissive est peu réfléchissante (et inversement).
+  </div>
+  <div class="slide-footer"><span>QCM J1 — Q3</span><span>Conservation énergie</span></div>
+</section>
+
+
+<!-- Q4 — Stefan-Boltzmann -->
+<section class="slide-content">
+  <a href="index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 4 / 10</span>
+  <p class="qcm-question">Selon la loi de Stefan-Boltzmann, si on double la température absolue (T en Kelvin) d'un corps, l'énergie émise par unité de surface est multipliée par :</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> 2</li>
+    <li><span class="letter">B.</span> 4</li>
+    <li><span class="letter">C.</span> 8</li>
+    <li><span class="letter">D.</span> 16</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE D</span> La puissance émise est proportionnelle à <strong>T⁴</strong> (W = ε·σ·T⁴). Doubler T ⟶ multiplier l'énergie par <strong>2⁴ = 16</strong>. C'est ce qui rend la caméra très sensible aux petites variations de T°.
+  </div>
+  <div class="slide-footer"><span>QCM J1 — Q4</span><span>Stefan-Boltzmann</span></div>
+</section>
+
+
+<!-- Q5 — Conductivité λ -->
+<section class="slide-content">
+  <a href="index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 5 / 10</span>
+  <p class="qcm-question">À propos de la conductivité thermique λ (lambda) d'un matériau :</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Plus λ est élevé, mieux le matériau isole</li>
+    <li><span class="letter">B.</span> Plus λ est faible, mieux le matériau isole</li>
+    <li><span class="letter">C.</span> λ ne dépend que de la T°</li>
+    <li><span class="letter">D.</span> λ est identique pour tous les isolants</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE B</span> λ exprime l'<strong>aptitude à conduire la chaleur</strong> (W/m·K). Plus λ est faible, moins le matériau conduit, donc mieux il <strong>isole</strong>. Laine de verre : λ ≈ 0,04 (excellent isolant) · Alu : λ ≈ 230 (très conducteur).
+  </div>
+  <div class="slide-footer"><span>QCM J1 — Q5</span><span>Conductivité λ</span></div>
+</section>
+
+
+<!-- Q6 — Résolution capteur DJI -->
+<section class="slide-content">
+  <a href="index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 6 / 10</span>
+  <p class="qcm-question">Quelle est la résolution du capteur thermique du DJI Mavic 3T et du Matrice 4T ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> 160 × 120 pixels</li>
+    <li><span class="letter">B.</span> 336 × 256 pixels</li>
+    <li><span class="letter">C.</span> 640 × 512 pixels</li>
+    <li><span class="letter">D.</span> 1280 × 1024 pixels</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE C</span> Le Mavic 3T et le Matrice 4T disposent tous deux d'un capteur <strong>640 × 512 px</strong>, le standard pro pour drone thermique. C'est suffisant pour la quasi-totalité des cas d'usage bâtiment/PV.
+  </div>
+  <div class="slide-footer"><span>QCM J1 — Q6</span><span>Capteur DJI</span></div>
+</section>
+
+
+<!-- Q7 — NETD -->
+<section class="slide-content">
+  <a href="index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 7 / 10</span>
+  <p class="qcm-question">Que mesure le NETD (Noise Equivalent Temperature Difference) ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> La plage de T° mesurable par la caméra</li>
+    <li><span class="letter">B.</span> L'écart minimal de T° détectable entre deux pixels voisins</li>
+    <li><span class="letter">C.</span> La précision absolue de la mesure</li>
+    <li><span class="letter">D.</span> La résolution du capteur en pixels</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE B</span> Le NETD exprime la <strong>sensibilité thermique</strong> de la caméra : le plus petit écart de T° entre deux pixels qu'elle peut distinguer. Le M3T et le M4T sont à <strong>≤ 50 mK</strong>, niveau pro.
+  </div>
+  <div class="slide-footer"><span>QCM J1 — Q7</span><span>NETD</span></div>
+</section>
+
+
+<!-- Q8 — Écart T° bâtiment -->
+<section class="slide-content">
+  <a href="index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 8 / 10</span>
+  <p class="qcm-question">Pour une thermographie de bâtiment exploitable, quel écart de T° minimum entre intérieur et extérieur est recommandé ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> 2 °C</li>
+    <li><span class="letter">B.</span> 5 °C</li>
+    <li><span class="letter">C.</span> 10 °C</li>
+    <li><span class="letter">D.</span> 25 °C</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE C</span> Un écart de <strong>10 °C minimum</strong> est recommandé (norme NF EN 13187). Pour cela : intervenir en saison de chauffe, le matin avant le lever du soleil, avec chauffage en fonctionnement depuis au moins 24 h.
+  </div>
+  <div class="slide-footer"><span>QCM J1 — Q8</span><span>Écart T°</span></div>
+</section>
+
+
+<!-- Q9 — R-JPEG -->
+<section class="slide-content">
+  <a href="index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 9 / 10</span>
+  <p class="qcm-question">Qu'est-ce que le format R-JPEG (DJI) utilisé par le Mavic 3T et le Matrice 4T ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Un JPEG haute résolution</li>
+    <li><span class="letter">B.</span> Un format vidéo radiométrique</li>
+    <li><span class="letter">C.</span> Un JPEG contenant une matrice de T° par pixel</li>
+    <li><span class="letter">D.</span> Un format brut sans compression</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE C</span> Le <strong>R-JPEG</strong> (Radiometric JPEG) est un fichier image qui embarque, en plus de l'image, une matrice de T° pour chaque pixel. Cela permet de re-paramétrer émissivité, RTC, distance <strong>après le vol</strong> dans DJI Thermal Analysis Tool.
+  </div>
+  <div class="slide-footer"><span>QCM J1 — Q9</span><span>Format R-JPEG</span></div>
+</section>
+
+
+<!-- Q10 — Autorisation prise de vue hors visible -->
+<section class="slide-content">
+  <a href="index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 10 / 10</span>
+  <p class="qcm-question">Pour réaliser une prise de vue thermographique (hors spectre visible), l'autorisation préfectorale (ex-Cerfa 12546*01) est-elle nécessaire ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Oui, systématiquement</li>
+    <li><span class="letter">B.</span> Non, plus depuis 2021</li>
+    <li><span class="letter">C.</span> Oui, seulement pour les sites privés</li>
+    <li><span class="letter">D.</span> Oui, seulement pour les zones urbaines</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE B</span> Depuis 2021, l'autorisation préfectorale pour prise de vue hors spectre visible <strong>n'est plus exigée</strong>. En revanche, les <strong>autorisations propriétaires</strong> (décollage + prise de vue privée) restent obligatoires.
+  </div>
+  <div class="slide-footer"><span>QCM J1 — Q10</span><span>Réglementation thermo</span></div>
+</section>
+
+
+<!-- CONCLUSION QCM -->
+<section class="slide-conclusion">
+  <img src="assets/img/logo-dronexperts.svg" alt="Dronexperts" class="slide-logo-large">
+  <h2>Fin du QCM Jour 1</h2>
+  <p>Bravo pour votre attention ! Rendez-vous demain matin pour les cas d'usage.</p>
+  <p style="font-size:0.6em; margin-top: 8px; opacity: 0.7;">Jour 2 — Méthodologie, cas d'usage, post-traitement et rapport</p>
+  <div class="conclusion-links">
+    <a href="index-formation.html">← Retour sommaire</a>
+    <a href="formation-jour2-matin.html">Suite : J2 Matin →</a>
+  </div>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    slideNumber: 'c/t',
+    transition: 'slide',
+    width: 1280,
+    height: 720,
+    margin: 0.04,
+    controls: true,
+    progress: true,
+    center: false,
+  });
+</script>
+</body>
+</html>

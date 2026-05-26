@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jour 2 Après-midi — Post-traitement, normes & rapport — Formation Thermographie par Drone</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css" id="theme">
+  <link rel="stylesheet" href="css/dronexperts-theme.css">
+</head>
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+<!-- SLIDE 1 — TITRE -->
+<section class="slide-title">
+  <img src="assets/img/logo-dronexperts.svg" alt="Dronexperts" class="slide-logo-large">
+  <h1>Formation Thermographie par Drone</h1>
+  <p class="subtitle">Jour 2 Après-midi — Post-traitement, normes &amp; rapport</p>
+  <span class="badge">DJI Thermal Analysis Tool · NF EN 13187 · 6 exercices · QCM J2</span>
+  <div class="slide-footer slide-footer-dark">
+    <span>Dronexperts — Formation Thermographie</span>
+    <span>Jour 2 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- SLIDE 2 — SOMMAIRE -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Sommaire de l'après-midi</h2>
+
+  <ul class="icon-list">
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+      <div class="text"><h4>19 · Workflow post-traitement</h4><p>R-JPEG DJI, types de fichiers, panorama des logiciels disponibles.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/></svg></div>
+      <div class="text"><h4>20 · DJI Thermal Analysis Tool</h4><p>Pas-à-pas : import, palettes, mesures, isotherme, ajustement émissivité, export.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg></div>
+      <div class="text"><h4>21 · Normes applicables</h4><p>NF EN 13187 (méthode), APSAD D19 (incendie), NF A09-400 (vocabulaire).</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></div>
+      <div class="text"><h4>22 · Structure du rapport (19 points NF EN 13187)</h4><p>Organisation en 5 sections, modèles téléchargeables.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/></svg></div>
+      <div class="text"><h4>23 · 6 exercices d'interprétation guidés</h4><p>Mises en situation + corrections détaillées.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/></svg></div>
+      <div class="text"><h4>24 · Bilan commercial</h4><p>Chiffrage, mentions essentielles d'une proposition, ce qui fait foi en cas de litige.</p></div>
+    </li>
+  </ul>
+
+  <div class="slide-footer">
+    <span>Sommaire — Jour 2 Après-midi</span>
+    <span>Dronexperts</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     MODULE 19 — WORKFLOW POST-TRAITEMENT
+     ============================================================ -->
+<section class="slide-module">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <div class="module-number">Module 19</div>
+  <h2>Workflow post-traitement</h2>
+  <p class="module-desc">Du cliché brut au thermogramme exploitable : organisation des fichiers, choix du logiciel, ajustements post-vol.</p>
+  <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+  </svg>
+  <div class="slide-footer">
+    <span>Module 19 — Workflow</span>
+    <span>Jour 2 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — R-JPEG + panorama logiciels -->
+<section class="slide-two-col">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Du cliché brut au thermogramme exploitable</h2>
+
+  <div class="two-col">
+    <div class="col-text">
+      <h3 style="color: var(--dx-primary); font-size: 0.95em; margin-bottom: 8px;">Types de fichiers</h3>
+      <ul>
+        <li><strong>Image classique</strong> (JPG/PNG) : pas de matrice de T° re-traitable</li>
+        <li><strong>Radiométrique propriétaire</strong> (R-JPEG DJI, .seq, .img) : <strong>matrice de T°</strong> par pixel + métadonnées</li>
+      </ul>
+      <div class="info-card" style="margin-top: 12px;">
+        <p style="margin:0; font-size:0.7em;">
+          <strong style="color: var(--dx-success);">✓ R-JPEG DJI</strong><br>
+          Format des M3T &amp; M4T. Lisible dans DJI Thermal Analysis Tool, mais aussi dans certains logiciels tiers (FLIR Studio Thermal Pro).
+        </p>
+      </div>
+    </div>
+    <div class="col-visual">
+      <h3 style="color: var(--dx-primary); font-size: 0.95em; margin-bottom: 8px;">Logiciels disponibles</h3>
+      <table class="dx-table" style="font-size: 0.7em;">
+        <thead><tr><th>Logiciel</th><th>Prix</th></tr></thead>
+        <tbody>
+          <tr><td><strong>DJI Thermal Analysis Tool 3</strong></td><td>Gratuit</td></tr>
+          <tr><td>FLIR Studio Thermal Starter</td><td>Gratuit</td></tr>
+          <tr><td>FLIR Studio Thermal Standard</td><td>239 €/an</td></tr>
+          <tr><td>FLIR Studio Thermal Pro</td><td>479 €/an</td></tr>
+          <tr><td>Testo IRSoft</td><td>Gratuit</td></tr>
+          <tr><td>IRT Cronista PRO (multi-marques)</td><td>299–515 €</td></tr>
+        </tbody>
+      </table>
+      <div class="info-card" style="margin-top: 12px;">
+        <p style="margin:0; font-size:0.7em;">
+          <strong style="color: var(--dx-primary);">→ Au programme</strong> DJI Thermal Analysis Tool (cohérent avec M3T / M4T).
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 19 — Panorama logiciels</span>
+    <span>Jour 2 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     MODULE 20 — DJI THERMAL ANALYSIS TOOL
+     ============================================================ -->
+<section class="slide-module">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <div class="module-number">Module 20</div>
+  <h2>DJI Thermal Analysis Tool 3</h2>
+  <p class="module-desc">Le logiciel officiel DJI pour exploiter les R-JPEG du Mavic 3T et du Matrice 4T. Gratuit, complet, suffisant pour 95 % des cas d'usage.</p>
+  <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/>
+  </svg>
+  <div class="slide-footer">
+    <span>Module 20 — DJI TAT</span>
+    <span>Jour 2 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — DJI TAT vue d'ensemble + import -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>DJI TAT — Vue d'ensemble &amp; import</h2>
+
+  <div class="process-steps">
+    <div class="process-step">
+      <div class="step-number">1</div>
+      <div class="step-label">Téléchargement</div>
+      <div class="step-desc">Site DJI<br>Enterprise (gratuit)</div>
+    </div>
+    <div class="process-step">
+      <div class="step-number">2</div>
+      <div class="step-label">Installation</div>
+      <div class="step-desc">Windows / macOS<br>Pas de licence</div>
+    </div>
+    <div class="process-step">
+      <div class="step-number">3</div>
+      <div class="step-label">Import R-JPEG</div>
+      <div class="step-desc">Glisser-déposer<br>les fichiers du drone</div>
+    </div>
+    <div class="process-step">
+      <div class="step-number">4</div>
+      <div class="step-label">Bibliothèque</div>
+      <div class="step-desc">Vignettes + tri<br>chronologique</div>
+    </div>
+    <div class="process-step">
+      <div class="step-number">5</div>
+      <div class="step-label">Édition</div>
+      <div class="step-desc">Double-clic<br>= ouverture image</div>
+    </div>
+  </div>
+
+  <div class="info-card" style="margin-top: 32px;">
+    <p style="margin:0; font-size:0.7em;">
+      <strong style="color: var(--dx-primary);">💡 Bonne pratique</strong> · Créer un dossier projet par mission (date_client_site) avec sous-dossiers R-JPEG et exports. Sauvegarder le projet TAT régulièrement.
+    </p>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 20 — Import &amp; bibliothèque</span>
+    <span>Jour 2 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — DJI TAT réglages palette / niveau / gain / émissivité -->
+<section class="slide-two-col">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>DJI TAT — Réglages d'image</h2>
+
+  <div class="two-col">
+    <div class="col-text">
+      <h3 style="color: var(--dx-primary); font-size: 0.95em; margin-bottom: 8px;">Visualisation</h3>
+      <ul style="font-size: 0.78em;">
+        <li><strong>Palette</strong> : choix parmi white-hot, iron, rainbow, lava…</li>
+        <li><strong>Niveau / Gain</strong> : ajuster l'échelle pour maximiser le contraste sur la zone d'intérêt</li>
+        <li><strong>Plage T° auto / manuelle</strong> : verrouiller la plage pour comparer plusieurs images entre elles</li>
+      </ul>
+
+      <h3 style="color: var(--dx-primary); font-size: 0.95em; margin: 16px 0 8px;">Paramètres physiques</h3>
+      <ul style="font-size: 0.78em;">
+        <li><strong>Émissivité globale</strong> (image entière)</li>
+        <li><strong>Émissivité ponctuelle</strong> (par point de mesure)</li>
+        <li><strong>Température réfléchie (RTC)</strong></li>
+        <li><strong>Humidité</strong>, distance, T° ambiante</li>
+      </ul>
+    </div>
+    <div class="col-visual">
+      <svg viewBox="0 0 380 280" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:380px;">
+        <!-- Mockup interface -->
+        <rect x="0" y="0" width="380" height="280" fill="#F8FAFC" stroke="#E2E8F0" rx="8"/>
+        <!-- Header -->
+        <rect x="0" y="0" width="380" height="28" fill="#0F172A" rx="8"/>
+        <text x="12" y="19" font-family="Inter" font-size="11" fill="white" font-weight="600">DJI Thermal Analysis Tool 3</text>
+        <!-- Image area -->
+        <defs>
+          <linearGradient id="thermoMock" x1="0" x2="1" y1="0" y2="1">
+            <stop offset="0" stop-color="#1E3A8A"/>
+            <stop offset="0.5" stop-color="#10B981"/>
+            <stop offset="0.8" stop-color="#F59E0B"/>
+            <stop offset="1" stop-color="#DC2626"/>
+          </linearGradient>
+        </defs>
+        <rect x="80" y="40" width="220" height="160" fill="url(#thermoMock)" rx="3" opacity="0.85"/>
+        <!-- Sidebar gauche -->
+        <rect x="6" y="40" width="68" height="160" fill="white" stroke="#E2E8F0" rx="3"/>
+        <text x="40" y="56" text-anchor="middle" font-family="Inter" font-size="8" fill="#475569">Outils</text>
+        <circle cx="22" cy="76" r="6" fill="#0E74DA" opacity="0.2"/>
+        <circle cx="40" cy="76" r="6" fill="#0E74DA" opacity="0.2"/>
+        <circle cx="58" cy="76" r="6" fill="#0E74DA" opacity="0.2"/>
+        <text x="22" y="79" text-anchor="middle" font-family="Inter" font-size="7" fill="#0E74DA">⊙</text>
+        <text x="40" y="79" text-anchor="middle" font-family="Inter" font-size="7" fill="#0E74DA">▭</text>
+        <text x="58" y="79" text-anchor="middle" font-family="Inter" font-size="7" fill="#0E74DA">/</text>
+        <!-- Sidebar droite -->
+        <rect x="306" y="40" width="68" height="160" fill="white" stroke="#E2E8F0" rx="3"/>
+        <text x="340" y="56" text-anchor="middle" font-family="Inter" font-size="8" fill="#475569">Paramètres</text>
+        <text x="312" y="76" font-family="Inter" font-size="7" fill="#0F172A">ε = 0.92</text>
+        <text x="312" y="92" font-family="Inter" font-size="7" fill="#0F172A">RTC: 18°C</text>
+        <text x="312" y="108" font-family="Inter" font-size="7" fill="#0F172A">Humid: 55%</text>
+        <text x="312" y="124" font-family="Inter" font-size="7" fill="#0F172A">Dist: 12m</text>
+        <text x="312" y="148" font-family="Inter" font-size="7" font-weight="700" fill="#0E74DA">Mesures</text>
+        <text x="312" y="162" font-family="Inter" font-size="7" fill="#0F172A">P1: 19.2°C</text>
+        <text x="312" y="174" font-family="Inter" font-size="7" fill="#0F172A">P2: 8.4°C</text>
+        <text x="312" y="186" font-family="Inter" font-size="7" fill="#DC2626" font-weight="600">Δ: 10.8°C</text>
+        <!-- Bottom toolbar -->
+        <rect x="6" y="210" width="368" height="36" fill="white" stroke="#E2E8F0" rx="3"/>
+        <text x="20" y="232" font-family="Inter" font-size="8" fill="#475569">Palette:</text>
+        <rect x="55" y="222" width="100" height="14" fill="url(#thermoMock)" rx="2"/>
+        <text x="170" y="232" font-family="Inter" font-size="8" fill="#475569">Iron</text>
+        <text x="220" y="232" font-family="Inter" font-size="8" fill="#0E74DA" font-weight="600">[Exporter]</text>
+        <text x="290" y="232" font-family="Inter" font-size="8" fill="#0E74DA" font-weight="600">[Rapport]</text>
+        <!-- Footer -->
+        <text x="190" y="266" text-anchor="middle" font-family="Inter" font-size="8" fill="#94A3B8">Interface DJI TAT 3 (schéma)</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 20 — Réglages d'image</span>
+    <span>Jour 2 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — DJI TAT outils de mesure + isotherme -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>DJI TAT — Outils de mesure &amp; isotherme</h2>
+
+  <div class="diagram-container">
+    <div class="diagram-card card-blue">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="10"/></svg></div>
+      <h3>Point</h3>
+      <p style="font-size: 0.75em;">T° d'un pixel précis. Idéal pour mesurer un défaut ponctuel (cellule PV, hot-spot, connexion HT).</p>
+    </div>
+    <div class="diagram-card card-orange">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/></svg></div>
+      <h3>Zone (rectangle / polygone)</h3>
+      <p style="font-size: 0.75em;">T° min, max, moyenne sur une surface. Utile pour caractériser un pont thermique ou une zone de déperdition.</p>
+    </div>
+    <div class="diagram-card card-green">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><line x1="3" y1="20" x2="21" y2="4"/></svg></div>
+      <h3>Ligne (profil T°)</h3>
+      <p style="font-size: 0.75em;">Profil de T° le long d'un segment. Parfait pour visualiser un gradient thermique sur une façade ou un panneau.</p>
+    </div>
+  </div>
+
+  <div class="highlight-box highlight-info" style="margin-top: 24px; padding: 14px 20px;">
+    <blockquote style="font-size: 0.85em;"><strong>Isotherme</strong> : marquer en couleur opposée toute zone &gt; ou &lt; un seuil de T°. Pratique pour rendre immédiatement visible un défaut critique dans un rapport client.</blockquote>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 20 — Mesures &amp; isotherme</span>
+    <span>Jour 2 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — DJI TAT export + rapport -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>DJI TAT — Export &amp; génération de rapport</h2>
+
+  <ul class="icon-list">
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+      <div class="text"><h4>Export image annotée</h4><p>JPG ou PNG avec palette, échelle, mesures et annotations visibles. À insérer dans le rapport client.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      <div class="text"><h4>Export CSV (matrice de T°)</h4><p>Données numériques exportables. Permet de tracer un <strong>profil de température</strong> dans Excel ou de comparer plusieurs zones.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg></div>
+      <div class="text"><h4>Génération de rapport simple</h4><p>Modèles prédéfinis (planche de photos + tableau de mesures). Utile pour les missions courtes.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/></svg></div>
+      <div class="text"><h4>Export panoramique &amp; stitching</h4><p>Assemblage d'images pour cartographier une grande surface (toiture, centrale PV).</p></div>
+    </li>
+  </ul>
+
+  <div class="info-card" style="margin-top: 16px;">
+    <p style="margin:0; font-size:0.7em;">
+      <strong style="color: var(--dx-warning);">⚠ Limites de DJI TAT</strong> · Pas de méthodologie de rédaction complète (à compléter avec Word/PDF) · Pas de traitement par lots aussi puissant que FLIR Studio Pro.
+    </p>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 20 — Export &amp; rapport</span>
+    <span>Jour 2 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — FLIR Tools alternative -->
+<section class="slide-highlight">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+
+  <div class="highlight-box highlight-info">
+    <div class="tag">Alternative — FLIR Tools / Studio Thermal</div>
+    <blockquote>FLIR <strong>Studio Thermal Starter</strong> (gratuit) est l'équivalent historique de FLIR Tools : visualisation, édition d'images radiométriques, rapports prédéfinis. La version <strong>Standard</strong> (239 €/an) ajoute rapports personnalisés, mesures avancées, batch. La version <strong>Pro</strong> (479 €/an) ajoute vidéos radiométriques et FLIR Route Creator.</blockquote>
+    <p class="source">Compatible avec R-JPEG DJI dans les versions récentes — alternative valide si vous travaillez aussi avec des caméras FLIR portables</p>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 20 — FLIR Studio</span>
+    <span>Jour 2 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     MODULE 21 — NORMES APPLICABLES
+     ============================================================ -->
+<section class="slide-module">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <div class="module-number">Module 21</div>
+  <h2>Normes applicables</h2>
+  <p class="module-desc">Cadre normatif de la thermographie : NF EN 13187 (bâtiment), APSAD D19 (incendie/électrique), NF A09-400 (vocabulaire).</p>
+  <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>
+  </svg>
+  <div class="slide-footer">
+    <span>Module 21 — Normes</span>
+    <span>Jour 2 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Panorama des normes -->
+<section class="slide-diagram">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Les 3 normes à connaître</h2>
+
+  <div class="diagram-container">
+    <div class="diagram-card card-blue">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
+      <h3>NF EN 13187</h3>
+      <span class="tag tag-primary" style="margin-bottom: 10px;">Bâtiment</span>
+      <p style="font-size: 0.72em;">Performance thermique des bâtiments — détection qualitative des <strong>irrégularités thermiques</strong> dans les enveloppes par méthode infrarouge. Définit <strong>2 types de rapport</strong> (19 ou 11 points).</p>
+    </div>
+    <div class="diagram-card card-orange">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+      <h3>APSAD D19</h3>
+      <span class="tag tag-warning" style="margin-bottom: 10px;">Incendie / Électrique</span>
+      <p style="font-size: 0.72em;">Document technique sur la <strong>prévention incendie</strong> par contrôle thermographique des installations électriques. Référence pour les assureurs (CNPP).</p>
+    </div>
+    <div class="diagram-card card-green">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg></div>
+      <h3>NF A09-400</h3>
+      <span class="tag tag-success" style="margin-bottom: 10px;">Vocabulaire</span>
+      <p style="font-size: 0.72em;">Vocabulaire de la thermographie infrarouge. Référence pour les définitions employées dans les rapports (TIR, thermogramme, etc.).</p>
+    </div>
+  </div>
+
+  <div class="info-card" style="margin-top: 18px;">
+    <p style="margin:0; font-size:0.7em;">
+      <strong style="color: var(--dx-primary);">📚 Pour aller plus loin</strong> · NF EN 13829 (perméabilité à l'air) · NF P03-310 (essais préalables réception) · ISO 6781 (méthode qualitative bâtiment).
+    </p>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 21 — Panorama normes</span>
+    <span>Jour 2 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     MODULE 22 — STRUCTURE DU RAPPORT
+     ============================================================ -->
+<section class="slide-module">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <div class="module-number">Module 22</div>
+  <h2>Structure du rapport (NF EN 13187)</h2>
+  <p class="module-desc">Les 19 points exigés par la norme, organisés en 5 sections pour une rédaction efficace.</p>
+  <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/>
+  </svg>
+  <div class="slide-footer">
+    <span>Module 22 — Rapport</span>
+    <span>Jour 2 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Importance du rapport -->
+<section class="slide-highlight">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+
+  <div class="highlight-box highlight-critical">
+    <div class="tag">Le rapport = l'unique livrable client</div>
+    <blockquote>Après la visite, le <strong>rapport</strong> est le seul document remis au client. En cas de contestation ou de litige, c'est lui — avec la <strong>proposition commerciale</strong> — qui fait foi. À rédiger avec soin.</blockquote>
+  </div>
+
+  <div style="margin-top: 24px;">
+    <h3 style="color: var(--dx-text-dark); font-size: 1em; margin-bottom: 12px;">2 formats prévus par la norme NF EN 13187 :</h3>
+    <ul>
+      <li><strong>Rapport d'essai complet</strong> : 19 points (le standard professionnel)</li>
+      <li><strong>Rapport d'essai simplifié</strong> : 11 points (missions courtes, contrôles ponctuels)</li>
+    </ul>
+    <p style="margin-top: 12px; font-size: 0.78em;">Les modèles définis par la norme sont une <strong>base minimale</strong>. Vous pouvez (et devez) aller au-delà selon les attentes du client.</p>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 22 — Importance du rapport</span>
+    <span>Jour 2 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Structure organisée en 5 sections -->
+<section class="slide-table">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Les 19 points organisés en 5 sections</h2>
+
+  <table class="dx-table">
+    <thead>
+      <tr>
+        <th>Section</th>
+        <th>Points</th>
+        <th>Contenu</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>1. Identification</strong></td>
+        <td>1 → 5</td>
+        <td>Description essai, client, bâtiment, matériaux, orientation, équipement utilisé</td>
+      </tr>
+      <tr>
+        <td><strong>2. Conditions de mesure</strong></td>
+        <td>6 → 12</td>
+        <td>Date/heure, T° ext 24h avant, rayonnement solaire 12h, pluie/vent, T° int, écarts de pression, variations climatiques</td>
+      </tr>
+      <tr>
+        <td><strong>3. Constats &amp; thermogrammes</strong></td>
+        <td>13 → 16</td>
+        <td>Écarts à la norme, croquis avec positions, thermogrammes annotés avec défauts, identification des zones examinées</td>
+      </tr>
+      <tr>
+        <td><strong>4. Analyse</strong></td>
+        <td>17 → 18</td>
+        <td>Analyse de chaque défaut, comparaison avec zones saines, mesures supplémentaires éventuelles</td>
+      </tr>
+      <tr>
+        <td><strong>5. Validation</strong></td>
+        <td>19</td>
+        <td>Date d'édition, signature</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="info-card" style="margin-top: 16px;">
+    <p style="margin:0; font-size:0.7em;">
+      <strong style="color: var(--dx-primary);">📄 Modèle vierge téléchargeable</strong> dans la section ressources du sommaire de formation.
+    </p>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 22 — 19 points en 5 sections</span>
+    <span>Jour 2 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Section identification -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Section 1 — Identification (points 1-5)</h2>
+
+  <ul class="icon-list">
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><text x="12" y="17" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">1</text></svg></div>
+      <div class="text"><h4>Description essai + adresse</h4><p>Nature de l'essai (TIR), nom et adresse du client, adresse du bâtiment.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><text x="12" y="17" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">2</text></svg></div>
+      <div class="text"><h4>Description du bâtiment</h4><p>Structure (parpaing, brique, ossature bois), surfaces, date construction/rénovation, mode de chauffage, consommation annuelle.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><text x="12" y="17" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">3</text></svg></div>
+      <div class="text"><h4>Matériaux &amp; émissivités</h4><p>Pour chaque thermogramme : matériau ciblé + valeur d'émissivité utilisée.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><text x="12" y="17" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">4</text></svg></div>
+      <div class="text"><h4>Orientation &amp; alentours</h4><p>Plan/croquis avec orientation Nord, description environnement (urbain/rural, masques, végétation).</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><text x="12" y="17" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">5</text></svg></div>
+      <div class="text"><h4>Équipement utilisé</h4><p>Marque, modèle, n° de série du drone/caméra, type de caméra, objectif, certification (CNPP si applicable).</p></div>
+    </li>
+  </ul>
+
+  <div class="slide-footer">
+    <span>Module 22 — Section 1</span>
+    <span>Jour 2 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Section conditions de mesure -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Section 2 — Conditions (points 6-12)</h2>
+
+  <ul class="icon-list">
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><text x="12" y="17" text-anchor="middle" font-size="13" font-weight="700" fill="currentColor">6</text></svg></div>
+      <div class="text"><h4>Date &amp; heure</h4><p>Date essai, heure d'arrivée et de départ, historique éventuel (devis, pré-visite).</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><text x="12" y="17" text-anchor="middle" font-size="13" font-weight="700" fill="currentColor">7</text></svg></div>
+      <div class="text"><h4>T° air ext + 24h avant</h4><p>Min/max observées sur les 24 h précédentes (source : météo locale ou capteur sur site).</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><text x="12" y="17" text-anchor="middle" font-size="13" font-weight="700" fill="currentColor">8</text></svg></div>
+      <div class="text"><h4>Rayonnement solaire 12h avant</h4><p>Présence/absence de soleil avant et pendant la prise de vue — impact direct sur l'interprétation.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><text x="12" y="17" text-anchor="middle" font-size="13" font-weight="700" fill="currentColor">9</text></svg></div>
+      <div class="text"><h4>Précipitations + vent</h4><p>Pluie récente, direction et vitesse du vent (impact sur refroidissement des surfaces).</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><text x="11" y="17" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">10</text></svg></div>
+      <div class="text"><h4>T° intérieure + écart enveloppe</h4><p>T° pièce principale + autres locaux + écart à travers l'enveloppe.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><text x="11" y="17" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">11-12</text></svg></div>
+      <div class="text"><h4>Écarts de pression + variations climatiques</h4><p>Pression au vent/sous le vent par étage si pertinent, variations rapides (éclaircies, averses).</p></div>
+    </li>
+  </ul>
+
+  <div class="slide-footer">
+    <span>Module 22 — Section 2</span>
+    <span>Jour 2 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Section constats + analyse -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Sections 3-5 — Constats &amp; analyse (points 13-19)</h2>
+
+  <ul class="icon-list">
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><text x="11" y="17" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">13</text></svg></div>
+      <div class="text"><h4>Écarts à la norme</h4><p>Tout écart par rapport aux exigences d'essai (conditions météo non idéales, etc.).</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><text x="11" y="17" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">14</text></svg></div>
+      <div class="text"><h4>Croquis + position des thermogrammes</h4><p>Plan du bâtiment ou photos visibles avec numérotation des prises de vue.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><text x="11" y="17" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">15</text></svg></div>
+      <div class="text"><h4>Thermogrammes + défauts</h4><p>Pour chaque image : T° relevées, défauts détectés, recommandations de travaux. <strong>Cœur du rapport.</strong></p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><text x="11" y="17" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">16-17</text></svg></div>
+      <div class="text"><h4>Zones examinées + analyse</h4><p>Lister zones visitées ET zones non visitées (justifier non-visite). Analyse type/importance de chaque défaut.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><text x="11" y="17" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">18</text></svg></div>
+      <div class="text"><h4>Mesures supplémentaires</h4><p>Autres défauts détectés hors mission initiale, recommandations annexes.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><text x="11" y="17" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">19</text></svg></div>
+      <div class="text"><h4>Date &amp; signature</h4><p>Date d'édition + signature du télépilote/thermographicien.</p></div>
+    </li>
+  </ul>
+
+  <div class="slide-footer">
+    <span>Module 22 — Sections 3-5</span>
+    <span>Jour 2 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Ressources téléchargeables -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Ressources téléchargeables</h2>
+
+  <ul class="icon-list">
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+      <div class="text"><h4>Plan de rapport vierge</h4><p>Modèle Word reprenant les 19 points NF EN 13187, prêt à compléter.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg></div>
+      <div class="text"><h4>Tableau des émissivités</h4><p>Coefficients ε des matériaux usuels du bâtiment (PDF).</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg></div>
+      <div class="text"><h4>Conductivité thermique</h4><p>Valeurs λ usuelles (béton, briques, isolants…) — aide-mémoire.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/></svg></div>
+      <div class="text"><h4>Préparer une intervention sur site</h4><p>Check-list opérationnelle complète (matériel, autorisations, conditions, EPI).</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/></svg></div>
+      <div class="text"><h4>Modèles autorisations &amp; devis</h4><p>Décollage, prise de vue, devis type — modèles juridiques prêts à l'emploi.</p></div>
+    </li>
+  </ul>
+
+  <div class="info-card" style="margin-top: 16px;">
+    <p style="margin:0; font-size:0.7em;">
+      <strong style="color: var(--dx-primary);">📚 Toutes ces ressources</strong> sont accessibles depuis le sommaire de formation (section « Ressources &amp; documents »).
+    </p>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 22 — Ressources</span>
+    <span>Jour 2 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     MODULE 23 — 6 EXERCICES D'INTERPRETATION
+     ============================================================ -->
+<section class="slide-module">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <div class="module-number">Module 23</div>
+  <h2>6 exercices d'interprétation</h2>
+  <p class="module-desc">Mise en application : 6 cas réels (énoncé + correction guidée) couvrant les pièges principaux et les défauts les plus fréquents.</p>
+  <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+  </svg>
+  <div class="slide-footer">
+    <span>Module 23 — Exercices</span>
+    <span>Jour 2 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- EXERCICE 1 — ENONCE -->
+<section class="slide-quiz">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>
+    <svg style="width:28px; height:28px; vertical-align:middle; margin-right:8px; stroke:var(--dx-primary); fill:none; stroke-width:2;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+    Exercice 1 — Façade avec fenêtre et volet roulant
+  </h2>
+
+  <p class="quiz-question">Le thermogramme d'une façade par temps froid (Δ = 15 °C) montre des points chauds au-dessus de la fenêtre, sur le mur entre les fenêtres et au niveau du coffre de volet roulant. La partie haute du mur (sous toiture) est légèrement plus chaude. <strong>Que voit-on ?</strong></p>
+
+  <div class="info-card" style="margin-top: 20px;">
+    <p style="margin:0; font-size:0.75em;">
+      <strong>👀 À analyser :</strong> 4 zones distinctes à interpréter sur la façade.
+    </p>
+  </div>
+
+  <div class="slide-footer">
+    <span>Exercice 1 — Énoncé</span>
+    <span>Jour 2 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- EXERCICE 1 — CORRECTION -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Exercice 1 — Correction</h2>
+
+  <ul class="icon-list">
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24" stroke="#EF4444"><path d="M9 11l3 3L22 4"/></svg></div>
+      <div class="text"><h4>Coffre de volet roulant</h4><p>Zone classique de fuites d'air. Souvent mal isolée en rénovation, en haut de la fenêtre.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24" stroke="#EF4444"><path d="M9 11l3 3L22 4"/></svg></div>
+      <div class="text"><h4>Mur entre les fenêtres (allège)</h4><p>Absence d'isolant ou pont thermique avec la dalle/refend interne.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24" stroke="#EF4444"><path d="M9 11l3 3L22 4"/></svg></div>
+      <div class="text"><h4>Partie haute (sous toiture)</h4><p>Pont thermique chaînage haut + souvent rebouchage plâtre = isolation discontinue.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24" stroke="#EF4444"><path d="M9 11l3 3L22 4"/></svg></div>
+      <div class="text"><h4>Fenêtre</h4><p>Vitre chaude = très probablement un radiateur situé juste en dessous, qui chauffe le vitrage par convection.</p></div>
+    </li>
+  </ul>
+
+  <div class="info-card" style="margin-top: 16px;">
+    <p style="margin:0; font-size:0.7em;">
+      <strong style="color: var(--dx-success);">→ Recommandation client</strong> · Reprise isolation coffre volet roulant + traitement du chaînage haut (priorité 1).
+    </p>
+  </div>
+
+  <div class="slide-footer">
+    <span>Exercice 1 — Correction</span>
+    <span>Jour 2 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- EXERCICE 2 — ENONCE -->
+<section class="slide-quiz">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>
+    <svg style="width:28px; height:28px; vertical-align:middle; margin-right:8px; stroke:var(--dx-primary); fill:none; stroke-width:2;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+    Exercice 2 — Points froids réguliers sur un mur intérieur
+  </h2>
+
+  <p class="quiz-question">Vue intérieure d'un mur extérieur en collectif récent (ITI). On observe sur le thermogramme un <strong>motif régulier de points froids (-4 °C par rapport au mur)</strong>, espacés d'environ 30 cm en grille. Le mur a été isolé par doublage collé sur panneaux. <strong>Diagnostic ?</strong></p>
+
+  <div class="slide-footer">
+    <span>Exercice 2 — Énoncé</span>
+    <span>Jour 2 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- EXERCICE 2 — CORRECTION -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Exercice 2 — Correction</h2>
+
+  <div class="highlight-box highlight-warning">
+    <div class="tag">Diagnostic</div>
+    <blockquote>Les <strong>points froids correspondent aux plots de colle</strong> du doublage isolant. À ces endroits, l'isolant est <strong>comprimé voire absent</strong> ⟶ ponts thermiques ponctuels qui apparaissent froids côté chaud (intérieur, l'hiver).</blockquote>
+  </div>
+
+  <p style="margin-top: 20px;">Hypothèses possibles, par ordre de probabilité :</p>
+  <ul>
+    <li><strong>Tassement de l'isolant</strong> sur les plots de colle (le panneau s'est écrasé localement)</li>
+    <li><strong>Absence d'isolant</strong> au niveau des plots (pose défectueuse)</li>
+    <li>Plus rare : <strong>contact direct</strong> du parement avec le mur via les plots (pont thermique structurel)</li>
+  </ul>
+
+  <div class="info-card" style="margin-top: 16px;">
+    <p style="margin:0; font-size:0.7em;">
+      <strong style="color: var(--dx-primary);">💡 À retenir</strong> · Un motif régulier sur un mur isolé ⟶ presque toujours lié au mode de fixation (plots, montants, fixations mécaniques).
+    </p>
+  </div>
+
+  <div class="slide-footer">
+    <span>Exercice 2 — Correction</span>
+    <span>Jour 2 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- EXERCICE 3 — ENONCE -->
+<section class="slide-quiz">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>
+    <svg style="width:28px; height:28px; vertical-align:middle; margin-right:8px; stroke:var(--dx-primary); fill:none; stroke-width:2;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+    Exercice 3 — Fenêtre avec liseré bleu autour
+  </h2>
+
+  <p class="quiz-question">Vue intérieure d'une fenêtre. Le thermogramme montre un <strong>liseré bleu (froid) régulier tout autour du dormant</strong>, à la jonction avec la maçonnerie. Pas de défaut visible côté extérieur. <strong>De quoi s'agit-il ?</strong></p>
+
+  <div class="slide-footer">
+    <span>Exercice 3 — Énoncé</span>
+    <span>Jour 2 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- EXERCICE 3 — CORRECTION -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Exercice 3 — Correction</h2>
+
+  <div class="highlight-box highlight-warning">
+    <div class="tag">Diagnostic</div>
+    <blockquote><strong>Infiltration d'air froid</strong> entre le dormant de la fenêtre et la maçonnerie. Absence ou défaillance du <strong>joint de compression</strong> à la pose ⟶ air extérieur passe par le calfeutrement défectueux.</blockquote>
+  </div>
+
+  <p style="margin-top: 20px;">Indices distinctifs :</p>
+  <ul>
+    <li>Forme : <strong>liseré régulier</strong> sur tout le pourtour (pas localisé)</li>
+    <li>Position : <strong>jonction dormant/maçonnerie</strong> (pas le vitrage lui-même)</li>
+    <li>Visibilité : nettement plus marqué que le reste du mur</li>
+  </ul>
+
+  <div class="info-card" style="margin-top: 16px;">
+    <p style="margin:0; font-size:0.7em;">
+      <strong style="color: var(--dx-success);">→ Recommandation client</strong> · Refaire le calfeutrement périphérique (mousse polyuréthane + joint d'étanchéité). Travail à confier à un menuisier ou à l'entreprise qui a posé.
+    </p>
+  </div>
+
+  <div class="slide-footer">
+    <span>Exercice 3 — Correction</span>
+    <span>Jour 2 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- EXERCICE 4 — ENONCE -->
+<section class="slide-quiz">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>
+    <svg style="width:28px; height:28px; vertical-align:middle; margin-right:8px; stroke:var(--dx-primary); fill:none; stroke-width:2;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+    Exercice 4 — Toiture terrasse, zone irrégulière froide
+  </h2>
+
+  <p class="quiz-question">Survol drone d'une toiture-terrasse en fin de journée ensoleillée. Le thermogramme révèle une <strong>zone irrégulière plus froide</strong> au centre de la toiture, avec des contours flous. Pas de défaut visible côté visible. <strong>Hypothèse principale ?</strong></p>
+
+  <div class="slide-footer">
+    <span>Exercice 4 — Énoncé</span>
+    <span>Jour 2 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- EXERCICE 4 — CORRECTION -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Exercice 4 — Correction</h2>
+
+  <div class="highlight-box highlight-warning">
+    <div class="tag">Diagnostic</div>
+    <blockquote>Probable <strong>zone humide dans l'isolant</strong> sous l'étanchéité. L'eau retient la chaleur plus longtemps que l'isolant sec ⟶ en fin de journée, après que la toiture sèche ait commencé à se refroidir, la zone humide reste plus chaude — mais en début de journée elle apparaît plus froide (inertie thermique de l'eau).</blockquote>
+  </div>
+
+  <p style="margin-top: 20px; font-size: 0.85em;">⚠ <strong>Attention au moment de la prise de vue</strong> : ici en fin de journée, la zone est plus froide car la toiture sèche se réchauffe vite au soleil et se refroidit vite quand le soleil baisse, alors que la masse humide réagit lentement.</p>
+
+  <div class="info-card" style="margin-top: 16px;">
+    <p style="margin:0; font-size:0.7em;">
+      <strong style="color: var(--dx-primary);">📚 Référence</strong> · Norme américaine <strong>ASTM C1153-97</strong> (Standard Practice for Location of Wet Insulation in Roofing Systems Using Infrared Imaging). Pas de norme française équivalente.
+    </p>
+  </div>
+
+  <div class="slide-footer">
+    <span>Exercice 4 — Correction</span>
+    <span>Jour 2 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- EXERCICE 5 — ENONCE -->
+<section class="slide-quiz">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>
+    <svg style="width:28px; height:28px; vertical-align:middle; margin-right:8px; stroke:var(--dx-primary); fill:none; stroke-width:2;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+    Exercice 5 — Menuiserie aluminium, forme d'ellipse froide
+  </h2>
+
+  <p class="quiz-question">Vue extérieure d'une menuiserie aluminium récente avec double vitrage gaz argon. Le thermogramme montre une <strong>forme d'ellipse plus froide au centre du vitrage</strong>, alors que le reste de la fenêtre est OK. <strong>De quoi s'agit-il ?</strong></p>
+
+  <div class="slide-footer">
+    <span>Exercice 5 — Énoncé</span>
+    <span>Jour 2 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- EXERCICE 5 — CORRECTION -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Exercice 5 — Correction</h2>
+
+  <div class="highlight-box highlight-warning">
+    <div class="tag">Diagnostic</div>
+    <blockquote><strong>Fuite d'argon</strong> dans le double vitrage. La perte de gaz crée une dépression qui diminue la lame d'air ⟶ <strong>baisse de performance thermique</strong> au centre du vitrage. Forme caractéristique d'ellipse due à la déformation des deux vitres aspirées l'une vers l'autre.</blockquote>
+  </div>
+
+  <p style="margin-top: 20px;">Indices distinctifs :</p>
+  <ul>
+    <li><strong>Forme d'ellipse</strong> centrée — pas un défaut ponctuel ni linéaire</li>
+    <li>Localisation : <strong>vitrage uniquement</strong>, dormant intact</li>
+    <li>Souvent visible à la lumière rasante : <strong>déformation concave</strong> des vitres</li>
+  </ul>
+
+  <div class="info-card" style="margin-top: 16px;">
+    <p style="margin:0; font-size:0.7em;">
+      <strong style="color: var(--dx-success);">→ Recommandation client</strong> · Remplacement du vitrage isolant (vitrage non réparable). Faire jouer la garantie du vitrier si la pose est récente.
+    </p>
+  </div>
+
+  <div class="slide-footer">
+    <span>Exercice 5 — Correction</span>
+    <span>Jour 2 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- EXERCICE 6 — ENONCE -->
+<section class="slide-quiz">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>
+    <svg style="width:28px; height:28px; vertical-align:middle; margin-right:8px; stroke:var(--dx-primary); fill:none; stroke-width:2;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+    Exercice 6 — Point chaud sur façade nord
+  </h2>
+
+  <p class="quiz-question">Vue drone d'une façade <strong>orientée nord</strong>, prise en fin de matinée par temps ensoleillé. Un <strong>point chaud très marqué</strong> apparaît en haut du pignon, à 4-5 m du sol. Le reste de la façade est uniforme. <strong>Défaut d'isolation ou autre chose ?</strong></p>
+
+  <div class="slide-footer">
+    <span>Exercice 6 — Énoncé</span>
+    <span>Jour 2 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- EXERCICE 6 — CORRECTION -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Exercice 6 — Correction</h2>
+
+  <div class="highlight-box highlight-error">
+    <div class="tag">Piège n°2 — Réflexion solaire</div>
+    <blockquote>Ce n'est PAS un défaut d'isolation. C'est une <strong>réflexion du soleil par un bâtiment adjacent</strong> (façade brillante, vitrage, mur clair). Une façade nord ne reçoit normalement pas de soleil direct — toute zone chaude doit déclencher la recherche d'un <strong>réflecteur</strong> environnant.</blockquote>
+  </div>
+
+  <p style="margin-top: 20px;">Pour confirmer l'hypothèse :</p>
+  <ul>
+    <li><strong>Changer d'angle de vue</strong> : si c'est une réflexion, la position du point chaud bouge avec l'angle</li>
+    <li><strong>Repérer le réflecteur</strong> visuellement (souvent une vitre, un panneau métallique d'un voisin)</li>
+    <li><strong>Refaire le vol</strong> à un autre moment de la journée : si la T° disparaît, c'est confirmé</li>
+  </ul>
+
+  <div class="info-card" style="margin-top: 16px;">
+    <p style="margin:0; font-size:0.7em;">
+      <strong style="color: var(--dx-primary);">💡 À retenir</strong> · Un point chaud isolé sur une façade nord = presque toujours une réflexion. Ne jamais conclure sans investigation environnementale.
+    </p>
+  </div>
+
+  <div class="slide-footer">
+    <span>Exercice 6 — Correction</span>
+    <span>Jour 2 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     MODULE 24 — BILAN COMMERCIAL
+     ============================================================ -->
+<section class="slide-module">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <div class="module-number">Module 24</div>
+  <h2>Bilan commercial</h2>
+  <p class="module-desc">Comment chiffrer une mission de thermographie, quoi mettre dans la proposition, ce qui fait foi en cas de litige.</p>
+  <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+  </svg>
+  <div class="slide-footer">
+    <span>Module 24 — Bilan commercial</span>
+    <span>Jour 2 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Chiffrage + mentions essentielles -->
+<section class="slide-two-col">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Chiffrage &amp; proposition commerciale</h2>
+
+  <div class="two-col">
+    <div class="col-text">
+      <h3 style="color: var(--dx-primary); font-size: 0.95em; margin-bottom: 8px;">Composantes du coût</h3>
+      <ul style="font-size: 0.78em;">
+        <li>Démarches de vol (autorisations, déclarations)</li>
+        <li>Temps de trajet + frais véhicule</li>
+        <li><strong>Temps de prise de vue</strong> (planning sur site)</li>
+        <li><strong>Temps d'analyse + rédaction rapport</strong> (souvent &gt; temps vol)</li>
+        <li>Amortissement matériel</li>
+        <li>Frais fixes structure (assurance, comptabilité, loyer)</li>
+        <li>Marge</li>
+      </ul>
+      <div class="info-card" style="margin-top: 12px;">
+        <p style="margin:0; font-size:0.7em;">
+          <strong style="color: var(--dx-primary);">💡 Bonne pratique</strong> · Chiffrer séparément la <strong>prise de vue</strong> et l'<strong>analyse</strong>. Permet d'expliquer au client où va le coût.
+        </p>
+      </div>
+    </div>
+    <div class="col-visual">
+      <h3 style="color: var(--dx-primary); font-size: 0.95em; margin-bottom: 8px;">Mentions essentielles</h3>
+      <ul style="font-size: 0.78em;">
+        <li><strong>Objectif</strong> précis de la mission</li>
+        <li><strong>Délais</strong> d'intervention</li>
+        <li><strong>Contraintes</strong> du site</li>
+        <li><strong>Éléments susceptibles de décaler</strong> (météo, autorisations refusées)</li>
+        <li><strong>Obligations propriétaire</strong> (accès, autorisations)</li>
+        <li><strong>Obligations opérateur</strong> (matériel, assurance)</li>
+      </ul>
+
+      <div class="highlight-box highlight-critical" style="margin-top: 16px; padding: 12px 16px;">
+        <blockquote style="font-size: 0.78em;">En cas de litige, <strong>proposition commerciale + rapport</strong> sont les seuls documents qui font foi.</blockquote>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 24 — Chiffrage &amp; proposition</span>
+    <span>Jour 2 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- SYNTHESE FIN FORMATION -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Synthèse de la formation 2 jours</h2>
+
+  <ul class="icon-list">
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24" stroke="#10B981"><path d="M9 11l3 3L22 4"/></svg></div>
+      <div class="text"><h4>Fondamentaux IR maîtrisés</h4><p>Rayonnement, émissivité, lois physiques, transferts thermiques, ponts thermiques.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24" stroke="#10B981"><path d="M9 11l3 3L22 4"/></svg></div>
+      <div class="text"><h4>Matériel DJI &amp; préparation mission</h4><p>Mavic 3T / Matrice 4T, R-JPEG, palettes, conditions optimales, autorisations spécifiques thermo.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24" stroke="#10B981"><path d="M9 11l3 3L22 4"/></svg></div>
+      <div class="text"><h4>12 pièges + 5 règles + cas d'usage</h4><p>Bâtiment, photovoltaïque, réseau de chaleur, industriel — méthodologie unifiée.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24" stroke="#10B981"><path d="M9 11l3 3L22 4"/></svg></div>
+      <div class="text"><h4>Post-traitement DJI TAT &amp; rapport NF EN 13187</h4><p>Workflow complet, normes, structure des 19 points, modèles téléchargeables.</p></div>
+    </li>
+  </ul>
+
+  <div class="highlight-box highlight-success" style="margin-top: 20px; padding: 14px 20px;">
+    <blockquote style="font-size: 0.85em;">🎯 Vous avez désormais les bases pour démarrer une activité de <strong>thermographie par drone</strong> en autonomie. Direction : QCM Jour 2 pour valider les acquis !</blockquote>
+  </div>
+
+  <div class="slide-footer">
+    <span>Synthèse — Fin de formation</span>
+    <span>Dronexperts</span>
+  </div>
+</section>
+
+
+<!-- CONCLUSION + LIEN QCM -->
+<section class="slide-conclusion">
+  <img src="assets/img/logo-dronexperts.svg" alt="Dronexperts" class="slide-logo-large">
+  <h2>Fin de la formation</h2>
+  <p>Place au QCM de validation des acquis Jour 2 (10 questions, ~15 min)</p>
+  <p style="font-size:0.6em; margin-top: 8px; opacity: 0.7;">Merci de votre attention — Bon vent et belles inspections thermo !</p>
+  <div class="conclusion-links">
+    <a href="formation-qcm-j2.html">→ Lancer le QCM Jour 2</a>
+    <a href="index-formation.html">← Retour sommaire</a>
+  </div>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    slideNumber: 'c/t',
+    transition: 'slide',
+    width: 1280,
+    height: 720,
+    margin: 0.04,
+    controls: true,
+    progress: true,
+    center: false,
+  });
+</script>
+</body>
+</html>

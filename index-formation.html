@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formation Thermographie par Drone — Dronexperts</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dx-primary: #0E74DA;
+      --dx-gradient-start: #1E3A8A;
+      --dx-gradient-end: #04355D;
+      --dx-text-dark: #0F172A;
+      --dx-text-secondary: #475569;
+      --dx-text-muted: #94A3B8;
+      --dx-border: #E2E8F0;
+      --dx-bg-light: #F8FAFC;
+      --dx-success: #10B981;
+      --dx-warning: #F59E0B;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: white; color: var(--dx-text-secondary); }
+
+    /* ---- HERO ---- */
+    .hero {
+      background: linear-gradient(135deg, var(--dx-gradient-start) 0%, var(--dx-gradient-end) 100%);
+      color: white; text-align: center; padding: 56px 24px 72px; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; top: -50%; right: -20%; width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(245,158,11,0.18) 0%, transparent 70%); border-radius: 50%;
+    }
+    .hero::after {
+      content: ''; position: absolute; bottom: -40%; left: -10%; width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(239,68,68,0.12) 0%, transparent 70%); border-radius: 50%;
+    }
+    .hero-content { position: relative; z-index: 1; }
+    .hero img { height: 56px; filter: brightness(0) invert(1); margin-bottom: 20px; }
+    .hero h1 { font-size: 32px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 8px; }
+    .hero .subtitle { font-size: 16px; color: rgba(255,255,255,0.7); font-weight: 400; }
+    .hero .badges { display: flex; gap: 12px; justify-content: center; margin-top: 20px; flex-wrap: wrap; }
+    .hero .badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+      padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 500;
+      backdrop-filter: blur(8px);
+    }
+
+    /* ---- CONTAINER ---- */
+    .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+    /* ---- TIMELINE ---- */
+    .timeline { margin-top: -40px; position: relative; z-index: 2; }
+
+    .day-block { margin-bottom: 32px; }
+    .day-label {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em;
+      color: var(--dx-text-muted); margin-bottom: 12px; padding-left: 4px;
+    }
+    .day-label .dot { width: 8px; height: 8px; border-radius: 50%; }
+
+    .day-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media (max-width: 640px) { .day-cards { grid-template-columns: 1fr; } }
+
+    .card {
+      background: white; border-radius: 14px; padding: 0; text-decoration: none; color: inherit;
+      transition: all 0.25s ease; display: flex; flex-direction: column; overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03);
+      border: 1px solid rgba(226,232,240,0.8);
+    }
+    .card:hover {
+      box-shadow: 0 8px 30px rgba(14,116,218,0.12), 0 2px 8px rgba(0,0,0,0.04);
+      transform: translateY(-3px); border-color: var(--dx-primary);
+    }
+    .card-top { height: 5px; }
+    .card-body { padding: 20px 22px 18px; flex: 1; }
+    .card-time {
+      display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 0.05em;
+      padding: 3px 10px; border-radius: 6px; margin-bottom: 10px;
+    }
+    .card h2 { font-size: 16px; font-weight: 700; color: var(--dx-text-dark); margin-bottom: 6px; line-height: 1.3; }
+    .card p { font-size: 13px; line-height: 1.5; color: var(--dx-text-secondary); }
+    .card-footer {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 10px 22px; border-top: 1px solid var(--dx-border); font-size: 11px; color: var(--dx-text-muted);
+    }
+    .card-footer .slides { font-weight: 600; }
+    .card-footer .arrow { color: var(--dx-primary); font-weight: 600; font-size: 13px; }
+
+    /* Colors per session — thermo palette */
+    .j1m .card-top { background: var(--dx-primary); }
+    .j1m .card-time { background: rgba(14,116,218,0.08); color: var(--dx-primary); }
+    .j1a .card-top { background: #7C3AED; }
+    .j1a .card-time { background: rgba(124,58,237,0.08); color: #7C3AED; }
+    .j2m .card-top { background: var(--dx-warning); }
+    .j2m .card-time { background: rgba(245,158,11,0.08); color: #D97706; }
+    .j2a .card-top { background: #EF4444; }
+    .j2a .card-time { background: rgba(239,68,68,0.08); color: #EF4444; }
+
+    /* QCM badge */
+    .qcm-section {
+      background: linear-gradient(135deg, rgba(14,116,218,0.06) 0%, rgba(245,158,11,0.06) 100%);
+      border: 1px solid var(--dx-border);
+      border-radius: 16px; padding: 24px 28px; margin: 20px 0 8px;
+    }
+    .qcm-title {
+      font-size: 14px; font-weight: 700; color: var(--dx-text-dark); margin-bottom: 6px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .qcm-subtitle { font-size: 12px; color: var(--dx-text-secondary); margin-bottom: 14px; }
+    .qcm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 640px) { .qcm-grid { grid-template-columns: 1fr; } }
+    .qcm-card {
+      background: white; border: 1px solid var(--dx-border); border-radius: 10px;
+      padding: 14px 18px; text-decoration: none; color: inherit;
+      transition: all 0.2s ease; display: flex; flex-direction: column; gap: 4px;
+    }
+    .qcm-card:hover { border-color: var(--dx-primary); transform: translateY(-2px); box-shadow: 0 4px 14px rgba(14,116,218,0.08); }
+    .qcm-card .qcm-day { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
+    .qcm-card.j1 .qcm-day { color: var(--dx-primary); }
+    .qcm-card.j2 .qcm-day { color: #D97706; }
+    .qcm-card h3 { font-size: 13px; font-weight: 700; color: var(--dx-text-dark); }
+    .qcm-card span { font-size: 11px; color: var(--dx-text-muted); }
+
+    /* ---- DOCS SECTION ---- */
+    .docs-section {
+      background: var(--dx-bg-light); border-radius: 16px; padding: 28px; margin-top: 8px; margin-bottom: 40px;
+      border: 1px solid var(--dx-border);
+    }
+    .docs-title {
+      font-size: 14px; font-weight: 700; color: var(--dx-text-dark); margin-bottom: 16px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .docs-title svg { width: 18px; height: 18px; stroke: var(--dx-primary); fill: none; stroke-width: 2; }
+    .docs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    @media (max-width: 640px) { .docs-grid { grid-template-columns: 1fr; } }
+
+    .doc-card {
+      background: white; border: 1px solid var(--dx-border); border-radius: 10px;
+      padding: 14px 16px; text-decoration: none; color: inherit;
+      display: flex; align-items: center; gap: 12px; transition: all 0.2s ease;
+    }
+    .doc-card:hover { border-color: var(--dx-primary); background: rgba(14,116,218,0.02); }
+    .doc-icon {
+      width: 36px; height: 36px; background: rgba(14,116,218,0.08); border-radius: 8px;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .doc-icon svg { width: 18px; height: 18px; stroke: var(--dx-primary); fill: none; stroke-width: 2; }
+    .doc-icon.red { background: rgba(239,68,68,0.08); }
+    .doc-icon.red svg { stroke: #EF4444; }
+    .doc-icon.green { background: rgba(16,185,129,0.08); }
+    .doc-icon.green svg { stroke: #059669; }
+    .doc-icon.blue { background: rgba(14,116,218,0.08); }
+    .doc-icon.orange { background: rgba(245,158,11,0.08); }
+    .doc-icon.orange svg { stroke: #D97706; }
+    .doc-card h3 { font-size: 13px; font-weight: 600; color: var(--dx-text-dark); line-height: 1.3; }
+    .doc-card span { font-size: 11px; color: var(--dx-text-muted); }
+
+    /* ---- FOOTER ---- */
+    .footer {
+      text-align: center; padding: 28px 24px; font-size: 12px; color: var(--dx-text-muted);
+      border-top: 1px solid var(--dx-border);
+    }
+    .footer a { color: var(--dx-primary); text-decoration: none; font-weight: 500; }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-content">
+      <img src="assets/img/logo-dronexperts.svg" alt="Dronexperts">
+      <h1>Formation Thermographie par Drone</h1>
+      <p class="subtitle">Initiation — 2 jours / 14 heures · DJI Mavic 3T &amp; Matrice 4T</p>
+      <div class="badges">
+        <span class="badge">Initiation</span>
+        <span class="badge">Mavic 3T</span>
+        <span class="badge">Matrice 4T</span>
+        <span class="badge">Pré-requis : télépilote certifié</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIMELINE -->
+  <div class="container">
+    <div class="timeline">
+
+      <!-- JOUR 1 -->
+      <div class="day-block">
+        <div class="day-label"><span class="dot" style="background: var(--dx-primary);"></span> Jour 1 — Comprendre la thermographie</div>
+        <div class="day-cards">
+          <a href="formation-jour1-matin.html" class="card j1m">
+            <div class="card-top"></div>
+            <div class="card-body">
+              <span class="card-time">9h00 – 12h30</span>
+              <h2>Fondamentaux IR &amp; thermique du bâtiment</h2>
+              <p>Principe de la thermographie, apport du drone, rayonnement IR, émissivité, lois de Stefan-Boltzmann/Wien/Planck, transferts thermiques (conduction/convection/rayonnement), R/U/λ, ponts thermiques, panorama des applications.</p>
+            </div>
+            <div class="card-footer">
+              <span class="slides">~30 slides</span>
+              <span class="arrow">Ouvrir →</span>
+            </div>
+          </a>
+          <a href="formation-jour1-aprem.html" class="card j1a">
+            <div class="card-top"></div>
+            <div class="card-body">
+              <span class="card-time">13h30 – 18h00</span>
+              <h2>Matériel DJI &amp; préparation mission</h2>
+              <p>Critères caméra thermique (NETD, résolution, focales), comparatif Mavic 3T vs Matrice 4T, rappel réglementation thermo-drone, préparation mission, facteur humain, réglages caméra (palettes, isotherme, niveau/gain), conditions optimales.</p>
+            </div>
+            <div class="card-footer">
+              <span class="slides">~30 slides + QCM</span>
+              <span class="arrow">Ouvrir →</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- JOUR 2 -->
+      <div class="day-block">
+        <div class="day-label"><span class="dot" style="background: var(--dx-warning);"></span> Jour 2 — Appliquer, analyser, rapporter</div>
+        <div class="day-cards">
+          <a href="formation-jour2-matin.html" class="card j2m">
+            <div class="card-top"></div>
+            <div class="card-body">
+              <span class="card-time">9h00 – 12h30</span>
+              <h2>Méthodologie &amp; cas d'usage</h2>
+              <p>Les 12 pièges d'interprétation, 5 règles de relevé (optique, environnement, composition, taille, angle ±45°), cas d'usage bâtiment/isolation/humidité, photovoltaïque (composants, défauts cellules), réseaux de chaleur, industriel/HT, recherche personne &amp; agriculture.</p>
+            </div>
+            <div class="card-footer">
+              <span class="slides">~35 slides</span>
+              <span class="arrow">Ouvrir →</span>
+            </div>
+          </a>
+          <a href="formation-jour2-aprem.html" class="card j2a">
+            <div class="card-top"></div>
+            <div class="card-body">
+              <span class="card-time">13h30 – 18h00</span>
+              <h2>Post-traitement, normes &amp; rapport</h2>
+              <p>Workflow R-JPEG DJI, pas-à-pas DJI Thermal Analysis Tool, normes NF EN 13187 / APSAD D19 / NF A09-400, structure du rapport (19 points), modèles téléchargeables, 6 exercices d'interprétation guidés, mentions essentielles d'une proposition commerciale.</p>
+            </div>
+            <div class="card-footer">
+              <span class="slides">~35 slides + QCM</span>
+              <span class="arrow">Ouvrir →</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- QCM DE VALIDATION -->
+    <div class="qcm-section">
+      <div class="qcm-title">
+        <svg viewBox="0 0 24 24" style="width:18px; height:18px; stroke: var(--dx-primary); fill: none; stroke-width: 2;"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        QCM de validation des acquis
+      </div>
+      <p class="qcm-subtitle">À projeter en fin de chaque journée pour vérifier la compréhension des concepts clés.</p>
+      <div class="qcm-grid">
+        <a href="formation-qcm-j1.html" class="qcm-card j1">
+          <span class="qcm-day">QCM Jour 1</span>
+          <h3>Fondamentaux IR, matériel &amp; préparation mission</h3>
+          <span>10 questions · ~15 min</span>
+        </a>
+        <a href="formation-qcm-j2.html" class="qcm-card j2">
+          <span class="qcm-day">QCM Jour 2</span>
+          <h3>Méthodologie, cas d'usage &amp; rapport</h3>
+          <span>10 questions · ~15 min</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- DOCUMENTS -->
+    <div class="docs-section">
+      <div class="docs-title">
+        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        Ressources &amp; documents téléchargeables
+      </div>
+      <div class="docs-grid">
+        <a href="livret-instructeur.html" class="doc-card">
+          <div class="doc-icon blue"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+          <div><h3>Livret d'Accueil Instructeur</h3><span>Guide de préparation des sessions</span></div>
+        </a>
+        <a href="assets/docs/plan-rapport-thermographie.docx" class="doc-card">
+          <div class="doc-icon orange"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg></div>
+          <div><h3>Plan de rapport thermographique</h3><span>Modèle vierge à compléter (.docx)</span></div>
+        </a>
+        <a href="assets/docs/emissivite-materiaux.pdf" class="doc-card">
+          <div class="doc-icon red"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+          <div><h3>Tableau des émissivités</h3><span>Coefficients par matériau (PDF)</span></div>
+        </a>
+        <a href="assets/docs/conductivite-thermique.pdf" class="doc-card">
+          <div class="doc-icon red"><svg viewBox="0 0 24 24"><path d="M12 2v6m0 8v6M2 12h6m8 0h6"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <div><h3>Aide-mémoire conductivité</h3><span>Valeurs λ usuelles (PDF)</span></div>
+        </a>
+        <a href="assets/docs/preparer-intervention-site.pdf" class="doc-card">
+          <div class="doc-icon green"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><h3>Préparer une intervention sur site</h3><span>Check-list opérationnelle</span></div>
+        </a>
+        <a href="assets/docs/devis-type.pdf" class="doc-card">
+          <div class="doc-icon blue"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></div>
+          <div><h3>Modèle de devis</h3><span>Trame chiffrage prestation (PDF)</span></div>
+        </a>
+        <a href="assets/docs/autorisation-decollage.pdf" class="doc-card">
+          <div class="doc-icon orange"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+          <div><h3>Autorisation de décollage</h3><span>Modèle propriétaire de terrain</span></div>
+        </a>
+        <a href="assets/docs/autorisation-prise-de-vue.pdf" class="doc-card">
+          <div class="doc-icon orange"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="3"/><path d="M23 19V7a2 2 0 0 0-2-2h-4l-2-2H9L7 5H3a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2z"/></svg></div>
+          <div><h3>Autorisation prise de vue</h3><span>Modèle pour mission thermo</span></div>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <p>© 2026 Dronexperts — Tous droits réservés · <a href="https://www.dronexperts.io">dronexperts.io</a> · <a href="https://formation.dronexperts.io">formation.dronexperts.io</a></p>
+  </div>
+
+</body>
+</html>

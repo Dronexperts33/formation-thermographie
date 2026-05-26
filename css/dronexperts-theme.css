@@ -1,0 +1,980 @@
+/* ============================================================
+   DRONEXPERTS — Reveal.js Custom Theme
+   Charte Graphique v2.3 (Mars 2026)
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* --- CSS Variables (Charte Dronexperts) --- */
+:root {
+  --dx-primary: #0E74DA;
+  --dx-primary-dark: #0B5DB0;
+  --dx-gradient-start: #1E3A8A;
+  --dx-gradient-end: #04355D;
+  --dx-bg-light: #F9FAFC;
+  --dx-bg-white: #FFFFFF;
+  --dx-text-dark: #0F172A;
+  --dx-text-secondary: #475569;
+  --dx-text-muted: #94A3B8;
+  --dx-border: #E2E8F0;
+  --dx-success: #10B981;
+  --dx-warning: #F59E0B;
+  --dx-error: #EF4444;
+  --dx-info: #06B6D4;
+  --dx-font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --dx-radius: 12px;
+  --dx-radius-sm: 8px;
+  --dx-shadow: 0 4px 24px rgba(14, 116, 218, 0.08);
+  --dx-shadow-lg: 0 8px 40px rgba(15, 23, 42, 0.12);
+}
+
+/* --- Reset Reveal.js defaults --- */
+.reveal {
+  font-family: var(--dx-font);
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--dx-text-secondary);
+}
+
+.reveal .slides {
+  text-align: left;
+}
+
+.reveal .slides section {
+  padding: 48px 56px;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+/* --- Typography --- */
+.reveal h1 {
+  font-family: var(--dx-font);
+  font-weight: 700;
+  font-size: 2.4em;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--dx-text-dark);
+  margin-bottom: 0.4em;
+}
+
+.reveal h2 {
+  font-family: var(--dx-font);
+  font-weight: 600;
+  font-size: 1.6em;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--dx-text-dark);
+  margin-bottom: 0.5em;
+}
+
+.reveal h3 {
+  font-family: var(--dx-font);
+  font-weight: 600;
+  font-size: 1.2em;
+  line-height: 1.3;
+  color: var(--dx-primary);
+  margin-bottom: 0.4em;
+}
+
+.reveal h4 {
+  font-family: var(--dx-font);
+  font-weight: 500;
+  font-size: 1em;
+  color: var(--dx-text-secondary);
+}
+
+.reveal p {
+  line-height: 1.6;
+  margin-bottom: 0.6em;
+}
+
+.reveal strong { font-weight: 600; color: var(--dx-text-dark); }
+.reveal em { font-style: italic; }
+
+.reveal a {
+  color: var(--dx-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+.reveal a:hover { color: var(--dx-primary-dark); }
+
+/* --- Lists --- */
+.reveal ul, .reveal ol {
+  margin-left: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.reveal ul li, .reveal ol li {
+  position: relative;
+  padding-left: 2em;
+  margin-bottom: 0.5em;
+  line-height: 1.5;
+}
+
+.reveal ul li::before {
+  content: '';
+  position: absolute;
+  left: 0.4em;
+  top: 0.55em;
+  width: 8px;
+  height: 8px;
+  background: var(--dx-primary);
+  border-radius: 50%;
+}
+
+.reveal ol { counter-reset: li; }
+.reveal ol li { counter-increment: li; }
+.reveal ol li::before {
+  content: counter(li);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.6em;
+  height: 1.6em;
+  background: var(--dx-primary);
+  color: white;
+  border-radius: 50%;
+  font-size: 0.7em;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- Logo positioning --- */
+.slide-logo {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  height: 48px;
+  width: auto;
+  opacity: 0.9;
+  z-index: 10;
+}
+
+.slide-logo-center {
+  display: block;
+  margin: 0 auto 32px;
+  height: 100px;
+  width: auto;
+}
+
+.slide-logo-large {
+  display: block;
+  margin: 0 auto 40px;
+  height: 140px;
+  width: auto;
+  filter: brightness(0) invert(1);
+}
+
+/* --- Slide footer --- */
+.slide-footer {
+  position: absolute;
+  bottom: 20px;
+  left: 56px;
+  right: 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.45em;
+  color: var(--dx-text-muted);
+  font-weight: 400;
+  border-top: 1px solid var(--dx-border);
+  padding-top: 12px;
+}
+
+.slide-footer-dark {
+  border-top-color: rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.5);
+}
+
+/* ============================================================
+   SLIDE TYPE 1: Title Slide (Hero)
+   ============================================================ */
+.slide-title {
+  background: linear-gradient(135deg, var(--dx-gradient-start) 0%, var(--dx-gradient-end) 100%);
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.slide-title h1 {
+  color: #FFFFFF;
+  font-size: 2em;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.2);
+  margin-bottom: 0.2em;
+  max-width: 90%;
+}
+
+.slide-title .subtitle {
+  color: rgba(255,255,255,0.85);
+  font-size: 1.1em;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+.slide-title .badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: white;
+  font-size: 0.55em;
+  font-weight: 500;
+  padding: 6px 20px;
+  border-radius: 20px;
+  margin-top: 24px;
+  backdrop-filter: blur(8px);
+}
+
+/* ============================================================
+   SLIDE TYPE 2: Module Separator
+   ============================================================ */
+.slide-module {
+  background: var(--dx-bg-light);
+  display: flex !important;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.slide-module .module-number {
+  font-size: 0.55em;
+  font-weight: 700;
+  color: var(--dx-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 12px;
+}
+
+.slide-module h2 {
+  font-size: 2.2em;
+  color: var(--dx-text-dark);
+  margin-bottom: 0.3em;
+}
+
+.slide-module .module-desc {
+  font-size: 0.85em;
+  color: var(--dx-text-secondary);
+  max-width: 70%;
+  line-height: 1.6;
+}
+
+.slide-module .module-icon {
+  position: absolute;
+  right: 80px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 200px;
+  height: 200px;
+  opacity: 0.08;
+  color: var(--dx-primary);
+}
+
+/* ============================================================
+   SLIDE TYPE 3: Content Slide
+   ============================================================ */
+.slide-content {
+  background: var(--dx-bg-white);
+}
+
+.slide-content h2 {
+  padding-bottom: 16px;
+  border-bottom: 3px solid var(--dx-primary);
+  margin-bottom: 32px;
+  display: inline-block;
+}
+
+/* Icon bullets */
+.icon-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.icon-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 12px 0;
+  padding-left: 0;
+}
+
+.icon-list li::before { display: none; }
+
+.icon-list .icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  background: rgba(14, 116, 218, 0.1);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--dx-primary);
+}
+
+.icon-list .icon svg {
+  width: 22px;
+  height: 22px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.icon-list .text h4 {
+  font-weight: 600;
+  color: var(--dx-text-dark);
+  font-size: 0.85em;
+  margin-bottom: 2px;
+}
+
+.icon-list .text p {
+  font-size: 0.72em;
+  color: var(--dx-text-secondary);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ============================================================
+   SLIDE TYPE 4: Two Columns
+   ============================================================ */
+.slide-two-col {
+  background: var(--dx-bg-white);
+}
+
+.slide-two-col h2 {
+  padding-bottom: 12px;
+  border-bottom: 3px solid var(--dx-primary);
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+  margin-top: 8px;
+}
+
+.two-col .col-text {
+  font-size: 0.85em;
+}
+
+.two-col .col-text ul li {
+  margin-bottom: 0.35em;
+  line-height: 1.4;
+}
+
+.two-col .col-text p {
+  margin-bottom: 0.4em;
+  line-height: 1.5;
+}
+
+.two-col .col-text .info-card {
+  padding: 14px 18px;
+}
+
+.two-col .col-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.two-col .col-visual img {
+  max-width: 100%;
+  border-radius: var(--dx-radius);
+  box-shadow: var(--dx-shadow-lg);
+}
+
+.two-col .col-visual .visual-placeholder {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background: linear-gradient(135deg, rgba(14,116,218,0.05) 0%, rgba(30,58,138,0.08) 100%);
+  border-radius: var(--dx-radius);
+  border: 2px dashed var(--dx-border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--dx-text-muted);
+  font-size: 0.6em;
+  gap: 8px;
+}
+
+/* ============================================================
+   SLIDE TYPE 5: Diagram / Schema
+   ============================================================ */
+.slide-diagram {
+  background: var(--dx-bg-white);
+  text-align: center;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.slide-diagram h2 {
+  text-align: center;
+  display: block;
+  border-bottom: none;
+}
+
+.diagram-container {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.diagram-card {
+  flex: 1;
+  min-width: 200px;
+  max-width: 300px;
+  background: var(--dx-bg-white);
+  border: 2px solid var(--dx-border);
+  border-radius: var(--dx-radius);
+  padding: 28px 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.diagram-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+}
+
+.diagram-card.card-green::before { background: var(--dx-success); }
+.diagram-card.card-blue::before { background: var(--dx-primary); }
+.diagram-card.card-orange::before { background: var(--dx-warning); }
+.diagram-card.card-red::before { background: var(--dx-error); }
+.diagram-card.card-cyan::before { background: var(--dx-info); }
+
+.diagram-card .card-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 12px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.diagram-card.card-green .card-icon { background: rgba(16,185,129,0.12); color: var(--dx-success); }
+.diagram-card.card-blue .card-icon { background: rgba(14,116,218,0.12); color: var(--dx-primary); }
+.diagram-card.card-orange .card-icon { background: rgba(245,158,11,0.12); color: var(--dx-warning); }
+.diagram-card.card-red .card-icon { background: rgba(239,68,68,0.12); color: var(--dx-error); }
+
+.diagram-card .card-icon svg {
+  width: 24px; height: 24px;
+  stroke: currentColor; fill: none;
+  stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+}
+
+.diagram-card h3 {
+  font-size: 0.75em;
+  color: var(--dx-text-dark);
+  margin-bottom: 6px;
+}
+
+.diagram-card p {
+  font-size: 0.55em;
+  color: var(--dx-text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ============================================================
+   SLIDE TYPE 6: Table
+   ============================================================ */
+.slide-table {
+  background: var(--dx-bg-white);
+}
+
+.dx-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.65em;
+  border-radius: var(--dx-radius);
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.dx-table thead th {
+  background: linear-gradient(135deg, var(--dx-gradient-start), var(--dx-gradient-end));
+  color: white;
+  font-weight: 600;
+  padding: 14px 18px;
+  text-align: left;
+  font-size: 0.95em;
+  letter-spacing: 0.02em;
+}
+
+.dx-table tbody td {
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--dx-border);
+  vertical-align: top;
+}
+
+.dx-table tbody tr:nth-child(even) { background: var(--dx-bg-light); }
+.dx-table tbody tr:last-child td { border-bottom: none; }
+
+.dx-table .badge-sm {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 0.85em;
+  font-weight: 600;
+}
+
+.badge-green { background: rgba(16,185,129,0.15); color: #059669; }
+.badge-blue { background: rgba(14,116,218,0.15); color: var(--dx-primary); }
+.badge-orange { background: rgba(245,158,11,0.15); color: #D97706; }
+
+/* ============================================================
+   SLIDE TYPE 7: Full Image
+   ============================================================ */
+.slide-image {
+  padding: 0 !important;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.slide-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(4,53,93,0.9) 0%, rgba(30,58,138,0.4) 50%, transparent 100%);
+}
+
+.slide-image .image-content {
+  position: absolute;
+  bottom: 80px;
+  left: 56px;
+  right: 56px;
+  z-index: 2;
+}
+
+.slide-image h2 {
+  color: white;
+  font-size: 1.8em;
+  border-bottom: none;
+  margin-bottom: 12px;
+}
+
+.slide-image p {
+  color: rgba(255,255,255,0.85);
+  font-size: 0.8em;
+  max-width: 60%;
+}
+
+/* ============================================================
+   SLIDE TYPE 8: Highlight / Citation
+   ============================================================ */
+.slide-highlight {
+  background: var(--dx-bg-light);
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.highlight-box {
+  max-width: 80%;
+  padding: 48px;
+  background: white;
+  border-radius: 16px;
+  border-left: 6px solid var(--dx-primary);
+  box-shadow: var(--dx-shadow);
+  text-align: left;
+}
+
+.highlight-box .tag {
+  display: inline-block;
+  font-size: 0.5em;
+  font-weight: 600;
+  color: var(--dx-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 16px;
+  background: rgba(14,116,218,0.08);
+  padding: 4px 14px;
+  border-radius: 6px;
+}
+
+.highlight-box blockquote,
+.reveal .highlight-box blockquote {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: var(--dx-text-dark);
+  line-height: 1.5;
+  margin: 0 0 16px 0;
+  padding: 0;
+  border: none;
+  border-left: none;
+  background: none;
+  box-shadow: none;
+  font-style: normal;
+}
+
+.highlight-box .source {
+  font-size: 0.6em;
+  color: var(--dx-text-muted);
+  font-weight: 400;
+}
+
+/* Variant: alert/warning */
+.highlight-box.highlight-warning {
+  border-left-color: var(--dx-warning);
+}
+.highlight-box.highlight-warning .tag {
+  color: var(--dx-warning);
+  background: rgba(245,158,11,0.1);
+}
+
+.highlight-box.highlight-error {
+  border-left-color: var(--dx-error);
+}
+.highlight-box.highlight-error .tag {
+  color: var(--dx-error);
+  background: rgba(239,68,68,0.1);
+}
+
+.highlight-box.highlight-success {
+  border-left-color: var(--dx-success);
+}
+.highlight-box.highlight-success .tag {
+  color: var(--dx-success);
+  background: rgba(16,185,129,0.1);
+}
+
+/* ============================================================
+   SLIDE TYPE 9: QCM / Quiz
+   ============================================================ */
+.slide-quiz {
+  background: var(--dx-bg-white);
+}
+
+.slide-quiz h2 {
+  border-bottom: none;
+  text-align: center;
+  display: block;
+}
+
+.quiz-question {
+  text-align: center;
+  font-size: 0.95em;
+  font-weight: 500;
+  color: var(--dx-text-dark);
+  margin-bottom: 32px;
+  padding: 0 40px;
+  line-height: 1.5;
+}
+
+.quiz-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  max-width: 85%;
+  margin: 0 auto;
+}
+
+.quiz-option {
+  background: var(--dx-bg-light);
+  border: 2px solid var(--dx-border);
+  border-radius: var(--dx-radius);
+  padding: 20px 24px;
+  font-size: 0.72em;
+  color: var(--dx-text-dark);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.quiz-option:hover {
+  border-color: var(--dx-primary);
+  background: rgba(14,116,218,0.04);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(14,116,218,0.12);
+}
+
+.quiz-option .option-letter {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  background: white;
+  border: 2px solid var(--dx-border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9em;
+  color: var(--dx-text-muted);
+}
+
+.quiz-option:hover .option-letter {
+  border-color: var(--dx-primary);
+  color: var(--dx-primary);
+}
+
+.quiz-option.correct {
+  border-color: var(--dx-success);
+  background: rgba(16,185,129,0.06);
+}
+.quiz-option.correct .option-letter {
+  background: var(--dx-success);
+  color: white;
+  border-color: var(--dx-success);
+}
+
+/* ============================================================
+   SLIDE TYPE 10: Conclusion / Contact
+   ============================================================ */
+.slide-conclusion {
+  background: var(--dx-text-dark);
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.slide-conclusion h2 {
+  color: white;
+  font-size: 1.8em;
+  margin-bottom: 0.3em;
+}
+
+.slide-conclusion p {
+  color: rgba(255,255,255,0.6);
+  font-size: 0.75em;
+}
+
+.slide-conclusion .contact-grid {
+  display: flex;
+  gap: 40px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.slide-conclusion .contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: rgba(255,255,255,0.7);
+  font-size: 0.65em;
+}
+
+.slide-conclusion .contact-item .contact-icon {
+  width: 40px;
+  height: 40px;
+  background: rgba(14,116,218,0.2);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--dx-primary);
+}
+
+.slide-conclusion .contact-item .contact-icon svg {
+  width: 20px; height: 20px;
+  stroke: currentColor; fill: none;
+  stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+}
+
+.slide-conclusion .contact-item a {
+  color: rgba(255,255,255,0.85);
+}
+
+/* ============================================================
+   Utility Classes
+   ============================================================ */
+
+/* Grid systems */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+
+/* Stat callout */
+.stat-row {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  margin: 32px 0;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-item .stat-number {
+  font-size: 2.4em;
+  font-weight: 800;
+  color: var(--dx-primary);
+  line-height: 1;
+}
+
+.stat-item .stat-label {
+  font-size: 0.55em;
+  color: var(--dx-text-muted);
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+/* Info card for inside slides */
+.info-card {
+  background: var(--dx-bg-light);
+  border: 1px solid var(--dx-border);
+  border-radius: var(--dx-radius);
+  padding: 20px 24px;
+}
+
+/* Progress indicator */
+.progress-dots {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.progress-dots .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--dx-border);
+}
+
+.progress-dots .dot.active {
+  background: var(--dx-primary);
+  width: 30px;
+  border-radius: 5px;
+}
+
+/* Tag / badge */
+.tag {
+  display: inline-block;
+  padding: 3px 12px;
+  border-radius: 14px;
+  font-size: 0.55em;
+  font-weight: 600;
+}
+
+.tag-primary { background: rgba(14,116,218,0.1); color: var(--dx-primary); }
+.tag-success { background: rgba(16,185,129,0.1); color: var(--dx-success); }
+.tag-warning { background: rgba(245,158,11,0.1); color: var(--dx-warning); }
+.tag-error { background: rgba(239,68,68,0.1); color: var(--dx-error); }
+
+/* Timeline / process */
+.process-steps {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  margin: 32px 0;
+}
+
+.process-step {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  padding: 0 16px;
+}
+
+.process-step::after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: calc(50% + 28px);
+  width: calc(100% - 56px);
+  height: 2px;
+  background: var(--dx-border);
+  z-index: 0;
+}
+
+.process-step:last-child::after { display: none; }
+
+.process-step .step-number {
+  width: 40px;
+  height: 40px;
+  background: var(--dx-primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;
+  font-weight: 700;
+  font-size: 0.75em;
+  position: relative;
+  z-index: 1;
+}
+
+.process-step .step-label {
+  font-size: 0.6em;
+  font-weight: 600;
+  color: var(--dx-text-dark);
+}
+
+.process-step .step-desc {
+  font-size: 0.5em;
+  color: var(--dx-text-muted);
+  margin-top: 4px;
+}
+
+/* ============================================================
+   Reveal.js overrides for controls/progress
+   ============================================================ */
+.reveal .progress { color: var(--dx-primary); height: 4px; }
+.reveal .slide-number {
+  font-family: var(--dx-font);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--dx-text-muted);
+  background: transparent;
+  right: auto;
+  left: 56px;
+  bottom: 22px;
+}
+
+/* Move slide number inside the footer area, left-aligned */
+.reveal .controls { color: var(--dx-primary); opacity: 0.6; }
+.reveal .controls:hover { opacity: 1; }
+
+/* Reset Reveal.js blockquote globally */
+.reveal blockquote {
+  border-left: none;
+  box-shadow: none;
+  font-style: normal;
+  background: none;
+  padding: 0;
+  margin: 0;
+  width: auto;
+}
+
+/* Fragments */
+.reveal .fragment.fade-in { opacity: 0; }
+.reveal .fragment.fade-in.visible { opacity: 1; }
+
+/* Print styles */
+@media print {
+  .reveal .slides section { page-break-after: always; }
+  .slide-footer { display: none; }
+}

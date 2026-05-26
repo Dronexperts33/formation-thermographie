@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jour 1 Matin — Fondamentaux IR & thermique du bâtiment — Formation Thermographie par Drone</title>
+
+  <!-- Reveal.js -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css" id="theme">
+  <link rel="stylesheet" href="css/dronexperts-theme.css">
+</head>
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+<!-- ============================================================
+     SLIDE 1 — TITRE
+     ============================================================ -->
+<section class="slide-title">
+  <img src="assets/img/logo-dronexperts.svg" alt="Dronexperts" class="slide-logo-large">
+  <h1>Formation Thermographie par Drone</h1>
+  <p class="subtitle">Jour 1 Matin — Fondamentaux IR &amp; thermique du bâtiment</p>
+  <span class="badge">Initiation — DJI Mavic 3T &amp; Matrice 4T · 14h pédagogiques</span>
+  <div class="slide-footer slide-footer-dark">
+    <span>Dronexperts — Formation Thermographie</span>
+    <span>Jour 1 Matin</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 2 — SOMMAIRE DE LA MATINEE
+     ============================================================ -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Sommaire de la matinée</h2>
+
+  <ul class="icon-list">
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg></div>
+      <div class="text">
+        <h4>1 · Principe général de la thermographie</h4>
+        <p>Définition, apports, place du drone, distinction caméra thermique / caméra IR / photo classique.</p>
+      </div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2v6"/><path d="M5 12a7 7 0 0 0 14 0"/><path d="M3 22h18"/></svg></div>
+      <div class="text">
+        <h4>2 · Rayonnement IR &amp; spectre électromagnétique</h4>
+        <p>Tout objet rayonne, spectre EM, fenêtres atmosphériques 2-5 µm et 7-15 µm.</p>
+      </div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+      <div class="text">
+        <h4>3 · Émissivité, réflexion &amp; transmission</h4>
+        <p>Relation α + ρ + τ = 1, corps noir vs corps réels, valeurs typiques d'émissivité.</p>
+      </div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+      <div class="text">
+        <h4>4 · Lois physiques du rayonnement</h4>
+        <p>Stefan-Boltzmann, Wien, Planck — ce qu'il faut retenir.</p>
+      </div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="12" x2="21" y2="12"/></svg></div>
+      <div class="text">
+        <h4>5 · Thermique du bâtiment</h4>
+        <p>Transferts thermiques, conductivité λ, coefficients R/U, ponts thermiques, modes constructifs.</p>
+      </div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+      <div class="text">
+        <h4>6 · Panorama des applications</h4>
+        <p>Bâtiment, photovoltaïque, industriel, médical, sécurité, recherche.</p>
+      </div>
+    </li>
+  </ul>
+
+  <div class="slide-footer">
+    <span>Sommaire — Jour 1 Matin</span>
+    <span>Dronexperts</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     MODULE 1 — PRINCIPE GENERAL
+     ============================================================ -->
+<section class="slide-module">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <div class="module-number">Module 1</div>
+  <h2>Principe général de la thermographie</h2>
+  <p class="module-desc">Comprendre ce qu'est la thermographie infrarouge, ce qu'elle apporte et pourquoi le drone est un vecteur idéal.</p>
+  <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
+  </svg>
+  <div class="slide-footer">
+    <span>Module 1 — Principe général</span>
+    <span>Jour 1 Matin</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Définition de la thermographie -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Qu'est-ce que la thermographie ?</h2>
+
+  <div class="highlight-box highlight-info">
+    <div class="tag">Définition (norme NF A 09-400)</div>
+    <blockquote>« Technique permettant d'obtenir au moyen d'un appareillage approprié l'image thermique d'une scène thermique dans un domaine spectral de l'infrarouge. »</blockquote>
+  </div>
+
+  <p style="margin-top: 24px;">En pratique : <strong>acquisition et analyse</strong> d'informations thermiques à l'aide d'instruments d'<strong>imagerie sans contact</strong>. La caméra mesure le rayonnement IR et le convertit en image (<em>thermogramme</em>) où chaque pixel correspond à une température de surface.</p>
+
+  <div class="slide-footer">
+    <span>Module 1 — Définition</span>
+    <span>Jour 1 Matin</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Apports de la thermographie -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Que nous apporte la thermographie ?</h2>
+
+  <ul class="icon-list">
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <div class="text"><h4>Défauts d'isolation &amp; ponts thermiques</h4><p>Visualisation directe des zones de déperdition énergétique dans l'enveloppe du bâtiment.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg></div>
+      <div class="text"><h4>Présence d'humidité &amp; infiltrations</h4><p>Les zones humides présentent une signature thermique froide caractéristique (évaporation).</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <div class="text"><h4>Maintenance préventive électrique</h4><p>Détection d'échauffements anormaux avant la panne (connexions, transformateurs, moteurs).</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+      <div class="text"><h4>Contrôle photovoltaïque</h4><p>Identification de cellules défectueuses, hot-spots et défauts de raccordement sur les strings.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+      <div class="text"><h4>Identification de réseaux enterrés</h4><p>Chauffage urbain, planchers chauffants, canalisations : la signature thermique trahit le tracé.</p></div>
+    </li>
+  </ul>
+
+  <div class="slide-footer">
+    <span>Module 1 — Apports</span>
+    <span>Jour 1 Matin</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Apport du drone -->
+<section class="slide-two-col">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Pourquoi la thermographie par drone ?</h2>
+
+  <div class="two-col">
+    <div class="col-text">
+      <ul>
+        <li><strong>Vue d'ensemble</strong> : couverture rapide de toitures, façades, champs PV, sites industriels difficiles d'accès.</li>
+        <li><strong>Hauteur de prise de vue</strong> : recul nécessaire pour cadrer une façade entière ou un panneau de toiture.</li>
+        <li><strong>Déplacement rapide</strong> : un bâtiment couvert en 15-20 min vs plusieurs heures au sol.</li>
+        <li><strong>Coût optimisé</strong> : pas de nacelle, pas d'échafaudage, pas d'arrêt d'exploitation.</li>
+        <li><strong>Sécurité opérateur</strong> : zéro intervention en hauteur.</li>
+      </ul>
+      <div class="info-card" style="margin-top: 16px;">
+        <p style="margin:0; font-size:0.7em;">
+          <strong style="color: var(--dx-primary);">💡 Cas d'usage emblématique</strong><br>
+          Une centrale photovoltaïque de 50 000 m² inspectée en 1 journée drone vs 1 semaine au sol.
+        </p>
+      </div>
+    </div>
+    <div class="col-visual">
+      <img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=600&q=80" alt="Drone thermique en vol" style="object-fit: cover;">
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 1 — Apport du drone</span>
+    <span>Jour 1 Matin</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Caméra thermique vs photo vs vision nocturne -->
+<section class="slide-diagram">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Trois technologies à ne pas confondre</h2>
+
+  <div class="diagram-container">
+    <div class="diagram-card card-blue">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M23 19V7a2 2 0 0 0-2-2h-4l-2-2H9L7 5H3a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2z"/><circle cx="12" cy="13" r="3"/></svg></div>
+      <h3>Appareil photo</h3>
+      <span class="tag tag-primary" style="margin-bottom: 10px;">Spectre visible</span>
+      <p>Sensible à la lumière réfléchie (0.4–0.8 µm). Reproduit ce que voit l'œil humain : couleurs, formes, intensité.</p>
+    </div>
+
+    <div class="diagram-card card-orange">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="M2 12h2"/><path d="M20 12h2"/></svg></div>
+      <h3>Caméra IR (vision nocturne)</h3>
+      <span class="tag tag-warning" style="margin-bottom: 10px;">Proche IR</span>
+      <p>Amplifie une petite quantité de lumière (lune, étoiles, LED). Nécessite une source de lumière, même faible.</p>
+    </div>
+
+    <div class="diagram-card card-green">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 2v6m0 8v6M2 12h6m8 0h6"/><circle cx="12" cy="12" r="3"/></svg></div>
+      <h3>Caméra thermique</h3>
+      <span class="tag tag-success" style="margin-bottom: 10px;">IR moyen 7-15 µm</span>
+      <p>Détecte l'énergie émise par les objets eux-mêmes. <strong>Fonctionne dans l'obscurité totale.</strong> Mesure une température.</p>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 1 — Distinction des technologies</span>
+    <span>Jour 1 Matin</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Pourquoi une caméra thermique -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Pourquoi utiliser une caméra thermique ?</h2>
+
+  <ul class="icon-list">
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <div class="text"><h4>Sans contact, sans danger</h4><p>Mesure à distance : pas de contact avec une surface chaude, sous tension ou dangereuse.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+      <div class="text"><h4>Localisation facile des défauts</h4><p>Un défaut thermique est immédiatement visible sur le thermogramme : pas besoin de démonter.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+      <div class="text"><h4>Analyse en temps réel</h4><p>Le gradient thermique est interprétable en vol. Pas de post-traitement obligatoire pour les défauts évidents.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+      <div class="text"><h4>Capture de phénomènes rapides</h4><p>Variations de température fugitives détectables (échauffement transitoire, fuites intermittentes).</p></div>
+    </li>
+  </ul>
+
+  <div class="slide-footer">
+    <span>Module 1 — Avantages</span>
+    <span>Jour 1 Matin</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     MODULE 2 — RAYONNEMENT IR
+     ============================================================ -->
+<section class="slide-module">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <div class="module-number">Module 2</div>
+  <h2>Rayonnement IR &amp; spectre électromagnétique</h2>
+  <p class="module-desc">Comprendre la physique de base du rayonnement infrarouge et identifier les fenêtres atmosphériques exploitables par nos caméras DJI.</p>
+  <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 2v6"/><path d="M5 12a7 7 0 0 0 14 0"/><circle cx="12" cy="12" r="2"/>
+  </svg>
+  <div class="slide-footer">
+    <span>Module 2 — Rayonnement IR</span>
+    <span>Jour 1 Matin</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Tout objet rayonne -->
+<section class="slide-highlight">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+
+  <div class="highlight-box highlight-info">
+    <div class="tag">Principe fondamental</div>
+    <blockquote>Tout objet dont la température dépasse le zéro absolu (0 K = -273,15 °C) émet un rayonnement électromagnétique. Ce rayonnement dépend de la température de surface et de la nature du matériau.</blockquote>
+  </div>
+
+  <p style="margin-top: 24px; font-size: 0.8em;">Au-delà de <strong>500 à 600 °C</strong>, le rayonnement entre dans le domaine visible (fer porté au « rouge », chauffé à « blanc »). En dessous, il s'agit d'<strong>infrarouge</strong>, invisible à l'œil humain mais mesurable par caméra thermique.</p>
+
+  <div class="slide-footer">
+    <span>Module 2 — Principe</span>
+    <span>Jour 1 Matin</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Spectre EM -->
+<section class="slide-two-col">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Le spectre électromagnétique</h2>
+
+  <div class="two-col">
+    <div class="col-text">
+      <ul>
+        <li><strong>Visible</strong> : 0.4 – 0.8 µm (œil humain)</li>
+        <li><strong>Proche IR</strong> : 0.8 – 2.5 µm (vision nocturne)</li>
+        <li><strong>IR moyen</strong> : 2.5 – 25 µm (caméras thermiques)</li>
+        <li><strong>IR lointain</strong> : 25 – 1000 µm</li>
+      </ul>
+      <p style="margin-top: 12px; font-size: 0.65em;">La thermographie travaille essentiellement dans la bande <strong>2 à 15 µm</strong>, et plus précisément dans les <strong>fenêtres atmosphériques</strong> où l'air absorbe peu le rayonnement.</p>
+      <div class="info-card" style="margin-top: 12px;">
+        <p style="margin:0; font-size:0.65em;">
+          <strong style="color: var(--dx-primary);">DJI Mavic 3T &amp; Matrice 4T</strong><br>
+          Fenêtre <strong>7-15 µm</strong> (LWIR — Long Wave Infrared)
+        </p>
+      </div>
+    </div>
+    <div class="col-visual">
+      <svg viewBox="0 0 440 280" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:440px;">
+        <defs>
+          <linearGradient id="spectrumJ1M" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0" stop-color="#7C3AED"/>
+            <stop offset="0.5" stop-color="#10B981"/>
+            <stop offset="1" stop-color="#EF4444"/>
+          </linearGradient>
+        </defs>
+        <line x1="30" y1="200" x2="420" y2="200" stroke="#475569" stroke-width="1.5"/>
+        <rect x="60" y="100" width="60" height="80" fill="url(#spectrumJ1M)" opacity="0.8" rx="2"/>
+        <text x="90" y="92" text-anchor="middle" font-family="Inter" font-size="10" font-weight="600" fill="#0F172A">Visible</text>
+        <text x="90" y="218" text-anchor="middle" font-family="Inter" font-size="9" fill="#475569">0.4–0.8 µm</text>
+        <rect x="130" y="120" width="50" height="60" fill="#DC2626" opacity="0.5" rx="2"/>
+        <text x="155" y="112" text-anchor="middle" font-family="Inter" font-size="10" font-weight="600" fill="#0F172A">Proche IR</text>
+        <text x="155" y="218" text-anchor="middle" font-family="Inter" font-size="9" fill="#475569">0.8–2.5 µm</text>
+        <rect x="190" y="135" width="70" height="45" fill="#0E74DA" opacity="0.4" rx="2"/>
+        <text x="225" y="127" text-anchor="middle" font-family="Inter" font-size="10" font-weight="600" fill="#0E74DA">Fen. 2-5</text>
+        <text x="225" y="218" text-anchor="middle" font-family="Inter" font-size="9" fill="#475569">2-5 µm</text>
+        <rect x="270" y="115" width="90" height="65" fill="#0E74DA" opacity="0.85" rx="2" stroke="#0E74DA" stroke-width="2"/>
+        <text x="315" y="107" text-anchor="middle" font-family="Inter" font-size="11" font-weight="700" fill="#0E74DA">Fen. 7-15 µm</text>
+        <text x="315" y="151" text-anchor="middle" font-family="Inter" font-size="10" font-weight="700" fill="white">DJI</text>
+        <text x="315" y="166" text-anchor="middle" font-family="Inter" font-size="9" fill="white">M3T / M4T</text>
+        <text x="315" y="218" text-anchor="middle" font-family="Inter" font-size="9" fill="#475569">7-15 µm</text>
+        <rect x="370" y="155" width="40" height="25" fill="#94A3B8" opacity="0.5" rx="2"/>
+        <text x="390" y="147" text-anchor="middle" font-family="Inter" font-size="9" font-weight="500" fill="#475569">IR lointain</text>
+        <text x="390" y="218" text-anchor="middle" font-family="Inter" font-size="9" fill="#475569">&gt; 25 µm</text>
+        <text x="225" y="252" text-anchor="middle" font-family="Inter" font-size="11" font-weight="600" fill="#475569">Longueur d'onde →</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 2 — Spectre EM</span>
+    <span>Jour 1 Matin</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     MODULE 3 — EMISSIVITE
+     ============================================================ -->
+<section class="slide-module">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <div class="module-number">Module 3</div>
+  <h2>Émissivité, réflexion &amp; transmission</h2>
+  <p class="module-desc">Le concept clé pour interpréter correctement un thermogramme. Mal paramétrer l'émissivité, c'est se tromper sur la température mesurée.</p>
+  <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+  </svg>
+  <div class="slide-footer">
+    <span>Module 3 — Émissivité</span>
+    <span>Jour 1 Matin</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Équation α + ρ + τ = 1 -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Tout objet absorbe, réfléchit ou transmet</h2>
+
+  <p>Le rayonnement incident sur un objet est réparti en trois composantes :</p>
+
+  <div class="diagram-container" style="margin-top: 16px;">
+    <div class="diagram-card card-blue">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      <h3>Absorption (α)</h3>
+      <p style="font-size: 0.75em;">Le rayonnement est absorbé par le matériau et converti en chaleur. <strong>α = ε</strong> (émissivité, loi de Kirchhoff).</p>
+    </div>
+    <div class="diagram-card card-orange">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><polyline points="1 4 1 10 7 10"/><polyline points="23 20 23 14 17 14"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10"/><path d="M3.51 15a9 9 0 0 0 14.85 3.36L23 14"/></svg></div>
+      <h3>Réflexion (ρ)</h3>
+      <p style="font-size: 0.75em;">Le rayonnement est renvoyé. Forte sur les surfaces brillantes (métaux polis, vitres).</p>
+    </div>
+    <div class="diagram-card card-green">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/></svg></div>
+      <h3>Transmission (τ)</h3>
+      <p style="font-size: 0.75em;">Le rayonnement traverse l'objet. Quasi-nulle pour les objets opaques (la plupart des matériaux du bâtiment).</p>
+    </div>
+  </div>
+
+  <div class="highlight-box highlight-info" style="margin-top: 24px; padding: 14px 20px;">
+    <blockquote style="font-size: 0.9em;"><strong>α + ρ + τ = 1</strong> &nbsp;—&nbsp; La somme des trois est toujours égale à 100 %.</blockquote>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 3 — Loi fondamentale</span>
+    <span>Jour 1 Matin</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — L'émissivité en détail -->
+<section class="slide-two-col">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>L'émissivité (ε) — concept clé</h2>
+
+  <div class="two-col">
+    <div class="col-text">
+      <p>L'<strong>émissivité (ε)</strong> caractérise la capacité d'un matériau à émettre de l'énergie thermique sous forme de rayonnement IR.</p>
+      <ul>
+        <li>Valeur <strong>sans dimension</strong> comprise entre 0 et 1</li>
+        <li>Dépend du matériau, de l'état de surface, de la température, de l'angle d'observation, de la longueur d'onde</li>
+        <li>Pour les objets opaques (τ = 0) : <strong>ε + ρ = 1</strong></li>
+        <li>Une surface très réfléchissante est très peu émissive (et inversement)</li>
+      </ul>
+      <div class="info-card" style="margin-top: 12px;">
+        <p style="margin:0; font-size:0.7em;">
+          <strong style="color: var(--dx-warning);">⚠ Conséquence directe</strong><br>
+          Mal paramétrer l'émissivité dans la caméra ⟶ température mesurée fausse.
+        </p>
+      </div>
+    </div>
+    <div class="col-visual">
+      <table class="dx-table" style="font-size: 0.7em;">
+        <thead><tr><th>Matériau</th><th>ε typique</th></tr></thead>
+        <tbody>
+          <tr><td>Aluminium poli</td><td>0.05</td></tr>
+          <tr><td>Acier oxydé</td><td>0.80</td></tr>
+          <tr><td>Verre</td><td>0.92</td></tr>
+          <tr><td>Plâtre, peinture mate</td><td>0.92</td></tr>
+          <tr><td>Bois</td><td>0.90</td></tr>
+          <tr><td>Brique, béton</td><td>0.93</td></tr>
+          <tr><td>Eau</td><td>0.96</td></tr>
+          <tr><td>Peau humaine</td><td>0.98</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 3 — Émissivité</span>
+    <span>Jour 1 Matin</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Corps noir vs corps réels -->
+<section class="slide-diagram">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Corps noir vs corps réels</h2>
+
+  <div class="diagram-container">
+    <div class="diagram-card card-blue">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+      <h3>Corps noir</h3>
+      <span class="tag tag-primary" style="margin-bottom: 10px;">ε = 1 · idéal</span>
+      <p style="font-size: 0.75em;">Absorbe 100 % du rayonnement incident, quelle que soit la longueur d'onde, et émet idéalement à toutes les longueurs d'onde. <strong>ρ = τ = 0.</strong> Référence théorique pour calibrer les caméras.</p>
+    </div>
+
+    <div class="diagram-card card-orange">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/></svg></div>
+      <h3>Corps réels</h3>
+      <span class="tag tag-warning" style="margin-bottom: 10px;">ε &lt; 1 · réalité</span>
+      <p style="font-size: 0.75em;">Émettent, absorbent, réfléchissent et parfois transmettent. La plupart sont <strong>opaques (τ = 0)</strong>. Le rayonnement capté = rayonnement émis + rayonnement réfléchi de l'environnement.</p>
+    </div>
+  </div>
+
+  <div class="highlight-box highlight-error" style="margin-top: 28px; padding: 14px 20px;">
+    <blockquote style="font-size: 0.85em;">⚠ Pour les corps réels, le rayonnement réfléchi peut <strong>fausser la lecture</strong>. C'est tout l'enjeu de la méthodologie d'interprétation (Jour 2 matin).</blockquote>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 3 — Corps noir &amp; réels</span>
+    <span>Jour 1 Matin</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     MODULE 4 — LOIS PHYSIQUES
+     ============================================================ -->
+<section class="slide-module">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <div class="module-number">Module 4</div>
+  <h2>Les trois lois du rayonnement IR</h2>
+  <p class="module-desc">Stefan-Boltzmann, Wien et Planck — les fondements physiques. On retient l'essentiel pour interpréter, pas pour résoudre des équations.</p>
+  <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>
+  </svg>
+  <div class="slide-footer">
+    <span>Module 4 — Lois physiques</span>
+    <span>Jour 1 Matin</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Les 3 lois en synthèse -->
+<section class="slide-diagram">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Les trois lois à retenir</h2>
+
+  <div class="diagram-container">
+    <div class="diagram-card card-blue">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+      <h3>Stefan-Boltzmann</h3>
+      <span class="tag tag-primary" style="margin-bottom: 10px;">W = ε · σ · T⁴</span>
+      <p style="font-size: 0.75em;">La puissance totale émise par unité de surface est <strong>proportionnelle à T⁴</strong>. Doubler la température absolue ⟶ multiplier l'émission par 16.</p>
+    </div>
+    <div class="diagram-card card-orange">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M3 12h18"/><path d="M3 6h18"/><path d="M3 18h18"/></svg></div>
+      <h3>Wien</h3>
+      <span class="tag tag-warning" style="margin-bottom: 10px;">λ_max = 2898 / T</span>
+      <p style="font-size: 0.75em;">Plus un corps est chaud, plus la longueur d'onde max d'émission est <strong>courte</strong>. Le soleil émet dans le visible, un radiateur dans l'IR moyen.</p>
+    </div>
+    <div class="diagram-card card-green">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12s4.48 10 10 10 10-4.48 10-10z"/><path d="M12 6v6l4 2"/></svg></div>
+      <h3>Planck</h3>
+      <span class="tag tag-success" style="margin-bottom: 10px;">Distribution spectrale</span>
+      <p style="font-size: 0.75em;">Décrit la <strong>répartition de l'énergie</strong> émise selon la longueur d'onde, pour une température donnée. C'est la « courbe d'émission » du corps noir.</p>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 4 — Stefan-Boltzmann / Wien / Planck</span>
+    <span>Jour 1 Matin</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Conséquences pratiques -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Ce qu'il faut retenir des lois physiques</h2>
+
+  <ul class="icon-list">
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+      <div class="text"><h4>L'énergie émise croît très vite avec la température</h4><p>Petites variations de T° = grandes variations d'énergie détectées. C'est ce qui rend la caméra sensible aux défauts.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 12h18"/><path d="M12 3v18"/></svg></div>
+      <div class="text"><h4>Le pic d'émission se déplace avec la température</h4><p>À 20 °C ⟶ ~10 µm (cœur de la fenêtre 7-15 µm DJI). À 520 °C ⟶ rayonnement dans le visible (rouge sombre).</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+      <div class="text"><h4>En dessous de 520 °C, l'œil ne voit rien</h4><p>D'où l'utilité absolue de la caméra thermique pour tout ce qui touche au bâtiment, au PV, à l'électrique BT.</p></div>
+    </li>
+  </ul>
+
+  <div class="slide-footer">
+    <span>Module 4 — Conséquences pratiques</span>
+    <span>Jour 1 Matin</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     MODULE 5 — THERMIQUE DU BATIMENT
+     ============================================================ -->
+<section class="slide-module">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <div class="module-number">Module 5</div>
+  <h2>Thermique du bâtiment</h2>
+  <p class="module-desc">Pour interpréter un thermogramme de bâtiment, il faut connaître les bases de la thermique : transferts, résistance, conductivité, ponts thermiques.</p>
+  <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+  </svg>
+  <div class="slide-footer">
+    <span>Module 5 — Thermique du bâtiment</span>
+    <span>Jour 1 Matin</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Les 3 modes de transfert -->
+<section class="slide-diagram">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Les 3 modes de transfert thermique</h2>
+
+  <div class="diagram-container">
+    <div class="diagram-card card-blue">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="12" x2="21" y2="12"/></svg></div>
+      <h3>Conduction</h3>
+      <span class="tag tag-primary" style="margin-bottom: 10px;">Solides</span>
+      <p style="font-size: 0.75em;">Transmission de chaleur à travers la matière (sa partie solide). La paroi conduit plus ou moins selon sa <strong>résistance thermique</strong>.</p>
+    </div>
+    <div class="diagram-card card-orange">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 2v6"/><path d="M5 12a7 7 0 0 0 14 0"/></svg></div>
+      <h3>Convection</h3>
+      <span class="tag tag-warning" style="margin-bottom: 10px;">Fluides</span>
+      <p style="font-size: 0.75em;">Mouvement de matière (air, eau) dû aux différences de température. Naturelle ou forcée (ventilation, vent).</p>
+    </div>
+    <div class="diagram-card card-green">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="M2 12h2"/><path d="M20 12h2"/></svg></div>
+      <h3>Rayonnement</h3>
+      <span class="tag tag-success" style="margin-bottom: 10px;">Sans contact</span>
+      <p style="font-size: 0.75em;">Émission d'ondes EM par tout corps &gt; 0 K. <strong>C'est ce que mesure la caméra thermique.</strong></p>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 5 — Transferts thermiques</span>
+    <span>Jour 1 Matin</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Conductivité λ, R, U -->
+<section class="slide-table">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Conductivité λ, résistance R, transmission U</h2>
+
+  <table class="dx-table">
+    <thead>
+      <tr>
+        <th>Grandeur</th>
+        <th>Symbole</th>
+        <th>Unité</th>
+        <th>Interprétation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Conductivité thermique</strong></td>
+        <td>λ</td>
+        <td>W/m·K</td>
+        <td>Aptitude d'un matériau à conduire la chaleur. <strong>Plus λ est faible, mieux le matériau isole.</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Résistance thermique</strong></td>
+        <td>R</td>
+        <td>m²·K/W</td>
+        <td>R = épaisseur / λ. <strong>Plus R est élevé, mieux la paroi isole.</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Coefficient de transmission</strong></td>
+        <td>U</td>
+        <td>W/m²·K</td>
+        <td>U = 1/ΣR. <strong>Plus U est faible, mieux la paroi est isolée.</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="info-card" style="margin-top: 20px;">
+    <p style="margin:0; font-size:0.7em;">
+      <strong style="color: var(--dx-primary);">Exemples de λ</strong> · Laine de verre : 0.04 — Béton : 1.5 — Verre : 1.0 — Aluminium : 230 W/m·K
+    </p>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 5 — Grandeurs thermiques</span>
+    <span>Jour 1 Matin</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Ponts thermiques -->
+<section class="slide-two-col">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Les ponts thermiques</h2>
+
+  <div class="two-col">
+    <div class="col-text">
+      <p>Un <strong>pont thermique</strong> est une zone ponctuelle ou linéaire de l'enveloppe où la barrière isolante est rompue. Il se crée par :</p>
+      <ul>
+        <li><strong>Changement de géométrie</strong> (angle, débord, retour)</li>
+        <li><strong>Changement de matériau</strong> ou de résistance thermique</li>
+        <li><strong>Défaut d'exécution</strong> (perforation isolant, boîtier électrique)</li>
+      </ul>
+      <p style="margin-top: 12px; font-size: 0.75em;">Les ponts thermiques sont responsables d'une part importante des déperditions énergétiques et de la condensation locale (moisissures).</p>
+      <div class="info-card" style="margin-top: 12px;">
+        <p style="margin:0; font-size:0.7em;">
+          <strong style="color: var(--dx-success);">🎯 Cible n°1 de l'inspection thermo</strong><br>
+          Les ponts thermiques apparaissent comme des zones <strong>chaudes</strong> sur la façade extérieure (l'hiver).
+        </p>
+      </div>
+    </div>
+    <div class="col-visual">
+      <img src="https://images.unsplash.com/photo-1545209463-e2825498edbf?w=600&q=80" alt="Thermogramme façade avec ponts thermiques" style="object-fit: cover;">
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 5 — Ponts thermiques</span>
+    <span>Jour 1 Matin</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Types de ponts thermiques -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Types de ponts thermiques courants</h2>
+
+  <ul class="icon-list">
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/></svg></div>
+      <div class="text"><h4>Liaisons structurelles</h4><p>Mur intérieur / mur extérieur, refend, planchers intermédiaires, fondations, appui de plancher.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><line x1="9" y1="4" x2="9" y2="20"/></svg></div>
+      <div class="text"><h4>Liaisons menuiseries</h4><p>Linteau, tableau de baie, appui de fenêtre, ébrasement, tablette.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+      <div class="text"><h4>Ponts thermiques d'exécution</h4><p>Perforations d'isolant pour boîtiers électriques, fixations, conduits — souvent invisibles à l'œil nu.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 21V9l9-6 9 6v12"/><path d="M9 21V12h6v9"/></svg></div>
+      <div class="text"><h4>Coffres de volets roulants</h4><p>Zone classique de déperdition, en haut des fenêtres. Souvent mal isolés en rénovation.</p></div>
+    </li>
+  </ul>
+
+  <div class="slide-footer">
+    <span>Module 5 — Types de ponts thermiques</span>
+    <span>Jour 1 Matin</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Modes constructifs -->
+<section class="slide-diagram">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Les modes constructifs à reconnaître</h2>
+
+  <div class="diagram-container">
+    <div class="diagram-card card-blue">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg></div>
+      <h3>Structure portante + remplissage</h3>
+      <p style="font-size: 0.75em;">Poteaux/poutres béton + remplissage maçonnerie ou parpaing. Ponts thermiques fréquents aux liaisons poteaux/remplissage.</p>
+    </div>
+    <div class="diagram-card card-orange">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="1"/></svg></div>
+      <h3>Mur porteur</h3>
+      <p style="font-size: 0.75em;">Le mur lui-même supporte la structure (parpaing, brique, béton banché). Isolation par l'extérieur (ITE) ou intérieur (ITI).</p>
+    </div>
+    <div class="diagram-card card-green">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M3 21V8l9-5 9 5v13"/><line x1="3" y1="14" x2="21" y2="14"/></svg></div>
+      <h3>Ossature bois</h3>
+      <p style="font-size: 0.75em;">Montants bois remplis d'isolant. Les montants apparaissent comme des lignes chaudes régulières sur le thermogramme.</p>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 5 — Modes constructifs</span>
+    <span>Jour 1 Matin</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     MODULE 6 — APPLICATIONS
+     ============================================================ -->
+<section class="slide-module">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <div class="module-number">Module 6</div>
+  <h2>Panorama des applications</h2>
+  <p class="module-desc">La thermographie ne se limite pas au bâtiment. Tour d'horizon des domaines où le drone thermique apporte une valeur ajoutée.</p>
+  <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+  </svg>
+  <div class="slide-footer">
+    <span>Module 6 — Applications</span>
+    <span>Jour 1 Matin</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — Panorama des applications -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Les grands domaines d'application</h2>
+
+  <div class="diagram-container">
+    <div class="diagram-card card-blue">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
+      <h3>Bâtiment &amp; rénovation énergétique</h3>
+      <p style="font-size: 0.7em;">Ponts thermiques, défauts d'isolation, infiltrations, dégâts des eaux, plafonds chauffants, planchers chauffants.</p>
+    </div>
+    <div class="diagram-card card-orange">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+      <h3>Photovoltaïque</h3>
+      <p style="font-size: 0.7em;">Détection de cellules défectueuses, hot-spots, défauts de raccordement, salissures, diodes by-pass HS.</p>
+    </div>
+    <div class="diagram-card card-green">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12s4.48 10 10 10 10-4.48 10-10z"/><path d="M2 12h20"/></svg></div>
+      <h3>Industriel &amp; électrique</h3>
+      <p style="font-size: 0.7em;">Maintenance prédictive : moteurs, paliers, lignes HT, postes électriques, contrôle de cuves, fours, isolants.</p>
+    </div>
+  </div>
+
+  <div class="diagram-container" style="margin-top: 24px;">
+    <div class="diagram-card card-blue">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+      <h3>Sécurité &amp; recherche</h3>
+      <p style="font-size: 0.7em;">Recherche de personne en milieu hostile, détection d'intrusions, surveillance périmétrique, animaux (faons, gibier).</p>
+    </div>
+    <div class="diagram-card card-orange">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/></svg></div>
+      <h3>Réseaux de chaleur</h3>
+      <p style="font-size: 0.7em;">Cartographie de réseaux enterrés, détection de fuites, contrôle de calorifugeage, sous-stations.</p>
+    </div>
+    <div class="diagram-card card-green">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
+      <h3>Recherche &amp; études</h3>
+      <p style="font-size: 0.7em;">Archéologie (anomalies de sol), pollution thermique de rivière, agriculture (stress hydrique), R&amp;D.</p>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 6 — Domaines d'application</span>
+    <span>Jour 1 Matin</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SYNTHESE
+     ============================================================ -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Synthèse de la matinée</h2>
+
+  <ul class="icon-list">
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+      <div class="text"><h4>Tout objet rayonne</h4><p>Dès que T° &gt; 0 K. Notre Mavic 3T / Matrice 4T mesure ce rayonnement dans la fenêtre <strong>7-15 µm</strong>.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+      <div class="text"><h4>L'émissivité est la clé</h4><p>α + ρ + τ = 1. Pour les corps opaques, ε + ρ = 1. Mal paramétrer ε ⟶ mauvaise mesure.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+      <div class="text"><h4>Trois lois physiques</h4><p>Stefan-Boltzmann (T⁴), Wien (λ_max), Planck (distribution). À retenir : <strong>petite Δ T° ⟶ grande Δ énergie</strong>.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+      <div class="text"><h4>Thermique du bâtiment</h4><p>Conduction / convection / rayonnement. λ, R, U. Les ponts thermiques sont la cible n°1 de l'inspection.</p></div>
+    </li>
+  </ul>
+
+  <div class="highlight-box highlight-info" style="margin-top: 20px; padding: 14px 20px;">
+    <blockquote style="font-size: 0.85em;">👉 Cet après-midi : le matériel DJI (Mavic 3T / Matrice 4T), la préparation de mission, le paramétrage caméra terrain.</blockquote>
+  </div>
+
+  <div class="slide-footer">
+    <span>Synthèse — Jour 1 Matin</span>
+    <span>Dronexperts</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     CONCLUSION
+     ============================================================ -->
+<section class="slide-conclusion">
+  <img src="assets/img/logo-dronexperts.svg" alt="Dronexperts" class="slide-logo-large">
+  <h2>Pause déjeuner</h2>
+  <p>Rendez-vous à 13h30 pour le matériel DJI &amp; la préparation de mission</p>
+  <p style="font-size:0.6em; margin-top: 8px; opacity: 0.7;">Jour 1 Après-midi — Mavic 3T / Matrice 4T, palettes, isotherme, conditions optimales</p>
+  <div class="conclusion-links">
+    <a href="index-formation.html">← Retour sommaire</a>
+    <a href="formation-jour1-aprem.html">Suite : J1 Après-midi →</a>
+  </div>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    slideNumber: 'c/t',
+    transition: 'slide',
+    width: 1280,
+    height: 720,
+    margin: 0.04,
+    controls: true,
+    progress: true,
+    center: false,
+  });
+</script>
+</body>
+</html>
