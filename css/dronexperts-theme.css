@@ -385,14 +385,36 @@
 
 .two-col .col-visual {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: stretch;
   justify-content: center;
+  font-size: 0.85em;
+  gap: 8px;
+}
+
+.two-col .col-visual > * {
+  align-self: stretch;
 }
 
 .two-col .col-visual img {
   max-width: 100%;
   border-radius: var(--dx-radius);
   box-shadow: var(--dx-shadow-lg);
+  align-self: center;
+}
+
+.two-col .col-visual svg {
+  align-self: center;
+}
+
+.two-col .col-visual ul li {
+  margin-bottom: 0.35em;
+  line-height: 1.4;
+}
+
+.two-col .col-visual p {
+  margin-bottom: 0.4em;
+  line-height: 1.5;
 }
 
 .two-col .col-visual .visual-placeholder {
